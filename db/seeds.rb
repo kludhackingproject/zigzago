@@ -8,7 +8,7 @@
 
 require 'faker'
 
-#Destroying Users, 
+#Destroying Users, favorites and apisearches
 print "-"*10, "Beginning seed", "-"*10,"\n"
 puts "Emptying all tables"
 User.destroy_all
