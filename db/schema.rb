@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_080310) do
+ActiveRecord::Schema.define(version: 2019_06_03_145247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,29 @@ ActiveRecord::Schema.define(version: 2019_06_04_080310) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+  
+  create_table "apisearches", force: :cascade do |t|
+    t.string "city_departure"
+    t.decimal "price"
+    t.datetime "departure_date"
+    t.datetime "return_date"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_apisearches_on_user_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.string "city_departure"
+    t.string "destination"
+    t.decimal "price"
+    t.datetime "departure_date"
+    t.datetime "return_date"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
