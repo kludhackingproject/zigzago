@@ -25,3 +25,11 @@
 *= require styles/responsive
 
  */
+
+.div-center {
+		display: inline-block;
+}
+
+.home_content_inner a:hover {
+	color: white;
+}

@@ -1,42 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Inscription</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Destino project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
-</head>
-<body>
-
 <div class="super_container">
   
   <!-- Home -->
 
   <div class="home">
     <!-- Image by https://unsplash.com/@peecho -->
-    <div class="home_background parallax-window" data-parallax="scroll" data-image-src="https://i.f1g.fr/media/madame/1900x800_crop/sites/default/files/img/2018/05/la-felicita-a-station-f.jpg" data-speed="0.8"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="home_content">
-            <div class="home_content_inner">
-              <div class="home_title">Inscription</div>
-              <div class="home_breadcrumbs"></div>
-            </div>
-          </div>
-        </div>
+    <div class="home_background parallax-window" data-parallax="scroll" data-speed="0.8">
+      <%= image_tag("find.jpg") %>
+    </div>
+      <div class="home_content">
+        <div class="home_content_inner">
+          <%= link_to "Inscription", "#ancre", class: "home_text_small" %>
+        </div>  
       </div>
-    </div>    
+    </div>
   </div>
 
   <!-- Contact -->
 
-  <div class="contact">
+  <div class="contact" id="ancre">
     <div class="container">
       <div class="row">
         <div class="col">
@@ -49,14 +30,21 @@
           <div class="contact_form_container">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "clearfix", id: "contact_form") do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
+
+              <%= f.label :prénom %><br />              
               <%= f.text_field :first_name, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "text", placeholder: "Prénom" %>
+              <%= f.label :nom %><br />              
               <%= f.text_field :last_name, autofocus: true, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "text", placeholder: "Nom" %>
+              <%= f.label :votre_présentation %><br />              
               <%= f.text_area :description, autofocus: true, autocomplete: "email", class: "contact_message_input contact_input_message", id: "contact_input_subject", type: "text", placeholder: "Votre présentation" %>
+              <%= f.label :adresse_email %><br />              
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "email", placeholder: "Adresse email" %>
+              <%= f.label :mot_de_passe %>
               <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> caractères minimum)</em>
-              <% end %><br />
+               <em>(<%= @minimum_password_length %> caractères minimum)</em>
+              <% end %><br />              
               <%= f.password_field :password, autofocus: true, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Mot de passe" %>
+              <%= f.label :confirmation_mot_de_passe %><br />
               <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Confirmation mot de passe" %>
             <%= f.submit "S'inscrire", class: "contact_send_btn trans_200", id: "contact_send_btn" %>
             <% end %> 
@@ -65,20 +53,3 @@
       </div>
     </div>
   </div>
-
-</div>
-
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
-<script src="js/contact_custom.js"></script>
-</body>
-</html>
