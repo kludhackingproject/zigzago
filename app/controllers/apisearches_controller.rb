@@ -16,15 +16,26 @@ class ApisearchesController < ApplicationController
 
     def create
 
-      amadeus = Amadeus::Client.new
+      # let's get a list of possible destinations from Paris for a maximum amount of 200 EUR
+      client = OAuth2::Client.new(ENV['AMADEUS_CLIENT_ID'], ENV['AMADEUS_CLIENT_SECRET'], site: 'https://test.api.amadeus.com', token_url: 'https://test.api.amadeus.com/v1/security/oauth2/token')
+      token = client.client_credentials.get_token
 
-      response = amadeus.shopping.flight_offers.get(
-        origin: params[:departure],
-        destination: params[:arrival],
-        departureDate: '2019-10-01'
-      )
+      response = token.get("/v1/shopping/flight-destinations?origin=#{params[:departure]}&maxPrice=#{params[:price]}")
 
-      @results = response.result
+      response_body = JSON.parse(response.body)
+
+      @results = response_body['data']
+
+
+      # amadeus = Amadeus::Client.new
+      #
+      # response = amadeus.shopping.flight_offers.get(
+      #   origin: params[:departure],
+      #   destination: params[:arrival],
+      #   departureDate: '2019-10-01'
+      # )
+      #
+      # @results = response.result
 
       # amadeus = Amadeus::Client.new
       #
@@ -37,7 +48,7 @@ class ApisearchesController < ApplicationController
 
       respond_to do |format|
         format.html { redirect_to apisearches_path }
-        format.js { }
+        format.js
       end
 
     end
