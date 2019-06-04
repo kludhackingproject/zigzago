@@ -12,4 +12,16 @@
  *
  *= require_tree .
  *= require_self
+
+ *= require styles/bootstrap4/bootstrap.min
+
+*= require plugins/font-awesome-4.7.0/css/font-awesome.min
+*= require plugins/OwlCarousel2-2.2.1/owl.carousel
+*= require plugins/OwlCarousel2-2.2.1/owl.theme.default
+*= require plugins/OwlCarousel2-2.2.1/animate
+*= require plugins/magnific-popup/magnific-popup
+
+*= require styles/main_styles
+*= require styles/responsive
+
  */
