@@ -14,3 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//= require assets/js/jquery-3.2.1.min
+//= require styles/bootstrap4/popper
+//= require styles/bootstrap4/bootstrap.min
+//= require plugins/OwlCarousel2-2.2.1/owl.carousel
+//= require plugins/easing/easing
+//= require plugins/parallax-js-master/parallax.min
+//= require plugins/magnific-popup/jquery.magnific-popup.min
+//= require assets/js/custom
