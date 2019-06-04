@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <%= form_for(@contact) do |f| %>
+    <% if @contact.errors.any? %>
+    <div id="error_explanation">
+    <h3><%= pluralize(@contact.errors.count, "erreur") %> impossible d'enregistrer ce contact</h2>
+    
+    <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+    </ul>
+    </div>
+    <% end %>
+    
+    <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+    </div>
+    
+    <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+    </div>
+    
+    <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+    </div>
+    
+    <div class="actions">
+    <%= f.submit "Send"%>
+    </div>
+<% end %>
+
+  </body>
+</html>
