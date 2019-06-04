@@ -25,4 +25,15 @@
 *= require styles/responsive
 
  */
+<<<<<<< HEAD
  
+=======
+
+.div-center {
+		display: inline-block;
+}
+
+.home_content_inner a:hover {
+	color: white;
+}
+>>>>>>> development

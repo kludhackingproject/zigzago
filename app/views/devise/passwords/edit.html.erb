@@ -8,18 +8,53 @@
     <%= f.label :password, "New password" %><br />
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+<div class="super_container">
+	
+	<!-- Home -->
+
+  <div class="home">
+    <!-- Image by https://unsplash.com/@peecho -->
+    <div class="home_background parallax-window" data-parallax="scroll" data-speed="0.8">
+      <%= image_tag("find.jpg") %>
+    </div>
+      <div class="home_content">
+        <div class="home_content_inner">
+          <%= link_to "Modifier mon profil", "#ancre", class: "home_text_small" %>
+        </div>  
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+	<!-- Contact -->
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+	<div class="contact" id="ancre">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="contact_title">Veuillez renseigner un nouveau mot de passe</div>
+				</div>
+			</div>
+			<div class="row contact_content">
 
-<%= render "devise/shared/links" %>
+				<div class="col-lg-7">
+					<div class="contact_form_container">
+						<form action="#" id="contact_form" class="clearfix">
+  						<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, class: "clearfix", id: "contact_form") do |f| %>
+            			<%= render "devise/shared/error_messages", resource: resource %>
+            			<%= f.hidden_field :reset_password_token %>
+						    <% if @minimum_password_length %>
+						      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+						    <% end %>
+              				<%= f.label :nouveau_mot_de_passe %><br />
+						    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Nouveau mot de passe" %>
+						    <%= f.label :confirmation_mot_de_passe %><br />
+						    <%= f.password_field :password_confirmation, autocomplete: "off", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Confirmation nouveau mot de passe" %>
+							<%= f.submit "Réinitialiser", class: "contact_send_btn trans_200", id: "contact_send_btn" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
