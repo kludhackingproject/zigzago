@@ -1,43 +1,112 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Inscription</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Destino project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+</head>
+<body>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="super_container">
+  
+  <!-- Home -->
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="home">
+    <!-- Image by https://unsplash.com/@peecho -->
+    <div class="home_background parallax-window" data-parallax="scroll" data-image-src="https://i.f1g.fr/media/madame/1900x800_crop/sites/default/files/img/2018/05/la-felicita-a-station-f.jpg" data-speed="0.8"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="home_content">
+            <div class="home_content_inner">
+              <div class="home_title">Modifier mon profil</div>
+              <div class="home_breadcrumbs"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <!-- Contact -->
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <div class="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="contact_title">Modifier mes informations</div>
+        </div>
+      </div>
+      <div class="row contact_content">
+
+        <div class="col-lg-7">
+          <div class="contact_form_container">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "clearfix", id: "contact_form") do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+              <%= f.label :adresse_email %><br />              
+              <%= f.email_field :email, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "text", placeholder: "Adresse email" %>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <%= f.label :mot_de_passe %>
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> caractères minimum, </em>
+              <% end %>
+              <i>ne pas remplir si vous ne voulez pas le modifier)</i><br />
+              <%= f.password_field :password, autofocus: true, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "text", placeholder: "Mot de passe" %>
+
+              <%= f.label :confirmation_mot_de_passe %><br />
+              <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "text", placeholder: "Confirmation mot de passe" %>
+
+              <%= f.label :mot_de_passe_actuel %> <i>(pour confirmer les changements)</i><br />
+              <%= f.password_field :current_password, autofocus: true, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "text", placeholder: "Mot de passe actuel" %>
+
+            <%= f.submit "Mettre à jour", class: "contact_send_btn trans_200", id: "contact_send_btn" %>
+            <% end %> 
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <div class="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="contact_title">Supprimer mon compte</div>
+        </div>
+      </div>
+      <div class="row contact_content">
+        <div>
+            <p>Pas content ? 
+              <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes vous sûr ?" }, method: :delete, class: "contact_send_btn trans_200", id: "contact_send_btn" %>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+<script src="js/contact_custom.js"></script>
+</body>
+</html>
