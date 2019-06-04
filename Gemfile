@@ -16,9 +16,9 @@ gem 'mailjet'
 gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'dotenv-rails'
 gem 'jquery-rails'
-# gem 'aws-sdk-s3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-gem 'jquery-rails'
+# gem 'aws-sdk-s3'
+gem 'oauth2'
 
 # API flights
 gem 'amadeus'

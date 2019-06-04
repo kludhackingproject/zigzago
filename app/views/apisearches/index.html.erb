@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <body>
 
 <div class="super_container">
@@ -253,3 +254,26 @@
 
 </body>
 </html>
+=======
+<h1>Amadeus</h1>
+
+<%= form_tag url_for(action: 'create'), remote: true, method: "post" do %>
+
+  <div class="yip" >
+    <%= label_tag 'Départ' %>
+    <%= text_field_tag :departure, class: "form-control"%>
+  </div>
+
+  <div class="yop" >
+    <%= label_tag 'Prix' %>
+    <%= text_field_tag :price, class: "form-control" %>
+  </div>
+
+  <%= submit_tag "Soumet ton event" %>
+
+<% end %>
+
+<div id="results" >
+
+</div>
+>>>>>>> research-API-request
