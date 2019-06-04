@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'apisearches#index'
   resources :apisearches, only: [:index, :show, :new, :create, :destroy]
   resources :favorites, only: [:index, :show, :new, :create, :destroy]
+  resources :contacts, only: [:new, :create]
 end
