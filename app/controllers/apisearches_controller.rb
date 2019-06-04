@@ -1,17 +1,26 @@
 class ApisearchesController < ApplicationController
     def index
-    end 
+      amadeus = Amadeus::Client.new
+
+      response = amadeus.shopping.flight_offers.get(
+        origin: 'NYC',
+        destination: 'MAD',
+        departureDate: '2019-10-01'
+      )
+
+      @amadeus_test = response.data
+    end
 
     def show
-    end 
+    end
 
     def new
     end
 
     def create
-    end 
+    end
 
     def destroy
-    end 
+    end
 
 end
