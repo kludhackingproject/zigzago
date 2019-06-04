@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-<body>
-
 <div class="super_container">
-	
+
 	<!-- Home -->
 
-    <div class="home">
+  <div class="home">
     <%= image_tag("home.jpg", class:"home_background", data: { parallax: "scroll", speed: "0.8"}) %>
 		<div class="home_content">
 			<div class="home_content_inner">
@@ -15,8 +12,29 @@
 		</div>
 	</div>
 
-    <!-- Services -->
+	<h1>Amadeus</h1>
 
+	<%= form_tag url_for(action: 'create'), remote: true, method: "post" do %>
+
+	  <div class="yip" >
+	    <%= label_tag 'Départ' %>
+	    <%= text_field_tag :departure, class: "form-control"%>
+	  </div>
+
+	  <div class="yop" >
+	    <%= label_tag 'Prix' %>
+	    <%= text_field_tag :price, class: "form-control" %>
+	  </div>
+
+	  <%= submit_tag "Soumet ton event" %>
+
+	<% end %>
+
+	<div id="results" >
+
+	</div>
+
+    <!-- Services -->
 	<div class="services">
 		<div class="container">
 			<div class="row">
@@ -58,7 +76,7 @@
 			</div>
 		</div>
     </div>
-    
+
     <!-- Popular -->
 
 	<div class="popular">
@@ -74,7 +92,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="popular_content d-flex flex-md-row flex-column flex-wrap align-items-md-center align-items-start justify-content-md-between justify-content-start">
-						
+
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
@@ -83,7 +101,7 @@
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Turkey</div>
 								</div>
-							</a>	
+							</a>
 						</div>
 
 						<!-- Popular Item -->
@@ -94,7 +112,7 @@
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Hawai</div>
 								</div>
-							</a>	
+							</a>
 						</div>
 
 						<!-- Popular Item -->
@@ -105,7 +123,7 @@
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Ireland</div>
 								</div>
-							</a>	
+							</a>
 						</div>
 
 						<!-- Popular Item -->
@@ -149,7 +167,7 @@
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">France</div>
 								</div>
-							</a>	
+							</a>
 						</div>
 
 						<!-- Popular Item -->
@@ -185,7 +203,7 @@
 		<div class="special_content">
 			<div class="special_slider_container">
 				<div class="owl-carousel owl-theme special_slider">
-					
+
 					<!-- Special Offers Item -->
 					<div class="owl-item">
 						<div class="special_item">
@@ -248,32 +266,5 @@
 				</div>
 			</div>
 		</div>
-    </div>
-
-</div>
-
-</body>
-</html>
-=======
-<h1>Amadeus</h1>
-
-<%= form_tag url_for(action: 'create'), remote: true, method: "post" do %>
-
-  <div class="yip" >
-    <%= label_tag 'Départ' %>
-    <%= text_field_tag :departure, class: "form-control"%>
   </div>
-
-  <div class="yop" >
-    <%= label_tag 'Prix' %>
-    <%= text_field_tag :price, class: "form-control" %>
-  </div>
-
-  <%= submit_tag "Soumet ton event" %>
-
-<% end %>
-
-<div id="results" >
-
 </div>
->>>>>>> research-API-request
