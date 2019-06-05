@@ -18,7 +18,6 @@
 
 //= require jquery-3.2.1.min
 
-
 //= require styles/bootstrap4/popper
 //= require styles/bootstrap4/bootstrap.min
 
