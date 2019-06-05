@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery.easy-autocomplete
 //= require_tree .
 
 //= require jquery-3.2.1.min
