@@ -14,26 +14,16 @@
 //= require jquery_ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery.easy-autocomplete
 //= require_tree .
-<<<<<<< HEAD
 //= require jquery-3.2.1.min
 //= require custom
 //= require elements_custom
-=======
-
-//= require jquery-3.2.1.min
-
-//= require custom
-//= require elements_custom
-
->>>>>>> development
 //= require styles/bootstrap4/popper
 //= require styles/bootstrap4/bootstrap.min
 //= require plugins/OwlCarousel2-2.2.1/owl.carousel
 //= require plugins/easing/easing
 //= require plugins/parallax-js-master/parallax.min
-<<<<<<< HEAD
 //= require plugins/magnific-popup/jquery.magnific-popup.min
-=======
-//= require plugins/magnific-popup/jquery.magnific-popup.min
->>>>>>> development
+
+

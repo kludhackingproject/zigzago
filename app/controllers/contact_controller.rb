@@ -1,17 +1,19 @@
 class ContactController < ApplicationController
 
-    def index
-    end
-
-    def new
+    def new 
         @contact = Contact.new
-    end
-     
-    def create
+      end
+    
+      def create
         @contact = Contact.new(params[:contact])
-        
-        redirect_to apisearches_index, flash[:success] = "Post successfully created"
-    end
+        if @contact.deliver
+          flash.now[:error] = nil
+      redirect_to apisearches_path, notice: 'Message sent successfully'
+        else
+          flash.now[:error] = 'Cannot send message'
+          redirect_to contact_path
+        end
+      end
 
 end
 
