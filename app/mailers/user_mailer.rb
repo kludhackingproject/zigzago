@@ -7,6 +7,6 @@ class UserMailer < ApplicationMailer
   
       @url  = 'https://zigzago-development.herokuapp.com/' 
   
-      mail(to: @user.email, subject: 'Bienvenue chez nous !') 
+      mail(to: @user.email, subject: 'Confirmation de ton inscription chez Zigzago !') 
     end
 end

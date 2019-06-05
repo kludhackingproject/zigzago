@@ -1,10 +1,12 @@
-Salut <%= @user.name %> et bienvenue chez Zigzago !
+Salut <%= @user.first_name %> <%= @user.last_name %> et bienvenue chez Zigzago !
 ==========================================================
 
-Si tu reçois ce mail, c'est que tu viens de t'inscrire sur <%= @url %>.
+Si tu reçois ce mail, c'est que tu viens de t'inscrire sur : <%= @url %>.
 
-Tu as completé la première étape pour devenir un traveler ! La seconde c'est d'activer les alertes afin de recevoir un mail dès qu'une offre correspond à ce que tu recherches et à toi l'aventure ! :airplane:
+Tu as completé la première étape pour devenir un traveler ! La seconde, c'est d'activer les alertes afin de recevoir un mail dès qu'une offre correspond à ce que tu recherches et à toi l'aventure !
 
-Pour accéder à ton espace traveler, connecte-toi via : <%= @url %>  en utilisant l'e-mail suivant : <%= @user.email %>.
+Pour accéder à ton espace traveler, connecte-toi sur : <%= @url %>  en utilisant l'e-mail suivant : <%= @user.email %>.
 
 À très vite sur Zigzago !
+
+Tout ce que vous avez à faire, c’est décider de partir et le plus dur est fait.

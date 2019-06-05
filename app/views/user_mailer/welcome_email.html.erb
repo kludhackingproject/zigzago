@@ -4,16 +4,17 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Salut <%= @user.name %> et bienvenue chez Zigzago !</h1>
+    <h1>Salut <%= @user.first_name %>  <%= @user.last_name %> et bienvenue chez Zigzago !</h1>
     <p>
-      Si tu reçois ce mail, c'est que tu viens de t'inscrire sur <%= @url %>.
+      Si tu reçois ce mail, c'est que tu viens de t'inscrire sur : <%= @url %>.
     </p>
     <p>
-      Tu as completé la première étape pour devenir un traveler ! La seconde c'est d'activer les alertes afin de recevoir un mail dès qu'une offre correspond à ce que tu recherches et à toi l'aventure ! :airplane:
+      Tu as completé la première étape pour devenir un traveler ! La seconde, c'est d'activer les alertes afin de recevoir un mail dès qu'une offre correspond à ce que tu recherches et à toi l'aventure !
     </p>
     <p>
-      Pour accéder à ton espace traveler, connecte-toi via : <%= @url %>  en utilisant l'e-mail suivant : <%= @user.email %>.
+      Pour accéder à ton espace traveler, connecte-toi sur : <%= @url %>  en utilisant l'e-mail suivant : <%= @user.email %>.
     </p>
     <p> À très vite sur Zigzago ! </p>
+    <p><em>Tout ce que vous avez à faire, c’est décider de partir et le plus dur est fait.</em></p>
   </body>
 </html>
