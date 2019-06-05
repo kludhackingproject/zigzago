@@ -23,8 +23,18 @@
 
 	  <div class="yop" >
 	    <%= label_tag 'Prix' %>
-	    <%= text_field_tag :price, class: "form-control" %>
+	    <%= text_field_tag :arrival, class: "form-control" %>
 	  </div>
+
+		<div class="yop" >
+			<%= label_tag 'Date de depart' %>
+			<%= date_field_tag :departure_date, class: "form-control" %>
+		</div>
+
+		<div class="yop" >
+			<%= label_tag 'Date de retour' %>
+			<%= date_field_tag :return_date, class: "form-control" %>
+		</div>
 
 	  <%= submit_tag "Soumet ton event" %>
 
