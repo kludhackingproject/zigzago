@@ -33,8 +33,7 @@
 *= require styles/offers_styles
 *= require styles/offers_responsive
 
-
- */
+*/
 
 
 .div-center {
@@ -45,3 +44,11 @@
 	color: white;
 }
 
+/*flash*/
+
+.alert{
+	margin-left: 450px;
+	margin-right: 450px;
+	text-align: center;
+	margin-bottom: 0px !important;
+}
