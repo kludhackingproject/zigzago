@@ -11,9 +11,8 @@
 						<div class="logo_container">
 							<div class="logo">
 								<div>zigzago</div>
-								<div>travel agency</div>
+								<div> Travel your way </div>
 								<%= image_tag("logo.png", class: "logo_image") %>
-								<!-- <div class="logo_image"><img src="images/logo.png" alt=""></div> -->
 							</div>
 						</div>
 						<div class="footer_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar sed mauris eget tincidunt. Sed lectus nulla, tempor vel eleifend quis, tempus rut rum metus. Pellentesque ultricies enim eu quam fermentum hendrerit.</div>
@@ -25,32 +24,28 @@ Copyright &copy; 2019 All rights reserved | This template is made with <i class=
 
 				<!-- Footer Column -->
 				<div class="col-lg-4 footer_col">
-					<div class="footer_latest">
-						<div class="footer_title">Latest News</div>
-						<div class="footer_latest_content">
-
-							<!-- Footer Latest Post -->
-							<div class="footer_latest_item">
-								<div class="footer_latest_image"><img src="images/latest_1.jpg" alt="https://unsplash.com/@peecho"></div>
-								<div class="footer_latest_item_content">
-									<div class="footer_latest_item_title"><a href="news.html">Brazil Summer</a></div>
-									<div class="footer_latest_item_date">Jan 09, 2018</div>
-								</div>
-							</div>
-
-							<!-- Footer Latest Post -->
-							<div class="footer_latest_item">
-								<div class="footer_latest_image"><img src="images/latest_2.jpg" alt="https://unsplash.com/@sanfrancisco"></div>
-								<div class="footer_latest_item_content">
-									<div class="footer_latest_item_title"><a href="news.html">A perfect vacation</a></div>
-									<div class="footer_latest_item_date">Jan 09, 2018</div>
-								</div>
-							</div>
-
-						</div>
+					<div class="footer_about">
+						<div class="footer_title"> Plan du site </div>
+				            <div class="footer_about_text">
+				            	<ul class="main_nav_list">
+								<li class="footer_nav_item"><%= link_to 'Accueil', root_path %></li>
+								<li class="footer_nav_item"><%= link_to 'A propos', root_path %></li>
+								<li class="footer_nav_item"><a href="offers.html">Recherche</a></li>
+								<li class="footer_nav_item"><%= link_to 'Contact', root_path %></li>
+							</ul>
+				            </div>
 					</div>
 				</div>
+
+				<div class="col-lg-4 footer_col">
+					<div class="footer_about">
+						<div class="footer_title"> Newsletter </div>
+						<div class="footer_about_text">Laissez-nous vous dénicher les meilleures offres ! En vous abonnant recevez :<br>- Des bons plans vols<br>- Des promos<br>- Des inspis voyages</div>
+						<button type="submit" id="newsletter_footer_button" class="newsletter_footer_button">S'inscrire</button>
+				    </div>
+				</div>    
 
 			</div>
 		</div>
 	</footer>
+

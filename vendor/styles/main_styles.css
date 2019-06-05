@@ -347,7 +347,7 @@ section
 }
 .logo div:first-of-type
 {
-	font-size: 24px;
+	font-size: 26px;
 	font-weight: 500;
 	line-height: 0.75;
 }
@@ -1453,6 +1453,30 @@ section
 {
 	opacity: 0.8;
 }
+.newsletter_footer_button
+{
+	width: 100px;
+	height: 36px;
+	vertical-align: top;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: #fe364a;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: 500;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.newsletter_footer_button:hover
+{
+	opacity: 0.8;
+}
+
+
 .newsletter_input::-webkit-input-placeholder
 {
 	font-size: 14px !important;
@@ -1517,7 +1541,7 @@ section
 	font-size: 12px;
 	font-weight: 300;
 	line-height: 2.5;
-	color: #7d8293;
+	color: #FFFFFF;
 	margin-top: 35px;
 }
 .copyright
@@ -1528,6 +1552,26 @@ section
 	color: #7d8293;
 	margin-top: 39px;
 }
+
+
+.footer_nav_item
+{
+	list-style: none;
+	position: relative;
+}
+
+.footer_nav_item a
+{
+	font-size: 12px;
+	font-weight: 400;
+	color: #FFFFFF;
+}
+
+.footer_nav_item:hover a
+{
+	color: #fe435b;
+}
+
 .footer_latest
 {
 	width: 100%;
