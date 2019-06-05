@@ -1,38 +1,79 @@
+
 <div class="super_container">
 
 	<!-- Home -->
 
   <div class="home">
-    <%= image_tag("home.jpg", class:"home_background", data: { parallax: "scroll", speed: "0.8"}) %>
+    <%= image_tag("home.jpg", class: "home_background") %>
 		<div class="home_content">
 			<div class="home_content_inner">
-				<div class="home_text_large">discover</div>
-				<div class="home_text_small">Discover new worlds</div>
+				<div class="home_text_large">zigzago</div>
+				<div class="home_text_small">A new way to travel</div> -->
 			</div>
 		</div>
-	</div>
+  </div>
 
-	<h1>Amadeus</h1>
+	<!-- Find Form -->
+	<div class="find">
+		<%= image_tag("find.jpg", class: "find_background") %>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="find_title text-center">Find the Adventure of a lifetime</div>
+				</div>
 
-	<%= form_tag url_for(action: 'create'), remote: true, method: "post" do %>
+				<div class="col-12">
+					<div class="find_form_container">
+						<%= form_tag url_for(action: 'create'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
 
-	  <div class="yip" >
-	    <%= label_tag 'Départ' %>
-	    <%= text_field_tag :departure, class: "form-control"%>
-	  </div>
 
-	  <div class="yop" >
-	    <%= label_tag 'Prix' %>
-	    <%= text_field_tag :price, class: "form-control" %>
-	  </div>
+								<div class="find_item">
+									<div>Départ :</div>
 
-	  <%= submit_tag "Soumet ton event" %>
+									<input type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>>
+								</div>
 
-	<% end %>
+								<div class="find_item">
+									<div>Arrivée :</div>
+
+									<input type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>>
+								</div>
+
+								<div class="find_item">
+									<div>Date aller :</div>
+
+									<input class="destination find_input" <%= date_field_tag :departure_date %>>
+
+								</div>
+
+								<div class="find_item">
+									<div>Date retour :</div>
+
+									<input class="destination find_input" <%= date_field_tag :return_date %>>
+
+								</div>
+
+								<%= submit_tag "Rechercher", class:"button find_button" %>
+                          <% end %>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+  </div>
 
 	<div id="results" >
 
 	</div>
+
+
+<div id="results" >
+
+	</div>
+
+
+
 
     <!-- Services -->
 	<div class="services">
@@ -49,7 +90,7 @@
 				<!-- Icon Box -->
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
-                        <div class="icon_box_image"><%= image_tag("service_1.svg", class:"svg") %></div>
+                        <div class="icon_box_image"><%= image_tag("service_1.svg", class: "svg") %></div>
 						<div class="icon_box_title">Tes séjours à l'imprévu</div>
 						<p class="icon_box_text">Entre amis ou avec ta dulcinée, en famille ou même en solitaire, choisis l'aventure et décide de partir à l'improviste : zigzago te dévoile toutes les possibilités qui s'offrent à toi. </p>
 					</div>
@@ -58,7 +99,7 @@
 				<!-- Icon Box -->
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
-                    <div class="icon_box_image"><%= image_tag("service_2.svg", class:"svg") %></div>
+                    <div class="icon_box_image"><%= image_tag("service_2.svg", class: "svg") %></div>
                     <div class="icon_box_title">Tes séjours organisés</div>
 						<p class="icon_box_text">À 10 000km ou à 100, à l'autre bout du monde ou près de chez toi, il y a toujours des mondes inconnus à découvrir. Avec zigzago, découvre des destinations insoupsonnées pour des voyages inoubliables.</p>
 					</div>
@@ -67,7 +108,7 @@
 				<!-- Icon Box -->
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
-                    <div class="icon_box_image"><%= image_tag("service_3.svg", class:"svg") %></div>
+                    <div class="icon_box_image"><%= image_tag("service_3.svg", class: "svg") %></div>
                     <div class="icon_box_title">Tu choisis</div>
 						<p class="icon_box_text"> En avion, certes ! Mais aussi en train, en bus, ou en blablacar. Zigzago te propose de nombreuses fonctionnalités pour trouver le bon compromis entre destination, prix, durée du trajet etc... </p>
 					</div>
@@ -75,35 +116,103 @@
 
 			</div>
 		</div>
-    </div>
+  </div>
 
-	<div class="popular">
-		<div class="container">
-			<div>
+			<div class="row">
+				<div class="col">
+					<div class="popular_content d-flex flex-md-row flex-column flex-wrap align-items-md-center align-items-start justify-content-md-between justify-content-start">
 
-    <!-- Cards -->
+						<!-- Popular Item -->
+						<div class="popular_item">
+							<a href="">
+                                <%= image_tag("popular_1.jpg") %>
+								<div class="popular_item_content">
+									<div class="popular_item_price">From $890</div>
+									<div class="popular_item_title">Turkey</div>
+								</div>
+							</a>
+						</div>
 
-			<div class="card">
-			    <table>
-			        <tbody>
-			            <tr>
-			              <td>
-			              	<p class="card-departure-time">Heure départ</br>
-			              	<span class="card-departure-place">Lieu départ</span></p></td>
-			              <td>
-			              	<p class="card-duration">Durée</p></td>
-			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée</br>
-			              	<span class="card-arrival-place">Lieu arrivée</span></p></td>
-			              <td class="cell-price">
-			                <p class="card-price">Prix</br><button type="button" class="btn btn-info">Voir</button></p>
-			              </td>
-			            </tr>
-			        </tbody>
-			    </table>
-			</div>
+						<!-- Popular Item -->
+						<div class="popular_item">
+							<a href="">
+                                <%= image_tag("popular_2.jpg") %>
+								<div class="popular_item_content">
+									<div class="popular_item_price">From $890</div>
+									<div class="popular_item_title">Hawai</div>
+								</div>
+							</a>
+						</div>
 
+						<!-- Popular Item -->
+						<div class="popular_item">
+							<a href="">
+                                <%= image_tag("popular_3.jpg") %>
+								<div class="popular_item_content">
+									<div class="popular_item_price">From $890</div>
+									<div class="popular_item_title">Ireland</div>
+								</div>
+							</a>
+						</div>
+
+						<!-- Popular Item -->
+						<div class="popular_item">
+							<a href="">
+                                <%= image_tag("popular_4.jpg") %>
+								<div class="popular_item_content">
+									<div class="popular_item_price">From $890</div>
+									<div class="popular_item_title">Thailand</div>
+								</div>
+							</a>
+						</div>
+
+						<!-- Popular Item -->
+						<div class="popular_item">
+							<a href="">
+                                <%= image_tag("popular_5.jpg") %>
+								<div class="popular_item_content">
+									<div class="popular_item_price">From $890</div>
+									<div class="popular_item_title">Croatia</div>
+								</div>
+							</a>
+						</div>
+
+						<!-- Popular Item -->
+						<div class="popular_item">
+							<a href="">
+                                <%= image_tag("popular_6.jpg") %>
+								<div class="popular_item_content">
+									<div class="popular_item_price">From $890</div>
+									<div class="popular_item_title">Bali</div>
+								</div>
+							</a>
+						</div>
+
+						<!-- Popular Item -->
+						<div class="popular_item">
+							<a href="">
+                                <%= image_tag("popular_7.jpg") %>
+								<div class="popular_item_content">
+									<div class="popular_item_price">From $890</div>
+									<div class="popular_item_title">France</div>
+								</div>
+							</a>
+						</div>
+
+						<!-- Popular Item -->
+						<div class="popular_item">
+							<a href="">
+                                <%= image_tag("popular_8.jpg") %>
+								<div class="popular_item_content">
+									<div class="popular_item_price">From $890</div>
+									<div class="popular_item_title">Vietnam</div>
+								</div>
+							</a>
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
 </div>

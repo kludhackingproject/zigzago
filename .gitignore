@@ -27,7 +27,7 @@
 /config/master.key
 
 # Ignore Gemfile.lock
-Gemfile.lock
+
 
 # Ignore API keys
 .env
