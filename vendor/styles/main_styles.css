@@ -250,7 +250,7 @@ section
 .home_content
 {
 	position: absolute;
-	top: 46%;
+	top: 36%;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
@@ -262,12 +262,13 @@ section
 }
 .home_text_large
 {
-	font-size: 215px;
+	font-size: 150px;
 	font-weight: 900;
 	color: #fdaa27;
 	opacity: 0.34;
 	text-transform: uppercase;
 	line-height: 0.75;
+	text-align: center;
 }
 .home_text_small
 {
@@ -284,6 +285,7 @@ section
 	font-weight: 400;
 	color: #FFFFFF;
 	text-shadow: 0px 11px 51px rgba(0,0,0,0.35);
+	text-align: center;
 }
 
 /*********************************
@@ -1020,7 +1022,7 @@ section
 }
 .section_title
 {
-	padding-top: 111px;
+	padding-top: 5px;
 	line-height: 1.1;
 }
 .section_title h2
@@ -1245,6 +1247,7 @@ section
 {
 	width: 100%;
 	background: #FFFFFF;
+	margin-bottom: 50px;
 }
 .popular_content
 {

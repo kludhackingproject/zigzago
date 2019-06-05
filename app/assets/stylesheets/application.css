@@ -23,11 +23,15 @@
 
 *= require styles/main_styles
 *= require styles/responsive
+*= require styles/contact_styles
+*= require styles/contact_responsive
+*= require styles/about_styles
+*= require styles/about_responsive
+*= require styles/offers_styles
+*= require styles/offers_responsive
 
  */
-<<<<<<< HEAD
- 
-=======
+
 
 .div-center {
 		display: inline-block;
@@ -36,4 +40,4 @@
 .home_content_inner a:hover {
 	color: white;
 }
->>>>>>> development
+
