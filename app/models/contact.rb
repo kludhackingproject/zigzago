@@ -1,9 +1,14 @@
 class Contact < ApplicationRecord
-    validates :email, 
-    :presence => :true,
-    :format => { 
-      :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i,
-      :description => "must be a valid email address"
-    }
-    validates :description, :presence => :true
+
+attr_accessor :lastname, :email, :subject, :message
+
+after_create :contact_send
+ 
+validates :lastname, :email, :subject, :message, presence: true
+validates :email, :format => { :with => %r{.+@.+\..+} }, allow_blank: true
+
+def contact_send
+    ContactMailer.contact_form(@contact).deliver_now
+end
+ 
 end
