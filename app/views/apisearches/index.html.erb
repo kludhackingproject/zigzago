@@ -13,45 +13,9 @@
 		</div>
   </div>
 
-<!--
-	<h1>Amadeus</h1>
-
-	<%= form_tag url_for(action: 'create'), remote: true, method: "post" do %>
-
-	  <div class="yip" >
-	    <%= label_tag 'Départ' %>
-	    <%= text_field_tag :departure, class: "form-control"%>
-	  </div>
-
-	  <div class="yop" >
-	    <%= label_tag 'Prix' %>
-	    <%= text_field_tag :arrival, class: "form-control" %>
-	  </div>
-
-		<div class="yop" >
-			<%= label_tag 'Date de depart' %>
-			<%= date_field_tag :departure_date, class: "form-control" %>
-		</div>
-
-		<div class="yop" >
-			<%= label_tag 'Date de retour' %>
-			<%= date_field_tag :return_date, class: "form-control" %>
-		</div>
-
-	  <%= submit_tag "Soumet ton event" %>
-
-	<% end %>
-
-	<div id="results" >
-
-	</div>
--->
-
 	<!-- Find Form -->
-
 	<div class="find">
 		<%= image_tag("find.jpg", class: "find_background") %>
-		<!-- <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div> -->
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -60,45 +24,55 @@
 
 				<div class="col-12">
 					<div class="find_form_container">
+						<%= form_tag url_for(action: 'create'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
 
-						<form action="#" id="find_form" class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
 
-							<div class="find_item">
-								<div>Départ :</div>
-								<input type="text" class="destination find_input" required="required" placeholder="D'où partir ?">
-							</div>
-							<div class="find_item">
-								<div>Où aller :</div>
-								<select name="adventure" id="adventure" class="dropdown_item_select find_input">
-									<option>Categories</option>
-									<option>Categories</option>
-									<option>Categories</option>
-								</select>
-							</div>
-							<div class="find_item">
-								<div>Prix min</div>
-								<select name="min_price" id="min_price" class="dropdown_item_select find_input">
-									<option>&nbsp;</option>
-									<option>- 100€</option>
-									<option>- 200€</option>
-								</select>
-							</div>
-							<div class="find_item">
-								<div>Prix max</div>
-								<select name="max_price" id="max_price" class="dropdown_item_select find_input">
-									<option>&nbsp;</option>
-									<option>Price</option>
-									<option>Price</option>
-								</select>
-							</div>
-							<button class="button find_button">Find</button>
-						    </form>
+								<div class="find_item">
+									<div>Départ :</div>
+
+									<input type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>>
+								</div>
+
+								<div class="find_item">
+									<div>Arrivée :</div>
+
+									<input type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>>
+								</div>
+
+								<div class="find_item">
+									<div>Date aller :</div>
+
+									<input class="destination find_input" <%= date_field_tag :departure_date %>>
+
+								</div>
+
+								<div class="find_item">
+									<div>Date retour :</div>
+
+									<input class="destination find_input" <%= date_field_tag :return_date %>>
+
+								</div>
+
+								<%= submit_tag "Rechercher", class:"button find_button" %>
+                          <% end %>
+
 					</div>
 				</div>
 
 			</div>
 		</div>
+  </div>
+
+	<div id="results" >
+
 	</div>
+
+
+<div id="results" >
+
+	</div>
+
+
 
 
     <!-- Services -->
@@ -142,7 +116,7 @@
 
 			</div>
 		</div>
-    </div>
+  </div>
 
     <!-- Popular -->
 
@@ -253,5 +227,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>
