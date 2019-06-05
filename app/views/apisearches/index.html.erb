@@ -27,90 +27,51 @@
 				<div class="col-12">
 					<div class="find_form_container">
 
-						<%= form_tag url_for(action: 'create'), remote: true, id: "find_form",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap", method: "post" do %>
+						<%= form_tag url_for(action: 'create'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
 
-					  
 
 								<div class="find_item">
-									<div>Départ :</div>						
+									<div>Départ :</div>
+															
 									<input type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>>
 								</div>
 
 								<div class="find_item">
-									<div>Prix :</div>
-			
-									<select name="adventure" id="adventure" class="dropdown_item_select find_input" <%= text_field_tag :price %>>
-										<option>100€</option>
-										<option>200€</option>
-										<option>300€</option>
-									</select>
+									<div>Arrivée :</div>
+
+									<input type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>>
 								</div>
 
 								<div class="find_item">
 									<div>Date aller :</div>
-									<select name="min_price" id="min_price" class="dropdown_item_select find_input">
-										<option>&nbsp;</option>
-										<option>1 mois</option>
-										<option>3 mois</option>
-									</select>
+
+									<input class="destination find_input" <%= date_field_tag :departure_date %>>
+
 								</div>
 
 								<div class="find_item">
 									<div>Date retour :</div>
-									<select name="max_price" id="max_price" class="dropdown_item_select find_input">
-										<option>&nbsp;</option>
-										<option>1 mois</option>
-										<option>3 mois</option>
-									</select>
+									
+									<input class="destination find_input" <%= date_field_tag :return_date %>>
+
 								</div>
 
-								<button class="button find_button">Find</button>
-							<% end %>
+								<%= submit_tag "Rechercher", class:"button find_button" %>
+                          <% end %>
 						
 					</div>
-				</div>
-				
+				</div>			
 
 			</div>
 		</div>
 	</div>
 
 
-
-	
-
-	<h1>Amadeus</h1>
-
-	<%= form_tag url_for(action: 'create'), remote: true, method: "post" do %>
-
-	  <div class="yip" >
-	    <%= label_tag 'Départ' %>
-	    <%= text_field_tag :departure, class: "form-control"%>
-	  </div>
-
-	  <div class="yop" >
-	    <%= label_tag 'Prix' %>
-	    <%= text_field_tag :arrival, class: "form-control" %>
-	  </div>
-
-		<div class="yop" >
-			<%= label_tag 'Date de depart' %>
-			<%= date_field_tag :departure_date, class: "form-control" %>
-		</div>
-
-		<div class="yop" >
-			<%= label_tag 'Date de retour' %>
-			<%= date_field_tag :return_date, class: "form-control" %>
-		</div>
-
-	  <%= submit_tag "Soumet ton event" %>
-
-	<% end %>
-
-	<div id="results" >
+<div id="results" >
 
 	</div>
 
+	
 
 
     <!-- Services -->
