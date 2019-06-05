@@ -310,7 +310,6 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.3)
   rspec
-  sass (~> 3.7.4)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
