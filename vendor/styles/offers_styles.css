@@ -231,7 +231,7 @@ section
 }
 .section_title
 {
-	padding-top: 111px;
+	padding-top: 50px;
 	line-height: 1.1;
 }
 .section_title h2
@@ -286,7 +286,7 @@ section
 .home_content
 {
 	width: 100%;
-	height: 601px;
+	height: 200px;
 }
 .home_content_inner
 {
@@ -399,7 +399,7 @@ section
 }
 .logo div:first-of-type
 {
-	font-size: 24px;
+	font-size: 26px;
 	font-weight: 500;
 	line-height: 0.75;
 }
