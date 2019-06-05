@@ -21,9 +21,30 @@
 								<li class="main_nav_item active"><%= link_to 'Accueil', root_path %></li>
 								<li class="main_nav_item"><a href="about.html">A propos</a></li>
 								<li class="main_nav_item"><a href="offers.html">Recherche</a></li>
-								<li class="main_nav_item"><a href="contact.html">Contact</a></li>
+								<li class="main_nav_item"><a href="contact.html">Contact</a></li>							
 							</ul>
 						</nav>
+
+						<!-- Sign up / Sign up  -->
+						<!-- <div class="search"> -->
+						<li class="nav-item submenu dropdown">
+							<a href="#" id="connect_button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+			                  aria-expanded="false" type="submit">Profil</a>
+
+
+			                <ul class="dropdown-menu">
+			                  <% if current_user %>
+			                    <li class="nav-item"><%= link_to 'Mes commandes', profile_path(:id => current_user.id), class: 'nav-link' %></li>
+			                    <li class="nav-item"><%= link_to 'Editer mon profil', edit_user_registration_path, class: 'nav-link' %></li>
+			                    <li class="nav-item"><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+			                  <% else %>
+			                    <li class="nav-item"><%= link_to "Créer un compte", new_user_registration_path, class: 'nav-link' %></li>
+			                    <li class="nav-item"><%= link_to "Se connecter", new_user_session_path, class: 'nav-link' %></li>
+			                  <% end %>
+			                </ul>
+			              </li>
+			            
+			            <!-- </div> -->
 
 
 						<!-- Hamburger -->
