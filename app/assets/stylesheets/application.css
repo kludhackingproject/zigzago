@@ -26,7 +26,6 @@
 
 *= require styles/main_styles
 *= require styles/responsive
-
 *= require styles/contact_styles
 *= require styles/contact_responsive
 *= require styles/about_styles
@@ -51,8 +50,8 @@
 	color: white;
 }
 
-table { 
-	border-collapse: collapse; 
+table {
+	border-collapse: collapse;
 }
 
 td {
