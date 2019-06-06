@@ -75,37 +75,56 @@
 	</div>
 
 
-	<div class="popular">
+	<div class="services">
 		<div class="container">
-			<div>
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h2>Détails du vol</h2></br></br></br></br>
+					</div>
+				</div>
+			</div>
+		<div>
 
     <!-- Cards -->
 
 			<div class="card">
 			    <table>
 			        <tbody>
-			            <tr>
+			            <tr class="card-show-flight-main">
 			              <td>
-			              	<p class="card-departure-time">Heure départ</br>
+			              	<p class="card-show-departure">Heure départ</br>
 			              	<span class="card-departure-place">Lieu départ</span></p></td>
 			              <td>
-			              	<p class="card-duration">Durée</p></td>
-			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée</br>
+			              	<p class="card-duration">X escale(s)</br>Durée</p></td>
+			              <td class="font-weight-normal align-middle">	<p class="card-show-arrival">Heure arrivée<sup> +1</sup></br>
 			              	<span class="card-arrival-place">Lieu arrivée</span></p></td>
-			              <td class="cell-price">
-			                <p class="card-price">Prix</br></p>
-			              </td>
 			            </tr>
-			            <tr>
-							<td></td>
-			              <td><p class="card-details"><button type="button" class="btn btn-outline-info mr-1">Détails</button></p></td>
-			              <td class="font-weight-normal align-middle">	</td>
-			              <td class="cell-price">
-			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p></td>
+			         	<tr class="card-show-flight-main">
+			              <td></td>
+			              <td class="card-show-td-button" align="center">
+			            	<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme">Détails</button>
+			              	</td>
+			              <td></td>
+			            </tr>
+
+			            <tr class="collapse out" id="collapseme">
+			              <td>
+			              	<p class="card-show-flight-details">Durée</p></td>
+			              <td>
+			              	<p class="card-show-flight-details">Heure départ</br>Heure arrivée<sup> +1</sup></p></td>
+			              <td class="font-weight-normal align-middle">	<p class="card-show-flight-details">AITA aéroport</br>AITA aéroport</p></td></td>
 			            </tr>
 			        </tbody>
 			    </table>
 			</div>
+
+				<div class="col">
+					<div class="section_title text-center">
+						<span class="card-show-price">Prix   </span><a href="#" class="btn btn-outline-danger mr-1"> Réserver 
+      					</a>
+      				</div>
+      			</div>
 
 			</div>
 		</div>

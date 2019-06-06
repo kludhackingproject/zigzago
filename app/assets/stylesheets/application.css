@@ -26,9 +26,6 @@
 
 *= require styles/main_styles
 *= require styles/responsive
-*= require styles/offers_styles
-*= require styles/offers_responsive
-
 *= require styles/contact_styles
 *= require styles/contact_responsive
 *= require styles/about_styles
@@ -65,6 +62,9 @@ td {
 .card {
 	width: 40rem;
 	padding: 6px;
+	margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
 }
 
 .card-departure-time {
@@ -90,6 +90,8 @@ td {
 	text-align: center;
 	padding-right: .375rem;
 	padding-left: .375rem;
+	margin-bottom: 1px;
+	line-height: 20px;
 }
 
 .card-arrival-time {
@@ -163,5 +165,62 @@ td.float-right {
 .cell-price {
 	padding-left: .6rem;
 	padding-top: 0px;
-	border-left: 1.2px dashed black;
+	border-left: 1.2px dashed #939393;
+}
+
+.icon-image {
+    width: 2px;
+    height: 2px;
+}
+
+.card-show-flight-main {
+	padding-bottom: 10rem;
+}
+
+.card-show-departure {
+	text-align: right;
+	padding-right: .375rem;
+	padding-left: .375rem;
+	padding-top: .5rem;
+	font-size: 1.5rem;
+	padding-bottom: 1rem;
+	line-height: 1.4;
+	margin-bottom: 0px;
+}
+
+.card-show-arrival {
+	text-align: left;
+	font-size: 1.5rem;
+	padding-left: .375rem;
+	padding-right: .375rem;
+	padding-bottom: 1rem;
+	padding-top: .5rem;
+	line-height: 1.4;
+	margin-bottom: 0px;
+}
+
+.card-show-flight-wrap {
+	border-top: 2px dotted #939393;
+}
+
+.card-show-flight-details
+{
+	text-align: center;
+	font-size: 1rem;
+	padding-top: 1rem;
+	padding-bottom: .5rem;
+	line-height: 2;
+	margin-bottom: 0px;
+}
+
+.card-show-td-button {
+	padding-bottom: 1rem;
+}
+
+.card-show-price {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding-left: .375rem;
+	padding-right: .375rem;
 }
