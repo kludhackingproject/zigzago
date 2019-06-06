@@ -11,12 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
 
- *= require easy-autocomplete
- *= require easy-autocomplete.themes
- *= require_tree .
- *= require_self
+*= require easy-autocomplete
+*= require easy-autocomplete.themes
+*= require_tree .
+*= require_self
 
- *= require styles/bootstrap4/bootstrap.min
+*= require styles/bootstrap4/bootstrap.min
 
 *= require plugins/font-awesome-4.7.0/css/font-awesome.min
 *= require plugins/OwlCarousel2-2.2.1/owl.carousel
@@ -36,7 +36,7 @@
 *= require styles/offers_styles
 *= require styles/offers_responsive
 
-/*flash*/
+*/
 
 .alert{
 	margin-left: 450px;
@@ -58,7 +58,7 @@
 }
 
 table { 
-	border-collapse:collapse 
+	border-collapse:collapse;
 }
 
 td {
