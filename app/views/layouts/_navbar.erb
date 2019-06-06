@@ -1,12 +1,9 @@
-<!-- Header -->
-
 	<header class="header">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="header_container d-flex flex-row align-items-center justify-content-start">
 
-						<!-- Logo -->
 						<div class="logo_container">
 							<div class="logo">
 								<div>zigzago</div>
@@ -15,21 +12,18 @@
 							</div>
 						</div>
 
-						<!-- Main Navigation -->
 						<nav class="main_nav ml-auto">
 							<ul class="main_nav_list">
 								<li class="main_nav_item active"><%= link_to 'Accueil', root_path %></li>
-								<li class="main_nav_item"><a href="about.html">A propos</a></li>
-								<li class="main_nav_item"><a href="offers.html">Recherche</a></li>
-								<li class="main_nav_item"><a href="contact.html">Contact</a></li>							
+								<li class="main_nav_item"><%= link_to "A propos", rooth_path %></li>
+								<li class="main_nav_item"><%= link_to "Recherche", rooth_path %></li>
+								<li class="main_nav_item"><%= link_to "Contact", rooth_path %></li>							
 							</ul>
 						</nav>
 
-						<!-- Sign up / Sign up  -->
-						<!-- <div class="search"> -->
 						<li class="nav-item submenu dropdown">
-							<a href="#" id="connect_button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-			                  aria-expanded="false" type="submit">Profil</a>
+							<%= link_to "#", rooth_path, id="connect_button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+			                  aria-expanded="false" type="submit" %>Profil</<%=>
 
 
 			                <ul class="dropdown-menu">
@@ -44,10 +38,6 @@
 			                </ul>
 			              </li>
 			            
-			            <!-- </div> -->
-
-
-						<!-- Hamburger -->
 						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 
 					</div>
@@ -56,16 +46,12 @@
 		</div>
 	</header>
 
-	<!-- Menu -->
-
 	<div class="menu_container menu_mm">
 
-		<!-- Menu Close Button -->
 		<div class="menu_close_container">
 			<div class="menu_close"></div>
 		</div>
 
-		<!-- Menu Items -->
 		<div class="menu_inner menu_mm">
 			<div class="menu menu_mm">
 				<div class="menu_search_form_container">
@@ -75,20 +61,18 @@
 					</form>
 				</div>
 				<ul class="menu_list menu_mm">
-					<li class="menu_item menu_mm"><a href="#">Accueil</a></li>
-					<li class="menu_item menu_mm"><a href="">A propos</a></li>
-					<li class="menu_item menu_mm"><a href="">Recherche</a></li>
-					<li class="menu_item menu_mm"><a href="">Contact</a></li>
+					<li class="menu_item menu_mm"><%= link_to "Accueil", rooth_path %></li>
+					<li class="menu_item menu_mm"><%= link_to "A propos", rooth_path %></li>
+					<li class="menu_item menu_mm"><%= link_to "Recherche", rooth_path %></li>
+					<li class="menu_item menu_mm"><%= link_to "Contact", rooth_path %></li>
 				</ul>
-
-				<!-- Menu Social -->
 				
 				<div class="menu_social_container menu_mm">
 					<ul class="menu_social menu_mm">
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="menu_social_item menu_mm"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
 
