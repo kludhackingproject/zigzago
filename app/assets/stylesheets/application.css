@@ -26,8 +26,6 @@
 
 *= require styles/main_styles
 *= require styles/responsive
-*= require styles/offers_styles
-*= require styles/offers_responsive
 
 *= require styles/contact_styles
 *= require styles/contact_responsive
