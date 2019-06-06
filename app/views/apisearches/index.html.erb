@@ -15,9 +15,8 @@
 
 	<!-- Find Form -->
 
-	<div class="find">
+	<div class="find" id="search_flight">
 		<%= image_tag("find.jpg", class: "find_background") %>
-		<!-- <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div> -->
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -54,9 +53,11 @@
 									
 									<input class="destination find_input" <%= date_field_tag :return_date %>>
 
-								</div>
-
-								<%= submit_tag "Rechercher", class:"button find_button" %>
+								</div>	
+																								
+									<%= submit_tag "Rechercher", class:"button find_button" %>									
+								
+							    
                           <% end %>
 						
 					</div>
@@ -67,12 +68,8 @@
 	</div>
 
 
-<div id="results" >
-
-	</div>
-
+<div id="results" ></div>
 	
-
 
     <!-- Services -->
 	<div class="services">
@@ -116,6 +113,7 @@
 			</div>
 		</div>
     </div>
+
 
     <!-- Popular -->
 

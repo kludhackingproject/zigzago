@@ -255,6 +255,16 @@ section
 	background: #fe3c52;
 	text-align: center;
 }
+
+.button_nav
+{
+	display: inline-table;
+	width: 161px;
+	height: 56px;
+	background: #fe3c52;
+	text-align: center;
+}
+
 .button a
 {
 	display: block;
@@ -458,6 +468,15 @@ section
 	margin-right: -4px;
 	padding-top: 2px;
 }
+.main_nav_item_dropdown
+{
+	display: inline-block;
+	position: relative;
+	/*padding-left: 22px;
+	padding-right: 22px;*/
+	margin-right: -4px;
+	padding-top: 2px;
+}
 .main_nav_item.active::after
 {
 	display: block;
@@ -484,6 +503,24 @@ section
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
+
+.main_nav_item_dropdown a
+{
+	display: block;
+	font-size: 15px;
+	font-weight: 400;
+	color: #FFFFFF;
+	background-color: #131a2f;
+	line-height: 20px;
+	padding-left: 20px;
+	padding-right: 0px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+
 .header.scrolled .main_nav_item a
 {
 	line-height: 90px;
@@ -496,7 +533,33 @@ section
 {
 	color: #fe435b;
 }
-
+.main_nav_item_dropdown.active a
+{
+	color: #fe435b;
+}
+.main_nav_item_dropdown:hover a
+{
+	color: #fe435b;
+}
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 10rem;
+	padding: .5rem 0;
+	margin: .125rem 0 0;
+	font-size: 1rem;
+	color: #212529;
+	text-align: left;
+	list-style: none;
+	background-color: #131a2f;
+	background-clip: padding-box;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: .25rem;
+}
 /*********************************
 4.3 Search
 *********************************/
@@ -955,19 +1018,19 @@ section
 }
 .find_item:first-child
 {
-	width: 31.413%;
+	width: 30%;
 }
 .find_item:nth-child(2)
 {
-	width: 31.413%;
+	width: 30%;
 }
 .find_item:nth-child(3)
 {
-	width: 10.122%;
+	width: 20%;
 }
 .find_item:nth-child(4)
 {
-	width: 10.122%;
+	width: 20%;
 }
 .find_item div
 {
@@ -1019,7 +1082,7 @@ section
 	font-weight: 500;
 	color: #FFFFFF;
 	line-height: 52px;
-	padding-left: 46px;
+	padding-left: 32px;
 	padding-right: 46px;
 	background: #fe435b !important;
 	-webkit-transform: translateY(14px);
