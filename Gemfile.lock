@@ -94,6 +94,7 @@ GEM
     dotenv-rails (2.7.2)
       dotenv (= 2.7.2)
       railties (>= 3.2, < 6.1)
+    ejs (1.1.1)
     erubi (1.8.0)
     execjs (2.7.0)
     faker (1.9.3)
@@ -287,6 +288,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  ejs
   faker
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.5)
@@ -302,6 +304,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rspec
   sass-rails (~> 5.0)
+  sassc
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)

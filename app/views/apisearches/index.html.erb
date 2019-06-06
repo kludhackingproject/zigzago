@@ -15,7 +15,7 @@
 
 	<!-- Find Form -->
 
-	<div class="find" id="search_flight">
+	<div class="find">
 		<%= image_tag("find.jpg", class: "find_background") %>
 		<div class="container">
 			<div class="row">
@@ -25,13 +25,12 @@
 
 				<div class="col-12">
 					<div class="find_form_container">
-
 						<%= form_tag url_for(action: 'create'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
 
 
 								<div class="find_item">
 									<div>Départ :</div>
-															
+
 									<input type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>>
 								</div>
 
@@ -50,7 +49,7 @@
 
 								<div class="find_item">
 									<div>Date retour :</div>
-									
+
 									<input class="destination find_input" <%= date_field_tag :return_date %>>
 
 								</div>	
@@ -59,17 +58,15 @@
 								
 							    
                           <% end %>
-						
+
 					</div>
-				</div>			
+				</div>
 
 			</div>
 		</div>
-	</div>
+  </div>
 
-
-<div id="results" ></div>
-	
+	<div id="results" ></div>
 
     <!-- Services -->
 	<div class="services">
@@ -112,6 +109,7 @@
 
 			</div>
 		</div>
+
     </div>
 
 
@@ -119,21 +117,45 @@
 
 	<div class="popular">
 		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title text-center">
-						<h2>Toutes les destinations possibles, près ou loin de chez toi</h2>
-						<div>take a look at these offers</div>
-					</div>
-				</div>
+			<div>
+
+    <!-- Cards -->
+
+			<div class="card">
+			    <table>
+			        <tbody>
+			            <tr>
+			              <td>
+			              	<p class="card-departure-time">Heure départ</br>
+			              	<span class="card-departure-place">Lieu départ</span></p></td>
+			              <td>
+			              	<p class="card-duration">Durée</p></td>
+			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée</br>
+			              	<span class="card-arrival-place">Lieu arrivée</span></p></td>
+			              <td class="cell-price">
+			                <p class="card-price">Prix</br></p>
+			              </td>
+			            </tr>
+			            <tr>
+							<td></td>
+			              <td><p class="card-details"><button type="button" class="btn btn-outline-info mr-1">Détails</button></p></td>
+			              <td class="font-weight-normal align-middle">	</td>
+			              <td class="cell-price">
+			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p></td>
+			            </tr>
+			        </tbody>
+			    </table>
 			</div>
+
+			</div>
+		</div>
+	</div>
+
 			<div class="row">
 				<div class="col">
 					<div class="popular_content d-flex flex-md-row flex-column flex-wrap align-items-md-center align-items-start justify-content-md-between justify-content-start">
 
-						<!-- Popular Item -->
 						<div class="popular_item">
-							<a href="">
                                 <%= image_tag("popular_1.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
@@ -142,9 +164,7 @@
 							</a>
 						</div>
 
-						<!-- Popular Item -->
 						<div class="popular_item">
-							<a href="">
                                 <%= image_tag("popular_2.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
@@ -153,9 +173,7 @@
 							</a>
 						</div>
 
-						<!-- Popular Item -->
 						<div class="popular_item">
-							<a href="">
                                 <%= image_tag("popular_3.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
@@ -164,9 +182,7 @@
 							</a>
 						</div>
 
-						<!-- Popular Item -->
 						<div class="popular_item">
-							<a href="">
                                 <%= image_tag("popular_4.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
@@ -175,9 +191,7 @@
 							</a>
 						</div>
 
-						<!-- Popular Item -->
 						<div class="popular_item">
-							<a href="">
                                 <%= image_tag("popular_5.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
@@ -186,9 +200,7 @@
 							</a>
 						</div>
 
-						<!-- Popular Item -->
 						<div class="popular_item">
-							<a href="">
                                 <%= image_tag("popular_6.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
@@ -197,9 +209,7 @@
 							</a>
 						</div>
 
-						<!-- Popular Item -->
 						<div class="popular_item">
-							<a href="">
                                 <%= image_tag("popular_7.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
@@ -208,9 +218,7 @@
 							</a>
 						</div>
 
-						<!-- Popular Item -->
 						<div class="popular_item">
-							<a href="">
                                 <%= image_tag("popular_8.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
@@ -224,5 +232,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>

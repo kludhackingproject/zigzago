@@ -20,6 +20,8 @@ gem 'jquery-ui-rails'
 #gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # gem 'aws-sdk-s3'
 gem 'oauth2'
+gem 'ejs'
+gem 'sassc'
 
 # API flights
 gem 'amadeus'
