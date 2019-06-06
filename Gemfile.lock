@@ -48,8 +48,6 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (9.6.0)
-      execjs
     bcrypt (3.1.13)
     better_errors (2.5.1)
       coderay (>= 1.0.0)
@@ -58,9 +56,6 @@ GEM
     bindex (0.7.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.22.0)
@@ -99,6 +94,7 @@ GEM
     dotenv-rails (2.7.2)
       dotenv (= 2.7.2)
       railties (>= 3.2, < 6.1)
+    ejs (1.1.1)
     erubi (1.8.0)
     execjs (2.7.0)
     faker (1.9.3)
@@ -289,13 +285,13 @@ DEPENDENCIES
   amadeus
   better_errors
   bootsnap (>= 1.1.0)
-  bootstrap-sass (~> 3.3, >= 3.3.6)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  ejs
   faker
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.5)
@@ -311,6 +307,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rspec
   sass-rails (~> 5.0)
+  sassc
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
