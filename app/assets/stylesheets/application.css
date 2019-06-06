@@ -1,4 +1,4 @@
-/*
+	/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -10,10 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
 
- *= require styles/bootstrap4/bootstrap.min
+*= require easy-autocomplete
+*= require easy-autocomplete.themes
+*= require_tree .
+*= require_self
+
+*= require styles/bootstrap4/bootstrap.min
 
 *= require plugins/font-awesome-4.7.0/css/font-awesome.min
 *= require plugins/OwlCarousel2-2.2.1/owl.carousel
@@ -23,6 +26,9 @@
 
 *= require styles/main_styles
 *= require styles/responsive
+*= require styles/offers_styles
+*= require styles/offers_responsive
+
 *= require styles/contact_styles
 *= require styles/contact_responsive
 *= require styles/about_styles
@@ -32,6 +38,12 @@
 
 */
 
+.alert{
+	margin-left: 450px;
+	margin-right: 450px;
+	text-align: center;
+	margin-bottom: 0px !important;
+}
 
 .div-center {
 		display: inline-block;
@@ -41,11 +53,90 @@
 	color: white;
 }
 
-/*flash*/
+.card {
+	padding: 6px;
+}
 
-.alert{
-	margin-left: 450px;
-	margin-right: 450px;
+table { 
+	border-collapse:collapse;
+}
+
+td {
+	border: 0;
+}
+
+.card {
+	width: 35rem;
+}
+
+.card-departure-time {
+	text-align: right;
+	padding-right: .375rem;
+	padding-left: .375rem;
+	font-size: 1.5rem;
+	padding-bottom: 0rem;
+	line-height: 1.4;
+	margin-bottom: 0px;
+}
+
+.card-departure-place {
+	text-align: right;
+	padding-right: .375rem;
+	padding-left: .375rem;
+	font-size: 1rem;
+	padding-top: 0px;
+}
+
+.card-duration {
 	text-align: center;
-	margin-bottom: 0px !important;
+	padding-right: .375rem;
+	padding-left: .375rem;
+}
+
+.card-arrival-time {
+	text-align: left;
+	font-size: 1.5rem;
+	padding-left: .375rem;
+	padding-right: .375rem;
+	padding-bottom: 0rem;
+	line-height: 1.4;
+	margin-bottom: 0px;
+}
+
+.card-arrival-place {
+	text-align: left;
+	padding-left: .375rem;
+	padding-right: .375rem;
+	font-size: 1rem;
+}
+
+.card-price {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding-left: .375rem;
+	margin-bottom: 0px;
+
+}
+
+.card-button {
+	text-align: center;
+}
+
+.icon_image {
+	width: 2rem;
+}
+
+td.font-weight-normal {
+	vertical-align: bottom;
+	padding: 0px;
+}
+
+td.float-right {
+	border-left: 2px;
+}
+
+.cell-price {
+	padding-left: .6rem;
+	border-left: 1.2px dashed black;
 }
