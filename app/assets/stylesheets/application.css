@@ -38,3 +38,105 @@
 
 */
 
+.alert{
+	margin-left: 450px;
+	margin-right: 450px;
+	text-align: center;
+	margin-bottom: 0px !important;
+}
+
+.div-center {
+		display: inline-block;
+}
+
+.home_content_inner a:hover {
+	color: white;
+}
+
+.card {
+	padding: 6px;
+}
+
+table { 
+	border-collapse:collapse;
+}
+
+td {
+	border: 0;
+}
+
+.card {
+	width: 35rem;
+}
+
+.card-departure-time {
+	text-align: right;
+	padding-right: .375rem;
+	padding-left: .375rem;
+	font-size: 1.5rem;
+	padding-bottom: 0rem;
+	line-height: 1.4;
+	margin-bottom: 0px;
+}
+
+.card-departure-place {
+	text-align: right;
+	padding-right: .375rem;
+	padding-left: .375rem;
+	font-size: 1rem;
+	padding-top: 0px;
+}
+
+.card-duration {
+	text-align: center;
+	padding-right: .375rem;
+	padding-left: .375rem;
+}
+
+.card-arrival-time {
+	text-align: left;
+	font-size: 1.5rem;
+	padding-left: .375rem;
+	padding-right: .375rem;
+	padding-bottom: 0rem;
+	line-height: 1.4;
+	margin-bottom: 0px;
+}
+
+.card-arrival-place {
+	text-align: left;
+	padding-left: .375rem;
+	padding-right: .375rem;
+	font-size: 1rem;
+}
+
+.card-price {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding-left: .375rem;
+	margin-bottom: 0px;
+
+}
+
+.card-button {
+	text-align: center;
+}
+
+.icon_image {
+	width: 2rem;
+}
+
+td.font-weight-normal {
+	vertical-align: bottom;
+	padding: 0px;
+}
+
+td.float-right {
+	border-left: 2px;
+}
+
+.cell-price {
+	padding-left: .6rem;
+	border-left: 1.2px dashed black;
+}
