@@ -18,7 +18,7 @@
   z-index: 1043;
   position: fixed;
   outline: none !important;
-  -webkit-backface-visibility: hidden; }
+}
 
 .mfp-container {
   text-align: center;
@@ -350,14 +350,6 @@ img.mfp-img {
     padding-left: 6px;
     padding-right: 6px; } }
 
-====== Zoom effect ======
-
-*/
-.mfp-zoom-in {
-  /* start state */
-  /* animate in */
-  /* animate out */
-}
 .mfp-zoom-in .mfp-with-anim {
   opacity: 0;
   transition: all 0.2s ease-in-out;
