@@ -1,7 +1,4 @@
-	<!-- Home -->
-
 	<div class="home">
-		<!-- Image by https://unsplash.com/@peecho -->
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/offers.jpg" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
@@ -11,7 +8,7 @@
 							<div class="home_title">Offers</div>
 							<div class="home_breadcrumbs">
 								<ul class="home_breadcrumbs_list">
-									<li class="home_breadcrumb"><a href="index.html">Home</a></li>
+									<li class="home_breadcrumb"><%= link_to "Home", root_path %></li>
 									<li class="home_breadcrumb">Offers</li>
 								</ul>
 							</div>
@@ -22,14 +19,10 @@
 		</div>		
 	</div>
 
-	<!-- Find Form -->
-
 	<div class="find">
-		<!-- Image by https://unsplash.com/@garciasaldana_ -->
 		<div class="find_background_container prlx_parent">
 			<div class="find_background prlx" style="background-image:url(images/find.jpg)"></div>
 		</div>
-		<!-- <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div> -->
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -75,44 +68,58 @@
 	</div>
 
 
-	<div class="popular">
+	<div class="services">
 		<div class="container">
-			<div>
-
-    <!-- Cards -->
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h2>Détails du vol</h2></br></br></br></br>
+					</div>
+				</div>
+			</div>
+		<div>
 
 			<div class="card">
 			    <table>
 			        <tbody>
-			            <tr>
+			            <tr class="card-show-flight-main">
 			              <td>
-			              	<p class="card-departure-time">Heure départ</br>
+			              	<p class="card-show-departure">Heure départ</br>
 			              	<span class="card-departure-place">Lieu départ</span></p></td>
 			              <td>
-			              	<p class="card-duration">Durée</p></td>
-			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée</br>
+			              	<p class="card-duration">X escale(s)</br>Durée</p></td>
+			              <td class="font-weight-normal align-middle">	<p class="card-show-arrival">Heure arrivée<sup> +1</sup></br>
 			              	<span class="card-arrival-place">Lieu arrivée</span></p></td>
-			              <td class="cell-price">
-			                <p class="card-price">Prix</br></p>
-			              </td>
 			            </tr>
-			            <tr>
-							<td></td>
-			              <td><p class="card-details"><button type="button" class="btn btn-outline-info mr-1">Détails</button></p></td>
-			              <td class="font-weight-normal align-middle">	</td>
-			              <td class="cell-price">
-			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p></td>
+			         	<tr class="card-show-flight-main">
+			              <td></td>
+			              <td class="card-show-td-button" align="center">
+			            	<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseme">Détails</button>
+			              	</td>
+			              <td></td>
+			            </tr>
+
+			            <tr class="collapse out" id="collapseme">
+			              <td>
+			              	<p class="card-show-flight-details">Durée</p></td>
+			              <td>
+			              	<p class="card-show-flight-details">Heure départ</br>Heure arrivée<sup> +1</sup></p></td>
+			              <td class="font-weight-normal align-middle">	<p class="card-show-flight-details">AITA aéroport</br>AITA aéroport</p></td></td>
 			            </tr>
 			        </tbody>
 			    </table>
 			</div>
 
+				<div class="col">
+					<div class="section_title text-center">
+						<span class="card-show-price">Prix   </span><a href="#" class="btn btn-outline-danger mr-1"> Réserver 
+      					</a>
+      				</div>
+      			</div>
+
 			</div>
 		</div>
 	</div>
-
-
-	<!-- Offers -->
 
 	<div class="offers">
 		<div class="container">
@@ -186,7 +193,6 @@
 				<div class="col">
 					<div class="items item_grid clearfix">
 
-						<!-- Item -->
 						<div class="item clearfix rating_5">
 							<div class="item_image"><img src="images/top_1.jpg" alt=""></div>
 							<div class="item_content">
@@ -205,11 +211,10 @@
 									<i class="fa fa-star"></i>
 								</div>
 								<div class="item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</div>
-								<div class="item_more_link"><a href="#">Read More</a></div>
+								<div class="item_more_link"><%= link_to "Read More", root_path %></div>
 							</div>
 						</div>
 
-						<!-- Item -->
 						<div class="item clearfix rating_3">
 							<div class="item_image"><img src="images/top_2.jpg" alt=""></div>
 							<div class="item_content">
@@ -228,11 +233,10 @@
 									<i class="fa fa-star"></i>
 								</div>
 								<div class="item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</div>
-								<div class="item_more_link"><a href="#">Read More</a></div>
+								<div class="item_more_link"><%= link_to "Read More", root_path %></div>
 							</div>
 						</div>
 
-						<!-- Item -->
 						<div class="item clearfix rating_4">
 							<div class="item_image"><img src="images/top_3.jpg" alt=""></div>
 							<div class="item_content">
@@ -251,11 +255,10 @@
 									<i class="fa fa-star"></i>
 								</div>
 								<div class="item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</div>
-								<div class="item_more_link"><a href="#">Read More</a></div>
+								<div class="item_more_link"><%= link_to "Read More", root_path %></div>
 							</div>
 						</div>
 
-						<!-- Item -->
 						<div class="item clearfix rating_5">
 							<div class="item_image"><img src="images/top_4.jpg" alt=""></div>
 							<div class="item_content">
@@ -274,7 +277,7 @@
 									<i class="fa fa-star"></i>
 								</div>
 								<div class="item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</div>
-								<div class="item_more_link"><a href="#">Read More</a></div>
+								<div class="item_more_link"><%= link_to "Read More", root_path %></div>
 							</div>
 						</div>
 
@@ -285,10 +288,10 @@
 				<div class="col">
 					<div class="pages">
 						<ul class="pages_list">
-							<li class="page active"><a href="#">01.</a></li>
-							<li class="page"><a href="#">02.</a></li>
-							<li class="page"><a href="#">03.</a></li>
-							<li class="page"><a href="#">04.</a></li>
+							<li class="page active"><%= link_to "01.", root_path %></li>
+							<li class="page"><%= link_to "02.", root_path %></li>
+							<li class="page"><%= link_to "03.", root_path %></li>
+							<li class="page"><%= link_to "04.", root_path %></li>
 						</ul>
 					</div>
 				</div>
@@ -296,10 +299,7 @@
 		</div>
 	</div>
 
-	<!-- Newsletter -->
-
 	<div class="newsletter">
-		<!-- Image by https://unsplash.com/@garciasaldana_ -->
 		<div class="newsletter_background" style="background-image:url(images/newsletter.jpg)"></div>
 		<div class="container">
 			<div class="row">
