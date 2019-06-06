@@ -26,9 +26,6 @@
 
 *= require styles/main_styles
 *= require styles/responsive
-*= require styles/offers_styles
-*= require styles/offers_responsive
-
 *= require styles/contact_styles
 *= require styles/contact_responsive
 *= require styles/about_styles
@@ -57,8 +54,8 @@
 	padding: 6px;
 }
 
-table { 
-	border-collapse:collapse 
+table {
+	border-collapse: collapse;
 }
 
 td {
@@ -128,7 +125,7 @@ td {
 }
 
 td.font-weight-normal {
-	vertical-align: bottom
+	vertical-align: bottom;
 	padding: 0px;
 }
 
