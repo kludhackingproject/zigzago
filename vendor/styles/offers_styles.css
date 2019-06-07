@@ -55,7 +55,8 @@ div
 	position: relative;
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	box-sizing: border-box;
+	color: #FFFFFF
 }
 ul
 {
@@ -965,6 +966,8 @@ section
 .find_background
 {
 	position: absolute;
+	text-align: center;
+	margin: auto;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -973,7 +976,10 @@ section
 .find_form_container
 {
 	width: 100%;
-	margin-top: 36px;
+	padding: 30px;
+	margin: auto;
+	text-align: center;
+	display: inline-block;
 }
 .find_title
 {
@@ -995,11 +1001,12 @@ section
 	outline: none;
 	padding-left: 20px;
 	padding-right: 20px;
+	margin-left: 40px;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 52px;
 	color: #FFFFFF;
-	border: solid 2px rgba(255,255,255,0.5);
+	border: solid 2px #FFFFFF;
 	background: transparent;
 }
 .find_item:first-child
@@ -1023,8 +1030,8 @@ section
 	font-size: 14px;
 	font-weight: 400;
 	color: #FFFFFF;
-	margin-bottom: 7px;
 }
+
 .dropdown_item_select
 {
 	-webkit-appearance:none;
@@ -1052,12 +1059,12 @@ section
 }
 .find_input:hover
 {
-	border: solid 2px rgba(254, 67, 91, 0.5);
+	border: solid 2px #000000;
 }
 .find_input:focus
 {
-	outline-color: rgba(254, 67, 91, 0.5);
-	border: solid 2px rgba(254, 67, 91, 0.5);
+	outline-color: #000000;
+	border: solid 2px #000000;
 }
 .find_button
 {
@@ -1065,11 +1072,13 @@ section
 	height: 56px;
 	font-size: 16px;
 	font-weight: 500;
-	color: #FFFFFF;
+	color: #000000;
 	line-height: 52px;
-	padding-left: 32px;
-	padding-right: 46px;
-	background: #fe435b !important;
+	padding: 0 140px 0px 50px;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	background: #FFFFFF !important;
 	-webkit-transform: translateY(14px);
 	-moz-transform: translateY(14px);
 	-ms-transform: translateY(14px);
@@ -1083,40 +1092,67 @@ section
 {
 	opacity: 0.8;
 }
+
+.delete_button
+{
+	width: 14.048%;
+	height: 56px;
+	font-size: 16px;
+	font-weight: 500;
+	color: #FFFFFF;
+	line-height: 52px;
+	padding: 0 140px 0px 50px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background: #000000 !important;
+	-webkit-transform: translateY(14px);
+	-moz-transform: translateY(14px);
+	-ms-transform: translateY(14px);
+	-o-transform: translateY(14px);
+	transform: translateY(14px);
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.delete_button:hover
+{
+	opacity: 0.8;
+}
 .find_input::-webkit-input-placeholder
 {
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	font-style: italic;
-	color: #939393 !important;
+	color: #FFFFFF !important;
 }
 .find_input:-moz-placeholder
 {
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	font-style: italic;
-	color: #939393 !important;
+	color: #FFFFFF !important;
 }
 .find_input::-moz-placeholder
 {
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	font-style: italic;
-	color: #939393 !important;
+	color: #FFFFFF !important;
 } 
 .find_input:-ms-input-placeholder
 { 
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	font-style: italic;
-	color: #939393 !important;
+	color: #FFFFFF !important;
 }
 .find_input::input-placeholder
 {
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	font-style: italic;
-	color: #939393 !important;
+	color: #FFFFFF !important;
 }
 
 /*********************************

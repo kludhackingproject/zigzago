@@ -63,7 +63,8 @@ td {
 	width: 40rem;
 	padding: 6px;
 	margin: 0 auto;
-    float: none;
+	float: none;
+	background-color: blue;
     margin-bottom: 10px;
 }
 
