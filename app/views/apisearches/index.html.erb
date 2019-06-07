@@ -8,7 +8,7 @@
 		<div class="home_content">
 			<div class="home_content_inner">
 				<div class="home_text_large">zigzago</div>
-				<div class="home_text_small">A new way to travel</div> -->
+				<div class="home_text_small">A new way to travel</div>
 			</div>
 		</div>
   </div>
@@ -52,12 +52,10 @@
 
 									<input class="destination find_input" <%= date_field_tag :return_date %>>
 
-								</div>	
-																								
-									<%= submit_tag "Rechercher", class:"button find_button" %>									
-								
-							    
-                          <% end %>
+								</div>
+
+								<%= submit_tag "Rechercher", class:"button find_button" %>
+             			<% end %>
 
 					</div>
 				</div>
@@ -110,23 +108,33 @@
 			</div>
 		</div>
 
-    </div>
+    <!-- API search results  -->
 
-    <!-- Cards -->
+	<div class="services">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h2>Vos résultats de recherche</h2></br></br></br></br>
+					</div>
+				</div>
+			</div>
+
+    		<!-- Cards -->
 
 			<div class="card">
 			    <table>
 			        <tbody>
 			            <tr>
 			              <td>
-			              	<p class="card-departure-time">Heure départ</br>
+			              	<p class="card-departure-time">Heure départ<br>
 			              	<span class="card-departure-place">Lieu départ</span></p></td>
 			              <td>
-			              	<p class="card-duration">Durée</p></td>
+			              	<p class="card-duration">X escale(s)</br>Durée</p></td>
 			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée</br>
 			              	<span class="card-arrival-place">Lieu arrivée</span></p></td>
 			              <td class="cell-price">
-			                <p class="card-price">Prix</br></p>
+			                <p class="card-price">Prix<br></p>
 			              </td>
 			            </tr>
 			            <tr>
@@ -140,7 +148,12 @@
 			    </table>
 			</div>
 
-			</div>
+			<div class="col">
+				<div class="section_title text-center">
+					<a href="#" class="btn btn-outline-success mr-1"> Résultats suivants</a>
+      			</div>
+      		</div>
+
 		</div>
 	</div>
 
@@ -153,7 +166,7 @@
 					<div class="popular_content d-flex flex-md-row flex-column flex-wrap align-items-md-center align-items-start justify-content-md-between justify-content-start">
 
 						<div class="popular_item">
-                                <%= image_tag("popular_1.jpg") %>
+              <%= image_tag("popular_1.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Turkey</div>
@@ -161,7 +174,7 @@
 						</div>
 
 						<div class="popular_item">
-                                <%= image_tag("popular_2.jpg") %>
+              <%= image_tag("popular_2.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Hawai</div>
@@ -169,16 +182,15 @@
 						</div>
 
 						<div class="popular_item">
-                                <%= image_tag("popular_3.jpg") %>
+              <%= image_tag("popular_3.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Ireland</div>
 								</div>
-							</a>
 						</div>
 
 						<div class="popular_item">
-                                <%= image_tag("popular_4.jpg") %>
+              <%= image_tag("popular_4.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Thailand</div>
@@ -186,7 +198,7 @@
 						</div>
 
 						<div class="popular_item">
-                                <%= image_tag("popular_5.jpg") %>
+              <%= image_tag("popular_5.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Croatia</div>
@@ -194,7 +206,7 @@
 						</div>
 
 						<div class="popular_item">
-                                <%= image_tag("popular_6.jpg") %>
+              <%= image_tag("popular_6.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Bali</div>
@@ -202,7 +214,7 @@
 						</div>
 
 						<div class="popular_item">
-                                <%= image_tag("popular_7.jpg") %>
+              <%= image_tag("popular_7.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">France</div>
@@ -210,7 +222,7 @@
 						</div>
 
 						<div class="popular_item">
-                                <%= image_tag("popular_8.jpg") %>
+              <%= image_tag("popular_8.jpg") %>
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Vietnam</div>
@@ -219,6 +231,5 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
-</div>
+

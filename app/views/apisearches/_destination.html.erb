@@ -1,38 +1,33 @@
 <% results.each do |result| %>
   <div class="popular">
    <div class="container">
+     <div>
      <div class="card">
-  <!-- Cards -->
-     <div class="card" style="width: 48rem;">
-       <div class="card-body">
-         <h5 class="card-title">Vol</h5>
-         <h6 class="card-subtitle mb-2 text-muted">Vroum vroum</h6>
-         <p class="card-text">Super carte de ouf pour ton prochain vol</p>
-         <table class="table table-borderless table-sm mb-0">
-             <tbody>
-               <tr>
-                 <% result['offerItems'].each do |offerItem| %>
-                   <% offerItem['services'].each do |service| %>
-                     <% service['segments'].each do |segment| %>
-                      <%= segment['flightSegment']['departure']['iataCode'] %>
-                     <% end %>
-                   <% end %>
-                   <td class="float-right font-weight-normal">
-                     <p class="mb-1"><%= offerItem['price']['total'] %></p>
-                   </td>
+       <table>
+           <tbody>
+             <tr>
+               <% result['offerItems'].each do |offerItem| %>
+                <% offerItem['services'].each do |service| %>
+                  <% service['segments'].each do |segment| %>
+                    <p>Nombre de transit : <%= segment['flightSegment'].count.to_i %></p>
+                    <td>
+                     <p class="card-departure-time">Heure départ<br>
+                     <span class="card-departure-place">Lieu départ : <%= segment['flightSegment']['departure']['iataCode'] %></span></p></td>
+                    <td>
+                     <p class="card-duration">Durée</p></td>
+                    <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
+                     <span class="card-arrival-place">Lieu arrivée : <%= segment['flightSegment']['arrival']['iataCode'] %></span></p></td>
                  <% end %>
-                 <!-- <td class="font-weight-normal align-middle">Lieu départ</td>
-                 <td class="font-weight-normal align-middle">Lieu arrivée</td>
-                 <td class="font-weight-normal align-middle">Date départ</td>
-                 <td class="font-weight-normal align-middle">Date arrivée</td> -->
-               </tr>
-             </tbody>
-           </table>
-         <%= class="card-link">Card link %>
-         <%= class="card-link">Another link %>
+                <% end %>
+                    <td class="cell-price">
+                     <p class="card-price">Prix : <%= offerItem['price']['total'] %><br><button type="button" class="btn btn-info">Voir</button></p>
+                    </td>
+              <% end %>
+             </tr>
+           </tbody>
+         </table>
        </div>
      </div>
-    </div>
    </div>
-  </div>
+ </div>
 <% end %>
