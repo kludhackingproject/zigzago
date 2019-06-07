@@ -240,10 +240,41 @@ section
 .button
 {
 	display: inline-block;
-	width: 161px;
+	width: 170px;
 	height: 56px;
 	background: #fe3c52;
 	text-align: center;
+}
+
+.button-blue {
+  background-color: #364157; 
+  border: none; 
+  border-radius: 5px;
+  color: white; 
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer;
+}
+
+.button-rose {
+  background-color: #FE435B; 
+  border: none; 
+  border-radius: 5px;
+  color: white; 
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer;
+}
+
+.button-rose:hover {
+  text-decoration: none;
+	color: white;
+}
+
+.button-blue:hover {
+  background-color: #131a2f;
+  text-decoration: none;
+	color: white;
 }
 
 .button_nav
