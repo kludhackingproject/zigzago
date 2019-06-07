@@ -40,7 +40,7 @@
 //= require elements_custom
 //= require offers_custom
 
-let icon_star = document.querySelector(".button-blue")
-.addEventListener("click", function() {
-	icon_star.background-color = "yellow";
-}
+//= let icon_star = document.querySelector(".button-blue")
+//= .addEventListener("click", function() {
+//= 	icon_star.background-color = "yellow";
+//=  }
