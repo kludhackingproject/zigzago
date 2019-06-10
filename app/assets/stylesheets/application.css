@@ -13,8 +13,6 @@
 
 *= require easy-autocomplete
 *= require easy-autocomplete.themes
-*= require_tree .
-*= require_self
 
 *= require styles/bootstrap4/bootstrap.min
 
@@ -33,7 +31,35 @@
 *= require styles/offers_styles
 *= require styles/offers_responsive
 
+*= require_tree .
+*= require_self
+
 */
+
+.footer {
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.footer_about_text {
+	width: 60%;
+	margin: auto;
+}
+
+.find {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.logo a {
+	color: white;
+}
+
+.header a {
+	outline: none;
+}
 
 .alert{
 	margin-left: 450px;
@@ -48,6 +74,11 @@
 
 .home_content_inner a:hover {
 	color: white;
+
+}
+
+.home_content_banner {
+	margin-top: -8vh;
 }
 
 table {
@@ -63,8 +94,8 @@ td {
 	width: 40rem;
 	padding: 6px;
 	margin: 0 auto;
-    float: none;
-    margin-bottom: 10px;
+	float: none;
+  margin-bottom: 10px;
 }
 
 .card-departure-time {
@@ -260,4 +291,103 @@ td.float-right {
 
 .icon-white {
 	color: #fff;
+}
+
+.main_nav_item_dropdown:hover a {
+	color: white;
+}
+
+.main_nav_item_dropdown a:hover {
+	color: #fe435b;
+}
+
+.dropdown-menu a:hover {
+	color: #fe435b;
+}
+
+.contact, .profile {
+	height: 55vh;
+	width: 100%;
+}
+
+.small-banner {
+	height: inherit;
+	width: inherit;
+}
+
+.small-banner img {
+	height: inherit;
+	width: inherit;
+}
+
+.trip_picture {
+	margin-bottom: 0;
+	width: 100%;
+	padding: 2px;
+}
+
+.trip_picture img {
+	width: 100%;
+}
+
+.google-map {
+	margin-top: 40px;
+}
+
+.devise-form {
+	margin-bottom: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.contact_content {
+	margin-top: 30px;
+}
+
+.delete_btn {
+	float: none;
+	margin: auto;
+	width: 100%;
+	background-color: black;
+}
+
+.delete_btn:hover {
+	background-color: grey;
+}
+
+.find {
+	margin-top: -190px;
+	padding-top: 20px;
+	padding-bottom: 70px;
+}
+
+.find_background {
+	background-color: #131a2f;
+	opacity: 0.8;
+}
+
+.find_item {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.find_item input {
+	background-color: #131a2f;
+}
+
+.search_container {
+	width: 70vw;
+	margin: auto;
+}
+
+.search-plane {
+	font-size: 80px;
+	color: #fe435b;
+}
+
+.btn-search-plane {
+	margin-top: 20px;
+	margin-left: 70px;
+	background: none;
+	border: none;
 }

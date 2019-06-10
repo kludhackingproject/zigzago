@@ -1,72 +1,73 @@
-
 <div class="super_container">
-
-	<!-- Home -->
 
   <div class="home">
     <%= image_tag("home.jpg", class: "home_background") %>
-		<div class="home_content">
+		<div class="home_content home_content_banner">
 			<div class="home_content_inner">
 				<div class="home_text_large">zigzago</div>
-				<div class="home_text_small">A new way to travel</div>
+				<div class="home_text_small">Travel your way</div>
 			</div>
 		</div>
   </div>
-
-	<!-- Find Form -->
 
 	<div class="find">
-		<%= image_tag("find.jpg", class: "find_background") %>
-		<div class="container">
+    <div class="find_background">
+
+    </div>
+		<div id="search-anchor" class="search_container">
 			<div class="row">
-				<div class="col-12">
-					<div class="find_title text-center">Find the Adventure of a lifetime</div>
-				</div>
+				<%= form_tag url_for(action: 'create'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
 
-				<div class="col-12">
-					<div class="find_form_container">
-						<%= form_tag url_for(action: 'create'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
+						<div class="col-md-2 col-lg-2 find_item">
+							<div>Départ :</div>
 
+							<input id="basics" type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>>
+						</div>
 
-								<div class="find_item">
-									<div>Départ :</div>
+						<div class="col-md-2 col-lg-2 find_item">
+							<div>Arrivée :</div>
 
-									<input type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>>
-								</div>
+  							<input type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>>
+  						</div>
 
-								<div class="find_item">
-									<div>Arrivée :</div>
+						<div class="col-md-2 col-lg-2 find_item">
+							<div>Date aller :</div>
 
-									<input type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>>
-								</div>
+                <input class="destination find_input" <%= date_field_tag :departure_date %>>
 
-								<div class="find_item">
-									<div>Date aller :</div>
+						</div>
 
-									<input class="destination find_input" <%= date_field_tag :departure_date %>>
+						<div class="col-md-2 col-lg-2 find_item">
+							<div>Date retour :</div>
 
-								</div>
+                <input class="destination find_input" <%= date_field_tag :return_date %>>
 
-								<div class="find_item">
-									<div>Date retour :</div>
+						</div>
 
-									<input class="destination find_input" <%= date_field_tag :return_date %>>
+            <div class="col-md-2 col-lg-2 find_item">
+              <%= button_tag(type: "submit", class: "btn-search-plane") do %>
+                  <i class='fa fa-plane search-plane animated infinite pulse delay-2s' data-toggle="tooltip" title="Rechercher mon vol"></i>
+              <% end %>
+            </div>
+          <% end %>
+  			</div>
+  		</div>
+    </div>
 
-								</div>
+    <!-- <div class="atom-spinner">
+      <div class="spinner-inner">
+        <div class="spinner-line"></div>
+        <div class="spinner-line"></div>
+        <div class="spinner-line"></div>
+        <div class="spinner-circle">
+          &#9679;
+        </div>
+      </div>
+    </div> -->
 
-								<%= submit_tag "Rechercher", class:"button find_button" %>
-             			<% end %>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
+  <div id="results" >
   </div>
 
-	<div id="results" ></div>
-
-    <!-- Services -->
 	<div class="services">
 		<div class="container">
 			<div class="row">
@@ -78,35 +79,32 @@
 			</div>
 			<div class="row icon_box_container">
 
-				<!-- Icon Box -->
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
-                        <div class="icon_box_image"><%= image_tag("service_1.svg", class: "svg") %></div>
+            <div class="icon_box_image"><%= image_tag("service_1.svg", class: "svg") %></div>
 						<div class="icon_box_title">Tes séjours à l'imprévu</div>
 						<p class="icon_box_text">Entre amis ou avec ta dulcinée, en famille ou même en solitaire, choisis l'aventure et décide de partir à l'improviste : zigzago te dévoile toutes les possibilités qui s'offrent à toi. </p>
 					</div>
 				</div>
 
-				<!-- Icon Box -->
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
-                    <div class="icon_box_image"><%= image_tag("service_2.svg", class: "svg") %></div>
-                    <div class="icon_box_title">Tes séjours organisés</div>
-						<p class="icon_box_text">À 10 000km ou à 100, à l'autre bout du monde ou près de chez toi, il y a toujours des mondes inconnus à découvrir. Avec zigzago, découvre des destinations insoupsonnées pour des voyages inoubliables.</p>
+            <div class="icon_box_image"><%= image_tag("service_2.svg", class: "svg") %></div>
+            <div class="icon_box_title">Tes séjours organisés</div>
+  					<p class="icon_box_text">À 10 000km ou à 100, à l'autre bout du monde ou près de chez toi, il y a toujours des mondes inconnus à découvrir. Avec zigzago, découvre des destinations insoupsonnées pour des voyages inoubliables.</p>
 					</div>
 				</div>
 
-				<!-- Icon Box -->
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
-                    <div class="icon_box_image"><%= image_tag("service_3.svg", class: "svg") %></div>
-                    <div class="icon_box_title">Tu choisis</div>
+            <div class="icon_box_image"><%= image_tag("service_3.svg", class: "svg") %></div>
+            <div class="icon_box_title">Tu choisis</div>
 						<p class="icon_box_text"> En avion, certes ! Mais aussi en train, en bus, ou en blablacar. Zigzago te propose de nombreuses fonctionnalités pour trouver le bon compromis entre destination, prix, durée du trajet etc... </p>
 					</div>
 				</div>
-
 			</div>
 		</div>
+  </div>
 
 
     <!-- Cards without Details collapse -->
@@ -116,7 +114,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h2>Vos résultats de recherche</h2></br></br></br></br>
+						<h2>Vos résultats de recherche</h2><br><br><br><br>
 					</div>
 				</div>
 			</div>
@@ -127,24 +125,30 @@
 			            <tr>
 			              <td>
 			              	<p class="card-departure-time">Heure départ<br>
-			              	<span class="card-departure-place">Lieu départ</span></p></td>
+			              	<span class="card-departure-place">Lieu départ</span></p>
+                    </td>
 			              <td>
-			              	<p class="card-duration">X escale(s)</br>Durée</p></td>
-			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée</br>
-			              	<span class="card-arrival-place">Lieu arrivée</span></p></td>
+			              	<p class="card-duration">X escale(s)<br>Durée</p>
+                    </td>
+			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
+			              	<span class="card-arrival-place">Lieu arrivée</span></p>
+                    </td>
 			              <td class="cell-price">
 			                <p class="card-price">Prix<br></p>
 			              </td>
 			              <td class="card-icon-favorite">
-			                <p><%= image_tag("star-yellow.svg", class: "icon_star") %><br></p>
+			                <!--- <p><%= image_tag("star-yellow.svg", class: "icon_star") %><br></p> --->
 			              </td>
 			            </tr>
 			            <tr>
 							<td></td>
-			              <td><p class="card-details"><button type="button" class="button-blue">Détails</button></p></td>
-			              <td class="font-weight-normal align-middle">	</td>
+			              <td><p class="card-details"><button type="button" class="button-blue">Détails</button></p>
+                    </td>
+			              <td class="font-weight-normal align-middle">
+                    </td>
 			              <td class="cell-price">
-			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p></td>
+			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
+                    </td>
 			            </tr>
 			        </tbody>
 			    </table>
@@ -162,7 +166,7 @@
     <!-- Cards with Details collapse -->
 
 	<div class="section_title text-center">
-						<h2>Détails du vol</h2></br></br></br></br>
+						<h2>Détails du vol</h2><br><br><br><br>
 					</div>
 				</div>
 			</div>
@@ -173,11 +177,11 @@
 			        <tbody>
 			            <tr class="card-show-flight-main">
 			              <td>
-			              	<p class="card-show-departure">Heure départ</br>
+			              	<p class="card-show-departure">Heure départ<br>
 			              	<span class="card-departure-place">Lieu départ</span></p></td>
 			              <td>
-			              	<p class="card-duration">X escale(s)</br>Durée</p></td>
-			              <td class="font-weight-normal align-middle">	<p class="card-show-arrival">Heure arrivée<sup> +1</sup></br>
+			              	<p class="card-duration">X escale(s)<br>Durée</p></td>
+			              <td class="font-weight-normal align-middle">	<p class="card-show-arrival">Heure arrivée<sup> +1</sup><br>
 			              	<span class="card-arrival-place">Lieu arrivée</span></p></td>
 			            </tr>
 			         	<tr class="card-show-flight-main">
@@ -192,8 +196,11 @@
 			              <td>
 			              	<p class="card-show-flight-details">Durée</p></td>
 			              <td>
-			              	<p class="card-show-flight-details">Heure départ</br>Heure arrivée<sup> +1</sup></p></td>
-			              <td class="font-weight-normal align-middle">	<p class="card-show-flight-details">AITA aéroport</br>AITA aéroport</p></td></td>
+			              	<p class="card-show-flight-details">Heure départ<br>Heure arrivée<sup> +1</sup></p>
+                    </td>
+			              <td class="font-weight-normal align-middle">
+                      <p class="card-show-flight-details">AITA aéroport<br>AITA aéroport</p>
+                    </td>
 			            </tr>
 			        </tbody>
 			    </table>
@@ -201,7 +208,7 @@
 
 				<div class="col">
 					<div class="section_title text-center">
-						<span class="card-show-price">Prix   </span><a href="#" class="btn btn-outline-danger mr-1"> Réserver 
+						<span class="card-show-price">Prix   </span><a href="#" class="btn btn-outline-danger mr-1"> Réserver
       					</a>
       				</div>
       			</div>
@@ -214,76 +221,70 @@
     <!-- Popular -->
 
 	<div class="popular">
-		<div class="container"><div>
+		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="popular_content d-flex flex-md-row flex-column flex-wrap align-items-md-center align-items-start justify-content-md-between justify-content-start">
 
-						<div class="popular_item">
-              <%= image_tag("popular_1.jpg") %>
-								<div class="popular_item_content">
-									<div class="popular_item_price">From $890</div>
-									<div class="popular_item_title">Turkey</div>
-								</div>
+						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
+              <%= link_to image_tag("popular_1.jpg"), "https://www.tripadvisor.fr/Home-g293969?fid=65aa7117-76fc-429c-843d-e99314cd982d", target: "_blank" %>
+							<div class="popular_item_content">
+								<div class="popular_item_title">Turkey</div>
+							</div>
 						</div>
 
-						<div class="popular_item">
-              <%= image_tag("popular_2.jpg") %>
-								<div class="popular_item_content">
-									<div class="popular_item_price">From $890</div>
-									<div class="popular_item_title">Hawai</div>
-								</div>
+						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
+              <%= link_to image_tag("popular_2.jpg"), "https://www.tripadvisor.fr/Home-g28932", target: "_blank" %>
+							<div class="popular_item_content">
+								<div class="popular_item_title">Hawai</div>
+							</div>
 						</div>
 
-						<div class="popular_item">
-              <%= image_tag("popular_3.jpg") %>
-								<div class="popular_item_content">
-									<div class="popular_item_price">From $890</div>
-									<div class="popular_item_title">Ireland</div>
-								</div>
+						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
+              <%= link_to image_tag("popular_3.jpg"), "https://www.tripadvisor.fr/Home-g186591", target: "_blank" %>
+							<div class="popular_item_content">
+								<div class="popular_item_title">Ireland</div>
+							</div>
 						</div>
 
-						<div class="popular_item">
-              <%= image_tag("popular_4.jpg") %>
-								<div class="popular_item_content">
-									<div class="popular_item_price">From $890</div>
-									<div class="popular_item_title">Thailand</div>
-								</div>
+						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
+              <%= link_to image_tag("popular_4.jpg"), "https://www.tripadvisor.fr/Home-g293915", target: "_blank" %>
+							<div class="popular_item_content">
+								<div class="popular_item_title">Thailand</div>
+							</div>
 						</div>
 
-						<div class="popular_item">
-              <%= image_tag("popular_5.jpg") %>
-								<div class="popular_item_content">
-									<div class="popular_item_price">From $890</div>
-									<div class="popular_item_title">Croatia</div>
-								</div>
+						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
+              <%= link_to image_tag("popular_5.jpg"), "https://www.tripadvisor.fr/Home-g294453", target: "_blank" %>
+							<div class="popular_item_content">
+								<div class="popular_item_title">Croatia</div>
+							</div>
 						</div>
 
-						<div class="popular_item">
-              <%= image_tag("popular_6.jpg") %>
-								<div class="popular_item_content">
-									<div class="popular_item_price">From $890</div>
-									<div class="popular_item_title">Bali</div>
-								</div>
+						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
+              <%= link_to image_tag("popular_6.jpg"), "https://www.tripadvisor.fr/Home-g294226", target: "_blank" %>
+							<div class="popular_item_content">
+								<div class="popular_item_title">Bali</div>
+							</div>
 						</div>
 
-						<div class="popular_item">
-              <%= image_tag("popular_7.jpg") %>
-								<div class="popular_item_content">
-									<div class="popular_item_price">From $890</div>
-									<div class="popular_item_title">France</div>
-								</div>
+						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
+              <%= link_to image_tag("popular_7.jpg"), "https://www.tripadvisor.fr/Home-g187070", target: "_blank" %>
+							<div class="popular_item_content">
+								<div class="popular_item_title">France</div>
+							</div>
 						</div>
 
-						<div class="popular_item">
-              <%= image_tag("popular_8.jpg") %>
-								<div class="popular_item_content">
-									<div class="popular_item_price">From $890</div>
-									<div class="popular_item_title">Vietnam</div>
-								</div>
+						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
+              <%= link_to image_tag("popular_8.jpg"), "https://www.tripadvisor.fr/Home-g293921", target: "_blank" %>
+							<div class="popular_item_content">
+								<div class="popular_item_title">Vietnam</div>
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
+		</div>
 	</div>
-
+</div>
