@@ -1,4 +1,8 @@
 class ApisearchesController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
+
     def index
     end
 
@@ -15,7 +19,7 @@ class ApisearchesController < ApplicationController
       client = OAuth2::Client.new(ENV['AMADEUS_CLIENT_ID'], ENV['AMADEUS_CLIENT_SECRET'], site: 'https://test.api.amadeus.com', token_url: 'https://test.api.amadeus.com/v1/security/oauth2/token')
       token = client.client_credentials.get_token
 
-      response = token.get("/v1/shopping/flight-offers?origin=#{params[:departure]}&destination=#{params[:arrival]}&departureDate=#{params[:departure_date]}&returnDate=#{params[:return_date]}")
+      response = token.get("/v1/shopping/flight-offers?origin=#{params[:departure]}&destination=#{params[:arrival]}&departureDate=#{params[:departure_date]}&returnDate=#{params[:return_date]}&maxPrice=200&nonStop=true")
 
       response_body = JSON.parse(response.body)
 
@@ -32,3 +36,5 @@ class ApisearchesController < ApplicationController
     end
 
 end
+
+

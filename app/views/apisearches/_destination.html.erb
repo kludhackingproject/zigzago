@@ -1,7 +1,7 @@
+<br>
 <% results.each do |result| %>
   <div class="popular">
-   <div class="container">
-     <div>
+   <div class="container"><div>
      <div class="card">
        <table>
            <tbody>
@@ -9,20 +9,27 @@
                <% result['offerItems'].each do |offerItem| %>
                 <% offerItem['services'].each do |service| %>
                   <% service['segments'].each do |segment| %>
-                    <p>Nombre de transit : <%= segment['flightSegment'].count.to_i %></p>
+                    <!-- <p>Vol direct : <%= segment['flightSegment']['aircraft'].count.to_i %></p> -->
+                  
+                
                     <td>
-                     <p class="card-departure-time">Heure départ<br>
-                     <span class="card-departure-place">Lieu départ : <%= segment['flightSegment']['departure']['iataCode'] %></span></p></td>
-                    <td>
-                     <p class="card-duration">Durée</p></td>
-                    <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
-                     <span class="card-arrival-place">Lieu arrivée : <%= segment['flightSegment']['arrival']['iataCode'] %></span></p></td>
-                 <% end %>
+                     <p class="card-departure-time">Départ :
+                      <%= segment['flightSegment']['departure']['at'].slice(11...16) %>
+                      <br>
+                     <span class="card-departure-place"><%= segment['flightSegment']['departure']['iataCode'] %></span> --> </p>
+                    </td>
+                                     
+                    <td class="font-weight-normal align-middle">	
+                      <p class="card-arrival-time">Arrivée : <%= segment['flightSegment']['arrival']['at'].slice(11...16) %>
+                        <br>
+                     <span class="card-arrival-place"><%= segment['flightSegment']['arrival']['iataCode'] %></span></p>
+                    </td>
+                  <% end %>
                 <% end %>
                     <td class="cell-price">
                      <p class="card-price">Prix : <%= offerItem['price']['total'] %><br><button type="button" class="btn btn-info">Voir</button></p>
                     </td>
-              <% end %>
+               <% end %>
              </tr>
            </tbody>
          </table>
@@ -31,3 +38,4 @@
    </div>
  </div>
 <% end %>
+
