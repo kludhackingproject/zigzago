@@ -17,5 +17,3 @@ module SomewhereToGo
     # the framework and any gems in your application.
   end
 end
-
-ActionMailer::Base.delivery_method = :smtp
