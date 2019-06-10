@@ -29,6 +29,11 @@ class ApisearchesController < ApplicationController
         format.js
       end
 
+      @apisearch = Apisearch.new(city_departure: departure, city_arrival: arrival, departure_date: params[:departure_date], return_date: params[:return_date], user_id: current_user.id)
+
+      if params[:save_search] == '1'
+        @apisearch.save
+      end
     end
 
     def destroy
