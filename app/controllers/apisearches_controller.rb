@@ -12,21 +12,29 @@ class ApisearchesController < ApplicationController
 
     def create
 
+      departure_find = params[:departure]
+      arrival_find = params[:arrival]
+      departure_date_find = params[:departure_date]
+      return_date_find = params[:return_date]
+      
+      @api_results = ApiResults.new(departure_find, arrival_find, departure_date_find, return_date_find)
+
+      
+      @departure_result = @api_results.departure
+      @departuredate_result = @api_results.departure_date
+
+      @destination_result = @api_results.destination
+      @arrivaldate_result = @api_results.arrival_date
+      
+      @price_result = @api_results.price
+      @departureduration_result = @api_results.departure_duration
+     
+  
       respond_to do |format|
         format.html { redirect_to apisearches_path }
         format.js
       end
-
-      @departure = ApiResults.new.departure
-      @departure_date = ApiResults.new.departure_date
-      @destination = ApiResults.new.destination
-      @return_date = ApiResults.new.return_date
-      @price = ApiResults.new.price
-      @stopover = ApiResults.new.stopover
-      @departure_duration = ApiResults.new.departure_duration
-      @return_duration = ApiResults.new.return_duration
-    
-
+      
     end
 
     def destroy
