@@ -45,26 +45,34 @@
 // 	icon_star.background-color = "yellow";
 //  }
 
+
+
 $(document).ready(function() {
+
+  ////// Scroll when submit ////////
+
   $( "#find_form" ).submit(function() {
     $('html, body').animate( { scrollTop: $('#search-anchor').offset().top }, 2000 );
   });
 
-  var liste = [
-    "Draggable",
-    "Droppable",
-    "Resizable",
-    "Selectable",
-    "Sortable"
-  ];
+  //////// Autocomplet form /////////
 
-  $('#basics').autocomplete({
-      source : liste
+  $( function() {
+  	$.getJSON("/json/airports4.json", function(data) {
+  		autoComplete = [];
+  		for (var i = 0, len = data.length; i < len; i++) {
+  			autoComplete.push(data[i].location + ", " + data[i].code);
+  		}
+  		$( "#input-departure" ).autocomplete({
+  			source: autoComplete
+  		});
+      $( "#input-arrival" ).autocomplete({
+        source: autoComplete
+      });
+  	});
   });
 
-});
-
-$(document).ready(function() {
+  ///// Spinner //////
 
   // hide spinner
   $(".spinner").hide();
