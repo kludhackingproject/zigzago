@@ -1090,12 +1090,12 @@ section
 }
 .find_input:hover
 {
-	border: solid 2px #000000;
+	border: solid 2px #fe435b;
 }
 .find_input:focus
 {
-	outline-color: #000000;
-	border: solid 2px #000000;
+	outline-color: #fe435b;
+	border: solid 2px #fe435b;
 }
 .find_button
 {
