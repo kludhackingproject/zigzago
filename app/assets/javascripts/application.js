@@ -49,4 +49,17 @@ $(document).ready(function() {
   $( "#find_form" ).submit(function() {
     $('html, body').animate( { scrollTop: $('#search-anchor').offset().top }, 2000 );
   });
+
+  var liste = [
+    "Draggable",
+    "Droppable",
+    "Resizable",
+    "Selectable",
+    "Sortable"
+  ];
+
+  $('#basics').autocomplete({
+      source : liste
+  });
+
 });
