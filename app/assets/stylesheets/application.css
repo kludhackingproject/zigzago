@@ -98,13 +98,17 @@ td {
   margin-bottom: 10px;
 }
 
+.card-row {
+	padding-bottom: 2rem;
+}
+
 .card-departure-time {
 	text-align: right;
 	padding-right: .375rem;
 	padding-left: .375rem;
 	padding-top: .5rem;
 	font-size: 1.5rem;
-	padding-bottom: 0rem;
+	padding-bottom: .5rem;
 	line-height: 1.4;
 	margin-bottom: 0px;
 }
@@ -130,7 +134,7 @@ td {
 	font-size: 1.5rem;
 	padding-left: .375rem;
 	padding-right: .375rem;
-	padding-bottom: 0rem;
+	padding-bottom: .5rem;
 	padding-top: .5rem;
 	line-height: 1.4;
 	margin-bottom: 0px;
@@ -148,18 +152,18 @@ td {
 	font-size: 1.5rem;
 	font-weight: 700;
 	padding-left: .375rem;
-	padding-right: .375rem;
 	padding-top: 1rem;
-	margin-bottom: 0px;
+	margin-right: -1.4rem;
+	margin-bottom: -1.4rem;
+
 
 }
 
 .card-icon-favorite {
 	vertical-align: text-top;
 	text-align: right;
-	padding-right: .375rem;
-	padding-left: .375rem;
-	padding-top: 0rem;
+	padding-right: .2rem;
+	padding-top: .2rem;
 	font-size: 1.5rem;
 	padding-bottom: 0rem;
 	margin-bottom: 0px;
@@ -171,7 +175,8 @@ td {
 	font-size: 1.5rem;
 	font-weight: 700;
 	padding-left: .375rem;
-	padding-right: .375rem;
+	margin-right: -1.4rem;
+	margin-top: -1.4rem;
 	margin-bottom: 2px;
 
 }
@@ -208,7 +213,6 @@ td.float-right {
 .cell-price {
 	text-align: center;
 	padding-left: .6rem;
-	padding-right: .6rem;
 	padding-top: 0px;
 	border-left: 1.2px dashed #939393;
 }
@@ -287,10 +291,6 @@ td.float-right {
 	padding-bottom: 0rem;
 	padding-top: .5rem;
 	margin-bottom: 0px;
-}
-
-.icon-white {
-	color: #fff;
 }
 
 .main_nav_item_dropdown:hover a {
@@ -390,4 +390,14 @@ td.float-right {
 	margin-left: 70px;
 	background: none;
 	border: none;
+}
+
+.icon_star {
+  background-color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  border: none; 
+  fill: white;
+  outline:none;
+  color: #eec70d;
 }

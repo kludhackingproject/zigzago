@@ -50,3 +50,7 @@ $(document).ready(function() {
     $('html, body').animate( { scrollTop: $('#search-anchor').offset().top }, 2000 );
   });
 });
+
+$( "button.icon_star" ).submit(function() {
+  $( this ).css('color', '#eec70d');
+});
