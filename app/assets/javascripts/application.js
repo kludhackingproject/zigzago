@@ -63,3 +63,21 @@ $(document).ready(function() {
   });
 
 });
+
+$(document).ready(function() {
+
+  // hide spinner
+  $(".spinner").hide();
+
+
+  // show spinner on AJAX start
+  $(btn-search-plane).ajaxStart(function(){
+    $(".spinner").show();
+  });
+
+  // hide spinner on AJAX stop
+  $(create).ajaxComplete(function(){
+    $(".spinner").hide();
+  });
+
+});
