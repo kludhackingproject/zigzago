@@ -1,80 +1,64 @@
 <div class="super_container">
-  
-  <!-- Home -->
 
-  <div class="home">
-    <!-- Image by https://unsplash.com/@peecho -->
-    <div class="home_background parallax-window" data-parallax="scroll" data-speed="0.8">
+  <div class="home profile">
+    <div class="home_background parallax-window small-banner" data-parallax="scroll" data-speed="0.8">
       <%= image_tag("find.jpg") %>
     </div>
-      <div class="home_content">
-        <div class="home_content_inner">
-          <%= link_to "Modifier mon profil", "#ancre", class: "home_text_small" %>
-        </div>  
+    <div class="home_content">
+      <div class="home_content_inner">
+        <%= link_to "Modifier mon profil", "#ancre", class: "home_text_small" %>
       </div>
     </div>
   </div>
 
-  <!-- Contact -->
-
-  <div class="contact" id="ancre">
+  <div id="ancre">
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <div class="contact_title">Modifier mes informations</div>
-        </div>
-      </div>
       <div class="row contact_content">
-
-        <div class="col-lg-7">
+        <div class="col-lg-6 devise-form">
           <div class="contact_form_container">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "clearfix", id: "contact_form") do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
 
-              <%= f.label :adresse_email %><br />              
+              <%= f.label :adresse_email, autofocus: true %><br>
               <%= f.email_field :email, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "email", placeholder: "Adresse email" %>
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
               <% end %>
 
-              <%= f.label :votre_présentation %><br />              
+              <%= f.label :votre_présentation %><br>
               <%= f.text_area :description, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "text", placeholder: "Votre présentation" %>
 
               <%= f.label :mot_de_passe %>
               <% if @minimum_password_length %>
                 <em>(<%= @minimum_password_length %> caractères minimum, </em>
               <% end %>
-              <i>ne pas remplir si vous ne voulez pas le modifier)</i><br />
-              <%= f.password_field :password, autofocus: true, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Mot de passe" %>
+              <i>ne pas remplir si vous ne voulez pas le modifier)</i><br>
+              <%= f.password_field :password, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Mot de passe" %>
 
-              <%= f.label :confirmation_mot_de_passe %><br />
-              <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Confirmation mot de passe" %>
+              <%= f.label :confirmation_mot_de_passe %><br>
+              <%= f.password_field :password_confirmation, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Confirmation mot de passe" %>
 
-              <%= f.label :mot_de_passe_actuel %> <i>(pour confirmer les changements)</i><br />
-              <%= f.password_field :current_password, autofocus: true, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Mot de passe actuel" %>
+              <%= f.label :mot_de_passe_actuel %> <i>(pour confirmer les changements)</i><br>
+              <%= f.password_field :current_password, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Mot de passe actuel" %>
 
             <%= f.submit "Mettre à jour", class: "contact_send_btn trans_200", id: "contact_send_btn" %>
-            <% end %> 
+            <% end %>
           </div>
         </div>
       </div>
+    </div>
 
-
-  <div class="contact">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="contact_title">Supprimer mon compte</div>
+        <div class="devise-form">
+          <div class="contact_title">Tu souhaites supprimer ton compte ?</div>
         </div>
       </div>
       <div class="row contact_content">
-        <div>
-            <p>Pas content ? 
-              <%= button_to "Supprimer", registration_path(resource_name), data: { confirm: "Êtes vous sûr ?" }, method: :delete, class: "contact_send_btn trans_200", id: "contact_send_btn" %>
-            </p>
-            </div>
-          </div>
+        <div class="col-lg-6 devise-form">
+          <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes vous sûr de vouloir supprimer ce compte ?" }, method: :delete, class: "contact_send_btn trans_200 delete_btn", id: "contact_send_btn" %>
         </div>
       </div>
-
+    </div>
+  </div>
 </div>

@@ -37,3 +37,9 @@
 //= require custom
 //= require elements_custom
 //= require offers_custom
+
+$(document).ready(function() {
+  $( "#find_form" ).submit(function() {
+    $('html, body').animate( { scrollTop: $('#search-anchor').offset().top }, 2000 );
+  });
+});
