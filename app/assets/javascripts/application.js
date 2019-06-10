@@ -58,12 +58,12 @@ $(document).ready(function() {
 
 
   // show spinner on AJAX start
-  $(btn-search-plane).ajaxStart(function(){
+  $(document).ajaxStart(function(){
     $(".spinner").show();
   });
 
   // hide spinner on AJAX stop
-  $(find_form).ajaxComplete(function(){
+  $(document).ajaxComplete(function(){
     $(".spinner").hide();
   });
 
