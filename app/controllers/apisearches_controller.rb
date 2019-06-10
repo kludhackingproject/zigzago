@@ -2,8 +2,6 @@ class ApisearchesController < ApplicationController
     def index
     end
 
-# vue correspondante à l'affichage des recherches enregistrées (et non du détail des recherches effectuées)
-
     def show
     end
 
