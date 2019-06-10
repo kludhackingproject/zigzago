@@ -930,6 +930,7 @@ section
 	font-weight: 400;
 	color: #FFFFFF;
 	margin-bottom: 7px;
+	padding-right: 30px;
 }
 .dropdown_item_select
 {
@@ -958,12 +959,12 @@ section
 }
 .find_input:hover
 {
-	border: solid 2px rgba(254, 67, 91, 0.5);
+	border: solid 2px #000000;
 }
 .find_input:focus
 {
-	outline-color: rgba(254, 67, 91, 0.5);
-	border: solid 2px rgba(254, 67, 91, 0.5);
+	outline-color: #000000;
+	border: solid 2px #000000;
 }
 .find_button
 {
