@@ -50,3 +50,21 @@ $(document).ready(function() {
     $('html, body').animate( { scrollTop: $('#search-anchor').offset().top }, 2000 );
   });
 });
+
+$(document).ready(function() {
+
+  // hide spinner
+  $(".spinner").hide();
+
+
+  // show spinner on AJAX start
+  $(btn-search-plane).ajaxStart(function(){
+    $(".spinner").show();
+  });
+
+  // hide spinner on AJAX stop
+  $(create).ajaxComplete(function(){
+    $(".spinner").hide();
+  });
+
+});
