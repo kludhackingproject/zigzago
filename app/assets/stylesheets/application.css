@@ -13,8 +13,6 @@
 
 *= require easy-autocomplete
 *= require easy-autocomplete.themes
-*= require_tree .
-*= require_self
 
 *= require styles/bootstrap4/bootstrap.min
 
@@ -33,7 +31,35 @@
 *= require styles/offers_styles
 *= require styles/offers_responsive
 
+*= require_tree .
+*= require_self
+
 */
+
+.footer {
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.footer_about_text {
+	width: 60%;
+	margin: auto;
+}
+
+.find {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.logo a {
+	color: white;
+}
+
+.header a {
+	outline: none;
+}
 
 .alert{
 	margin-left: 450px;
@@ -48,6 +74,11 @@
 
 .home_content_inner a:hover {
 	color: white;
+
+}
+
+.home_content_banner {
+	margin-top: -8vh;
 }
 
 table {
@@ -63,8 +94,8 @@ td {
 	width: 40rem;
 	padding: 6px;
 	margin: 0 auto;
-    float: none;
-    margin-bottom: 10px;
+	float: none;
+  margin-bottom: 10px;
 }
 
 .card-departure-time {
@@ -123,6 +154,18 @@ td {
 
 }
 
+.card-icon-favorite {
+	vertical-align: text-top;
+	text-align: right;
+	padding-right: .375rem;
+	padding-left: .375rem;
+	padding-top: 0rem;
+	font-size: 1.5rem;
+	padding-bottom: 0rem;
+	margin-bottom: 0px;
+
+}
+
 .card-book {
 	text-align: center;
 	font-size: 1.5rem;
@@ -163,7 +206,9 @@ td.float-right {
 }
 
 .cell-price {
+	text-align: center;
 	padding-left: .6rem;
+	padding-right: .6rem;
 	padding-top: 0px;
 	border-left: 1.2px dashed #939393;
 }
@@ -224,3 +269,189 @@ td.float-right {
 	padding-left: .375rem;
 	padding-right: .375rem;
 }
+
+.card-favorites {
+	width: 45rem;
+	padding: 6px;
+	margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.card-favorites-price {
+	text-align: center;
+	border-left: 1.2px dashed #939393;
+	font-size: 1.5rem;
+	padding-left: .375rem;
+	padding-right: .375rem;
+	padding-bottom: 0rem;
+	padding-top: .5rem;
+	margin-bottom: 0px;
+}
+
+.main_nav_item_dropdown:hover a {
+	color: white;
+}
+
+.main_nav_item_dropdown a:hover {
+	color: #fe435b;
+}
+
+.dropdown-menu a:hover {
+	color: #fe435b;
+}
+
+.contact, .profile {
+	height: 55vh;
+	width: 100%;
+}
+
+.small-banner {
+	height: inherit;
+	width: inherit;
+}
+
+.small-banner img {
+	height: inherit;
+	width: inherit;
+}
+
+.trip_picture {
+	margin-bottom: 0;
+	width: 100%;
+	padding: 2px;
+}
+
+.trip_picture img {
+	width: 100%;
+}
+
+.google-map {
+	margin-top: 40px;
+}
+
+.devise-form {
+	margin-bottom: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.contact_content {
+	margin-top: 30px;
+}
+
+.delete_btn {
+	float: none;
+	margin: auto;
+	width: 100%;
+	background-color: black;
+}
+
+.delete_btn:hover {
+	background-color: grey;
+}
+
+.find {
+	margin-top: -190px;
+	padding-top: 20px;
+	padding-bottom: 70px;
+}
+
+.find_background {
+	background-color: #131a2f;
+	opacity: 0.8;
+}
+
+.find_item {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.find_item input {
+	background-color: #131a2f;
+}
+
+.search_container {
+	width: 70vw;
+	margin: auto;
+}
+
+.search-plane {
+	color: #FFFFFF;
+	
+}
+.search-plane:hover {
+	color: #fe435b;
+}
+
+.btn-search-plane {
+	margin-top: 15px;
+	margin-left: 30px;
+	background: none;
+	border: none;
+	font-size: 25px;
+}
+
+.page-link {
+	color: #131a2f;
+}
+
+.page-item {
+	color: #131a2f;
+	border: 1.5px solid #131a2f;
+}
+
+.page-item a:hover {
+	background-color: #131a2f;
+	color: #FFFFFF;
+	border: 1.5px solid #fe435b;
+}
+
+.spinner {
+	margin: 10px auto;
+	width: 30px;
+	height: 30px;
+	position: relative;
+	text-align: center;
+	
+	-webkit-animation: sk-rotate 2.0s infinite linear;
+	animation: sk-rotate 2.0s infinite linear;
+  }
+  
+  .dot1, .dot2 {
+	width: 60%;
+	height: 60%;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	background-color: #131a2f;
+	border-radius: 100%;
+	
+	-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+	animation: sk-bounce 2.0s infinite ease-in-out;
+  }
+  
+  .dot2 {
+	top: auto;
+	bottom: 0;
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+  }
+  
+  @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+  @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+  
+  @-webkit-keyframes sk-bounce {
+	0%, 100% { -webkit-transform: scale(0.0) }
+	50% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bounce {
+	0%, 100% { 
+	  transform: scale(0.0);
+	  -webkit-transform: scale(0.0);
+	} 50% { 
+	  transform: scale(1.0);
+	  -webkit-transform: scale(1.0);
+	}
+  }

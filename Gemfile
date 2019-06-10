@@ -22,6 +22,7 @@ gem 'jquery-ui-rails'
 gem 'oauth2'
 gem 'ejs'
 gem 'sassc'
+gem 'rails-jquery-autocomplete'
 
 # API flights
 gem 'amadeus'

@@ -1,24 +1,19 @@
 <div class="super_container">
-	
-	<!-- Home -->
 
-  <div class="home">
-    <!-- Image by https://unsplash.com/@peecho -->
+  <div class="home profile">
     <div class="home_background parallax-window" data-parallax="scroll" data-speed="0.8">
       <%= image_tag("find.jpg") %>
     </div>
       <div class="home_content">
         <div class="home_content_inner">
           <%= link_to "Modifier mon profil", "#ancre", class: "home_text_small" %>
-        </div>  
+        </div>
       </div>
     </div>
   </div>
 
-	<!-- Contact -->
-
-	<div class="contact" id="ancre">
-		<div class="container">
+	<div id="ancre">
+		<div class="container devise-form">
 			<div class="row">
 				<div class="col">
 					<div class="contact_title">Mot de passe oublié ?</div>
@@ -29,11 +24,11 @@
 				<div class="col-lg-7">
 					<div class="contact_form_container">
 						<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class: "clearfix", id: "contact_form") do |f| %>
-            			<%= render "devise/shared/error_messages", resource: resource %>
-            				<%= f.label :adresse_email %><br />
+            	<%= render "devise/shared/error_messages", resource: resource %>
+            	<%= f.label :adresse_email %><br />
 							<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "email", placeholder: "Adresse email" %>
 							<%= f.submit "Réinitialiser", class: "contact_send_btn trans_200", id: "contact_send_btn" %>
-          				<% end %>         
+          	<% end %>
 					</div>
 				</div>
 			</div>
