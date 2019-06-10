@@ -7,7 +7,7 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_LOGIN'],
     :password => ENV['SENDGRID_PWD'],
-    :domain => 'https://zigzago-development.herokuapp.com/',
+    :domain => 'https://zigzago-app.herokuapp.com/',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
