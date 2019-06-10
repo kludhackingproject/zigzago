@@ -21,13 +21,13 @@
 						<div class="col-md-2 col-lg-2 find_item">
 							<div>Départ :</div>
 
-							<input id="basics" type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>
+							<input id="input-departure" type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>
 						</div>
 
 						<div class="col-md-2 col-lg-2 find_item">
 							<div>Arrivée :</div>
 
-  							<input type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>
+  							<input id="input-arrival" type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>
   						</div>
 
 						<div class="col-md-2 col-lg-2 find_item">
@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h2>Find the adventure of a lifetime</h2>
+						<h2>Find the adventure of a lifetime <i class="fa fa-star"></i></h2>
 					</div>
 				</div>
 			</div>

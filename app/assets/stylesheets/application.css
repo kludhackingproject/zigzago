@@ -11,9 +11,6 @@
  * It is generally better to create a new file per style scope.
  *
 
-*= require easy-autocomplete
-*= require easy-autocomplete.themes
-
 *= require styles/bootstrap4/bootstrap.min
 
 *= require plugins/font-awesome-4.7.0/css/font-awesome.min
@@ -368,7 +365,8 @@ td.float-right {
 }
 
 .find_item input {
-	background-color: #131a2f;
+	background-color: white;
+	color: black;
 }
 
 .search_container {
@@ -385,5 +383,14 @@ td.float-right {
 	margin-top: 20px;
 	margin-left: 70px;
 	background: none;
+	border: none;
+}
+
+li.ui-menu-item .ui-menu-item-wrapper {
+	color: black !important;
+}
+
+li.ui-menu-item .ui-menu-item-wrapper:hover {
+	background-color: #fe435b;
 	border: none;
 }

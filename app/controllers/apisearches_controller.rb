@@ -12,10 +12,13 @@ class ApisearchesController < ApplicationController
 
     def create
 
+      departure = params[:departure].split(", ").last
+      arrival = params[:arrival].split(", ").last
+
       client = OAuth2::Client.new(ENV['AMADEUS_CLIENT_ID'], ENV['AMADEUS_CLIENT_SECRET'], site: 'https://test.api.amadeus.com', token_url: 'https://test.api.amadeus.com/v1/security/oauth2/token')
       token = client.client_credentials.get_token
 
-      response = token.get("/v1/shopping/flight-offers?origin=#{params[:departure]}&destination=#{params[:arrival]}&departureDate=#{params[:departure_date]}&returnDate=#{params[:return_date]}")
+      response = token.get("/v1/shopping/flight-offers?origin=#{departure}&destination=#{arrival}&departureDate=#{params[:departure_date]}&returnDate=#{params[:return_date]}")
 
       response_body = JSON.parse(response.body)
 
