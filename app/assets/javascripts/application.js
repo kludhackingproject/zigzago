@@ -51,13 +51,20 @@ $(document).ready(function() {
   });
 });
 
-
 $(document).ready(function() {
-  var table = $('#app-list-table').DataTable({
-    //any other datatables settings here
-    "initComplete": function(settings, json) {
-      $('#loadingSpinner').hide();
-      //or $('#loadingSpinner').empty();
-    }
-  })
+
+  // hide spinner
+  $(".spinner").hide();
+
+
+  // show spinner on AJAX start
+  $(btn-search-plane).ajaxStart(function(){
+    $(".spinner").show();
+  });
+
+  // hide spinner on AJAX stop
+  $(find_form).ajaxComplete(function(){
+    $(".spinner").hide();
+  });
+
 });
