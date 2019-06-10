@@ -1,41 +1,54 @@
-<br>
-<% results.each do |result| %>
-  <div class="popular">
-   <div class="container"><div>
-     <div class="card">
-       <table>
-           <tbody>
-             <tr>
-               <% result['offerItems'].each do |offerItem| %>
-                <% offerItem['services'].each do |service| %>
-                  <% service['segments'].each do |segment| %>
-                    <!-- <p>Vol direct : <%= segment['flightSegment']['aircraft'].count.to_i %></p> -->
-                  
-                
-                    <td>
-                     <p class="card-departure-time">Départ :
-                      <%= segment['flightSegment']['departure']['at'].slice(11...16) %>
-                      <br>
-                     <span class="card-departure-place"><%= segment['flightSegment']['departure']['iataCode'] %></span> --> </p>
-                    </td>
-                                     
-                    <td class="font-weight-normal align-middle">	
-                      <p class="card-arrival-time">Arrivée : <%= segment['flightSegment']['arrival']['at'].slice(11...16) %>
-                        <br>
-                     <span class="card-arrival-place"><%= segment['flightSegment']['arrival']['iataCode'] %></span></p>
-                    </td>
-                  <% end %>
-                <% end %>
-                    <td class="cell-price">
-                     <p class="card-price">Prix : <%= offerItem['price']['total'] %><br><button type="button" class="btn btn-info">Voir</button></p>
-                    </td>
-               <% end %>
-             </tr>
-           </tbody>
-         </table>
-       </div>
-     </div>
-   </div>
- </div>
-<% end %>
+<div class="services">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="section_title text-center">
+					<h2>Vos résultats de recherche</h2><br><br><br><br>
+				</div>
+			</div>
+		</div>
 
+<% (0...@price_result.length).step(2) { |i| %>
+
+			<div class="card">
+			    <table>
+			        <tbody>
+			            <tr class="card-row">
+			              <td>
+			              	<p class="card-departure-time"> <%= @departuredate_result[i] %> <br>
+			              	<span class="card-departure-place">  <%=  @departure_result[i] %> </span></p>
+                   		 </td>
+			              <td>
+			              	<p class="card-duration"> <%= @departureduration_result[i] %>  </p>
+                  		 </td>
+			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time"> <%= @arrivaldate_result[i] %> <br>
+			              	<span class="card-arrival-place"> <%= @destination_result[i] %> </span></p>
+             		       </td>
+			              <td class="cell-price">
+			                <p class="card-price"><%= @price_result[i] %></p>
+			              </td>
+			              <td class="card-icon-favorite">
+			              </td>
+			            </tr>
+			            <tr>
+			              <td>
+			              	<p class="card-departure-time"> <%= @departuredate_result[i + 1] %> <br>
+			              	<span class="card-departure-place"> <%=  @departure_result[i + 1] %> </span></p>
+                   		 </td>
+			              <td>
+			              	<p class="card-duration"> <%= @departureduration_result[i + 1] %>  </p>
+                  		 </td>
+			              <td class="font-weight-normal align-middle"> <p class="card-arrival-time"> <%= @arrivaldate_result[i + 1] %><br>
+			              	<span class="card-arrival-place"> <%= @destination_result[i + 1] %> </span></p>
+             		       </td>
+			              <td class="cell-price">
+			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
+                    </td>
+			              <td></td>
+			            </tr>
+			        </tbody>
+			    </table>
+			</div>
+			<% } %>
+		</div>
+  </div>
