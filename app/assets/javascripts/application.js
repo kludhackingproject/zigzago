@@ -85,3 +85,7 @@ $(document).ready(function() {
   });
 
 });
+
+$( "button.icon_star" ).submit(function() {
+  $( this ).css('color', '#eec70d');
+});
