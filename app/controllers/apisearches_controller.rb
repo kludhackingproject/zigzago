@@ -41,6 +41,7 @@ class ApisearchesController < ApplicationController
     end
 
     def destroy
+      @apisearch.destroy notice: "Recherche détruite"
     end
 
 end

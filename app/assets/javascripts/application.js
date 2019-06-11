@@ -72,24 +72,6 @@ $(document).ready(function() {
   	});
   });
 
-  ///// Spinner //////
-
-  // show spinner on AJAX start
-  $(document).ajaxStart(function(){
-    $(".spinner").show();
-  });
-
-  // hide spinner on AJAX stop
-  $(document).ajaxComplete(function(){
-    $(".spinner").hide();
-  });
-
-});
-
-$( "button.icon_star" ).submit(function() {
-  $( this ).css('color', '#eec70d');
-});
-
 ///// Tawk /////
 
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
