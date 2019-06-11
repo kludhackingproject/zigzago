@@ -3,6 +3,7 @@ class ApisearchesController < ApplicationController
     end
 
     def show
+      @apisearch = Apisearch.where(user_id: current_user.id)
     end
 
     def new
@@ -43,7 +44,9 @@ class ApisearchesController < ApplicationController
     end
 
     def destroy
-      @apisearch.destroy notice: "Recherche détruite"
+      @apisearch = Apisearch.find(params[:id])
+      @apisearch.destroy
+      redirect_to apisearch_path
     end
 
 end

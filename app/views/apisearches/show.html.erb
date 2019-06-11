@@ -24,58 +24,40 @@
 
 				<div class="col-12">
 					<div class="find_form_container">
-						<%= form_tag url_for(action: 'show'), remote: true, id: "find_form", method: "get",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
-						<%= image_tag("save_search.jpg", class: "find_background") %>
-						<div class="col-md-2 col-lg-2 find_item">
-						<div>Départ :</div>
-						<input id="input-departure" type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>
-						</div>
+						<%= form_tag url_for(action: 'show'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
 
-						<div class="col-md-2 col-lg-2 find_item">
-						<div>Arrivée :</div>
-  						<input id="input-arrival" type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>
-  						</div>
-
-						<div class="col-md-2 col-lg-2 find_item">
-						<div>Date aller :</div>
-						<input class="destination find_input" <%= date_field_tag :departure_date %>
-						</div>
-
-						<div class="col-md-2 col-lg-2 find_item">
-						<div>Date retour :</div>
-						<input class="destination find_input" <%= date_field_tag :return_date %>
-						</div>
 						
-						<div class="col-md-2 col-lg-2 find_item">
-						<%= button_tag(type: "submit", class: "btn-search-plane") do %>
-						<i class='fa fa-plane search-plane animated infinite pulse delay-2s ' data-toggle="tooltip" title="Rechercher mon vol"></i>
+						<%= @apisearch.each do |f| %>
+						<%= image_tag("save_search.jpg", class: "find_background") %>
+							<div class="col-md-2 col-lg-2 find_item">
+								<p id="input-departure" type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %> <%=  f.city_departure %></p>
+							</div>
+
+							<div class="col-md-2 col-lg-2 find_item">
+								<p id="input-arrival" type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %> <%= f.city_arrival %></p>
+  							</div>
+
+							<div class="col-md-2 col-lg-2 find_item">
+								<p class="destination find_input" <%= date_field_tag :departure_date %> <%= f.departure_date %></p>
+							</div>
+
+							<div class="col-md-2 col-lg-2 find_item">
+								<p class="destination find_input" <%= date_field_tag :return_date %> <%= f.return_date %></p>
+							</div>
+							<div class="col-md-2 col-lg-2 find_item">
+								<%= link_to apisearches_path, class: "btn-search-plane" do %>
+								<i class='fa fa-plane search-plane animated infinite pulse delay-2s ' data-toggle="tooltip" title="Rechercher mon vol"></i>
+								<% end %>
+							
+								<%= link_to apisearch_path(:id => f.id), method: "DELETE", class: "btn-delete-search" do %>
+								<i class='fa fa-trash' data-toggle="tooltip" title="Effacer ma recherche"></i>
+								<% end %>
+							</div>
 						<% end %>
-						<%= button_tag(method: "destroy", type: "delete", class: "btn-delete-search") do %>
-						<i class='fa fa-trash' data-toggle="tooltip" title="Effacer ma recherche"></i>
-						<% end %>
-						</div>
+						<% end%>
 					</div>
-					<% end %>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-<!-- Add navigation
-
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
-
- --->
