@@ -57,6 +57,9 @@
                         <% else %>
                              <button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
                         <% end %>
+
+											<%= link_to "Réserver", order_path(:id => i, :price => @price_result[i]), target: "_blank", class:"btn btn-outline-danger mr-1" %>
+
                     </td>
 			            </tr>
 			        </tbody>

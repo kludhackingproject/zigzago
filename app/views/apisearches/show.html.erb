@@ -13,7 +13,7 @@
 		</div>
   </div>
 
-	<!-- Find Form -->
+	<!-- Save Form -->
 
 	<div class="find">
 		<div class="container">
@@ -24,41 +24,46 @@
 
 				<div class="col-12">
 					<div class="find_form_container">
-						<%= form_tag url_for(action: 'create'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
+						<%= form_tag url_for(action: 'show'), remote: true, id: "find_form", method: "get",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
 						<%= image_tag("save_search.jpg", class: "find_background") %>
+						<div class="col-md-2 col-lg-2 find_item">
+						<div>Départ :</div>
+						<input id="input-departure" type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>
+						</div>
 
-								<div class="find_item">
-									<div>Départ :</div>
+						<div class="col-md-2 col-lg-2 find_item">
+						<div>Arrivée :</div>
+  						<input id="input-arrival" type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>
+  						</div>
 
-									<input type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>
+						<div class="col-md-2 col-lg-2 find_item">
+						<div>Date aller :</div>
+						<input class="destination find_input" <%= date_field_tag :departure_date %>
+						</div>
 
-									<div>Arrivée :</div>
-
-									<input type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>
-								</div>
-
-								<div class="find_item">
-									<div>Date aller :</div>
-
-									<input class="destination find_input" required="required" placeholder="mm/dd/yyyy" <%= text_field_tag :departure_date %>
-
-									<div>Date retour :</div>
-
-									<input class="destination find_input" required="required" placeholder="mm/dd/yyyy" <%= text_field_tag :return_date %>
-								</div>
-
-								<div class="find_item">
-									<div><input type="button" class="button find_button" value="Rechercher"></div>
-									<div><input type="button" class="button delete_button" value="Supprimer"></div>
-								</div>
-
-             <% end %>
+						<div class="col-md-2 col-lg-2 find_item">
+						<div>Date retour :</div>
+						<input class="destination find_input" <%= date_field_tag :return_date %>
+						</div>
+						
+						<div class="col-md-2 col-lg-2 find_item">
+						<%= button_tag(type: "submit", class: "btn-search-plane") do %>
+						<i class='fa fa-plane search-plane animated infinite pulse delay-2s ' data-toggle="tooltip" title="Rechercher mon vol"></i>
+						<% end %>
+						<%= button_tag(method: "destroy", type: "delete", class: "btn-delete-search") do %>
+						<i class='fa fa-trash' data-toggle="tooltip" title="Effacer ma recherche"></i>
+						<% end %>
+						</div>
 					</div>
+					<% end %>
 				</div>
-
 			</div>
 		</div>
-  </div>
+	</div>
+</div>
+
+<!-- Add navigation
+
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
     <li class="page-item disabled">
@@ -72,3 +77,5 @@
     </li>
   </ul>
 </nav>
+
+ --->

@@ -1,0 +1,24 @@
+<div class="super_container">
+  <div class="home contact">
+    <div class="home_background parallax-window small-banner" data-parallax="scroll" data-speed="0.8">
+      <%= image_tag("news.jpg") %>
+    </div>
+    <div class="home_content">
+      <div class="home_content_inner">
+        <%= link_to "Détails du vol", "#ancre", class: "home_text_small" %>
+      </div>
+    </div>
+  </div>
+  <div class="contact_title">  <%= @price %> </div>
+
+  <%= form_tag url_for(action: 'create', :controller => 'orders', :price => @price), method: "post" do %>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-label="Réserver"
+            data-amount="<%= @price_in_card %>"
+            data-locale="eur">
+    </script>
+  <% end %>
+</div>
