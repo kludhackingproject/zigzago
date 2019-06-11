@@ -6,7 +6,7 @@
     </div>
     <div class="home_content">
       <div class="home_content_inner">
-        <%= link_to "Modifier mon profil", "#ancre", class: "home_text_small" %>
+        <span class="home_text_small">Modifier mon profil</span>
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
               <%= f.label :mot_de_passe_actuel %> <i>(pour confirmer les changements)</i><br>
               <%= f.password_field :current_password, class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Mot de passe actuel" %>
 
-            <%= f.submit "Mettre à jour", class: "contact_send_btn trans_200", id: "contact_send_btn", root_path %>
+            <%= f.submit "Mettre à jour", class: "contact_send_btn trans_200", id: "contact_send_btn" %>
             <% end %>
           </div>
         </div>

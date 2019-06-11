@@ -6,7 +6,7 @@
     </div>
     <div class="home_content">
       <div class="home_content_inner">
-        <%= link_to "Veuillez vous authentifier", "#ancre", class: "home_text_small" %>
+        <span class="home_text_small">Connexion</span>
       </div>
     </div>
   </div>
@@ -24,14 +24,15 @@
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "email", placeholder: "Adresse email" %>
             <%= f.label :mot_de_passe %><br>
             <%= f.password_field :password, autocomplete: "current-password", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "password", placeholder: "Mot de passe" %>
-            <% if devise_mapping.rememberable? %>
-            <%= f.check_box :remember_me %>
-            <%= f.label :se_rappeler_de_moi %>
-            <% end %>
+            <div class="remember_me">
+              <% if devise_mapping.rememberable? %>
+              <%= f.check_box :remember_me %>
+              <%= f.label :se_rappeler_de_moi %>
+              <% end %>
+            </div>
             <%= f.submit "Connexion", class: "contact_send_btn trans_200", id: "contact_send_btn" %>
             <% end %>
             <%= render "devise/shared/links" %>
-
           </div>
         </div>
       </div>
