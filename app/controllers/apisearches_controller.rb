@@ -1,4 +1,8 @@
 class ApisearchesController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
+
     def index
     end
 
@@ -17,6 +21,7 @@ class ApisearchesController < ApplicationController
       return_date_find = params[:return_date]
 
       @api_results = ApiResults.new(departure_find, arrival_find, departure_date_find, return_date_find)
+
 
 
       @departure_result = @api_results.departure
@@ -50,3 +55,5 @@ class ApisearchesController < ApplicationController
     end
 
 end
+
+

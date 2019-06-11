@@ -21,6 +21,10 @@
 
 *= require styles/main_styles
 *= require styles/responsive
+*= require styles/elements_styles
+*= require styles/elements_responsive
+*= require styles/news_styles
+*= require styles/news_responsive
 *= require styles/contact_styles
 *= require styles/contact_responsive
 *= require styles/about_styles
@@ -61,8 +65,11 @@
 .alert{
 	margin-left: 450px;
 	margin-right: 450px;
+	width: 500px;
 	text-align: center;
 	margin-bottom: 0px !important;
+	position: absolute;
+	z-index: 400;
 }
 
 .div-center {
@@ -88,11 +95,12 @@ td {
 
 
 .card {
-	width: 40rem;
+	width: 22rem;
 	padding: 6px;
 	margin: 0 auto;
 	float: none;
-  margin-bottom: 10px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .card-row {
@@ -148,17 +156,14 @@ td {
 	text-align: center;
 	font-size: 1.5rem;
 	font-weight: 700;
-	padding-left: .375rem;
 	padding-top: 1rem;
-	margin-right: -1.4rem;
-	margin-bottom: -1.4rem;
 
 
 }
 
 .card-icon-favorite {
 	vertical-align: text-top;
-	text-align: right;
+	text-align: center;
 	padding-right: .2rem;
 	padding-top: .2rem;
 	font-size: 1.5rem;
@@ -428,7 +433,7 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
   color: #eec70d;
 }
 
- .btn-delete-search {
+.btn-delete-search {
 	background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
@@ -437,7 +442,7 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
 	color: #FFFFFF;
 	padding: 10px 98px;
 	font-size: 20px;
-  }
+ }
 
   @keyframes sk-bounce {
 	0%, 100% {
@@ -447,12 +452,31 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
 	  transform: scale(1.0);
 	  -webkit-transform: scale(1.0);
 	}
-  }
+}
 
-  .remember_me {
+.remember_me {
   	color: #1c2336;
-  }
+}
 
-  .btn-delete-search:hover {
+.btn-delete-search:hover {
 	color: #fe435b;
-  } 
+}
+
+.proposition_value_text{
+	font-size: 18px;
+	color: black;
+	padding-top: 50px;
+	padding-bottom: 25px;
+}
+
+.services{
+	padding-top: 20px;
+}
+
+.contact_title{
+	padding-top: 40px;
+}
+
+.contact_subtitle{
+	padding-bottom: 40px;
+}

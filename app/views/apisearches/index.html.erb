@@ -54,15 +54,15 @@
   		</div>
     </div>
 
-  <div id="results" >
-  </div>
+  <div id="results"></div>
 
 	<div class="services">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h2>Find the adventure of a lifetime</h2>
+						<h2>Pars à l'aventure</h2>
+						<p class="proposition_value_text"> Bali, Laponie, Polynésie ou Picardie. À côté de chez toi ou à l'autre bout de la planète, il y a toujours des mondes inconnus à découvrir. Avec Zigzago, trouve le meilleur vol pour ta destination. Tu peux même enregistrer tes recherches, ou encore des vols en particulier. Grand Prismatic Spring, Lac Abraham, Lac Natron, Mont Roraima, Dragonniers de Socotra : toutes ces destinations et ces merveilles s'offrent à toi.</p>
 					</div>
 				</div>
 			</div>
@@ -94,77 +94,6 @@
 			</div>
 		</div>
   </div>
-    <!-- Cards without Details collapse -->
-
-	<div class="services">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title text-center">
-						<h2>Vos résultats de recherche</h2><br><br><br><br>
-					</div>
-				</div>
-			</div>
-
-			</div>
-			<div class="card">
-			    <table>
-			        <tbody>
-			            <tr class="card-row">
-			              <td>
-			              	<p class="card-departure-time">Heure départ<br>
-			              	<span class="card-departure-place">Lieu départ</span></p>
-                   		 </td>
-			              <td>
-			              	<p class="card-duration">Durée</p>
-                  		 </td>
-			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
-			              	<span class="card-arrival-place">Lieu arrivée</span></p>
-             		       </td>
-			              <td class="cell-price">
-			                <p class="card-price">Prix</p>
-			              </td>
-			              <td class="card-icon-favorite">
-			              	<%= form_tag(favorites_path, method: "post", remote: true) do %>
-				                <input type="hidden" name="city_departure" value ="something" />
-				                <input type ="hidden" name ="destination" value ="something" />
-				                <input type = "hidden" name ="price" value ="something" />
-				                <input type ="hidden" name ="departure_date" value ="something" />
-				                <input type ="hidden" name ="return_date" value ="something" />
-				                <input type ="hidden" name ="user_id" value ="something" />
-			                <%= button_tag(type: "submit", class: "icon_star") do %><i class='fa fa-star'></i><% end %>
-			                <% end %>
-			              </td>
-			            </tr>
-			            <tr>
-			              <td>
-			              	<p class="card-departure-time">Heure départ<br>
-			              	<span class="card-departure-place">Lieu départ</span></p>
-                   		 </td>
-			              <td>
-			              	<p class="card-duration">Durée</p>
-                  		 </td>
-			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
-			              	<span class="card-arrival-place">Lieu arrivée</span></p>
-             		       </td>
-			              <td class="cell-price">
-			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
-                    		</td>
-			              <td></td>
-			            </tr>
-			        </tbody>
-			    </table>
-			</div>
-
-			<div class="col">
-				<div class="section_title text-center">
-					<button class="button-blue">Résultats suivants<br><i class='fa fa-angle-down'></i></button>
-
-      			</div>
-      		</div>
-		</div>
-	</div>
-
 
     <!-- Popular -->
 
