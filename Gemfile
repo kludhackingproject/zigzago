@@ -10,7 +10,7 @@ gem 'pry'
 gem 'rspec'
 gem 'better_errors'
 gem 'letter_opener'
-# gem 'stripe'
+gem 'stripe'
 gem 'devise'
 gem 'mailjet'
 gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+

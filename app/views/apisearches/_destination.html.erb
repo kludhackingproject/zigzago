@@ -42,7 +42,7 @@
 			              	<span class="card-arrival-place"> <%= @destination_result[i + 1] %> </span></p>
              		       </td>
 			              <td class="cell-price">
-			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
+											<%= link_to "Réserver", charge_path(:id => i, :price => @price_result[i]), target: "_blank", class:"btn btn-outline-danger mr-1" %>
                     </td>
 			              <td></td>
 			            </tr>
