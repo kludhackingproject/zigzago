@@ -28,6 +28,15 @@
 			                <p class="card-price"><%= @price_result[i] %></p>
 			              </td>
 			              <td class="card-icon-favorite">
+			              	<%= form_tag(favorites_path, method: "post", remote: true) do %>
+				                <input type="hidden" name="city_departure" value ="something" />
+				                <input type ="hidden" name ="destination" value ="something" />
+				                <input type = "hidden" name ="price" value ="something" />
+				                <input type ="hidden" name ="departure_date" value ="something" />
+				                <input type ="hidden" name ="return_date" value ="something" />
+				                <input type ="hidden" name ="user_id" value ="something" />
+			                <%= button_tag(type: "submit", class: "icon_star") do %><i class='fa fa-star'></i>
+			                <% end %>
 			              </td>
 			            </tr>
 			            <tr>
@@ -49,6 +58,6 @@
 			        </tbody>
 			    </table>
 			</div>
-			<% } %>
+			<% end %>
 		</div>
   </div>
