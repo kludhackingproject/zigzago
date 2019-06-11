@@ -9,4 +9,11 @@ class UserMailer < ApplicationMailer
   
       mail(to: @user.email, subject: 'Confirmation de ton inscription chez Zigzago !') 
     end
+
+    def order_confirmation(user)
+      
+      @user = user
+
+      mail(to: @user.email, subject: 'Votre voyage est reservé !')
+    end
 end
