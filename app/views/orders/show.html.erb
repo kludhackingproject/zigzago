@@ -11,7 +11,7 @@
   </div>
   <div class="contact_title">  <%= @price %> </div>
 
-  <%= form_tag url_for(action: 'create', :controller => 'charges', :price => @price), method: "post" do %>
+  <%= form_tag url_for(action: 'create', :controller => 'orders', :price => @price), method: "post" do %>
 
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
