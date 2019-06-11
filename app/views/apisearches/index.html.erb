@@ -106,7 +106,6 @@
 		</div>
   </div>
 
-
     <!-- Cards without Details collapse -->
 
 	<div class="services">
@@ -115,43 +114,58 @@
 				<div class="col">
 					<div class="section_title text-center">
 						<h2>Vos résultats de recherche</h2><br><br><br><br>
+							<div class="spinner">
+							<div class="dot1"></div>
+							<div class="dot2"></div>
 					</div>
 				</div>
 			</div>
-			<div class="spinner">
-			<div class="dot1"></div>
-			<div class="dot2"></div>
+
 			</div>
 			<div class="card">
 			    <table>
 			        <tbody>
+			            <tr class="card-row">
+			              <td>
+			              	<p class="card-departure-time">Heure départ<br>
+			              	<span class="card-departure-place">Lieu départ</span></p>
+                   		 </td>
+			              <td>
+			              	<p class="card-duration">Durée</p>
+                  		 </td>
+			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
+			              	<span class="card-arrival-place">Lieu arrivée</span></p>
+             		       </td>
+			              <td class="cell-price">
+			                <p class="card-price">Prix</p>
+			              </td>
+			              <td class="card-icon-favorite">
+			              	<%= form_tag(favorites_path, method: "post", remote: true) do %>
+				                <input type="hidden" name="city_departure" value ="something" />
+				                <input type ="hidden" name ="destination" value ="something" />
+				                <input type = "hidden" name ="price" value ="something" />
+				                <input type ="hidden" name ="departure_date" value ="something" />
+				                <input type ="hidden" name ="return_date" value ="something" />
+				                <input type ="hidden" name ="user_id" value ="something" />
+			                <%= button_tag(type: "submit", class: "icon_star") do %><i class='fa fa-star'></i><% end %>
+			                <% end %>
+			              </td>
+			            </tr>
 			            <tr>
 			              <td>
 			              	<p class="card-departure-time">Heure départ<br>
 			              	<span class="card-departure-place">Lieu départ</span></p>
-                    </td>
+                   		 </td>
 			              <td>
-			              	<p class="card-duration">X escale(s)<br>Durée</p>
-                    </td>
+			              	<p class="card-duration">Durée</p>
+                  		 </td>
 			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
 			              	<span class="card-arrival-place">Lieu arrivée</span></p>
-                    </td>
-			              <td class="cell-price">
-			                <p class="card-price">Prix<br></p>
-			              </td>
-			              <td class="card-icon-favorite">
-			                <!--- <p><%= image_tag("star-yellow.svg", class: "icon_star") %><br></p> --->
-			              </td>
-			            </tr>
-			            <tr>
-							<td></td>
-			              <td><p class="card-details"><button type="button" class="button-blue">Détails</button></p>
-                    </td>
-			              <td class="font-weight-normal align-middle">
-                    </td>
+             		       </td>
 			              <td class="cell-price">
 			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
-                    </td>
+                    		</td>
+			              <td></td>
 			            </tr>
 			        </tbody>
 			    </table>
@@ -159,64 +173,10 @@
 
 			<div class="col">
 				<div class="section_title text-center">
-					<button class="button-blue"><i class="fa fa-home"></i> Résultats suivants </button>
+					<button class="button-blue">Résultats suivants<br><i class='fa fa-angle-down'></i></button>
+
       			</div>
       		</div>
-		</div>
-	</div>
-
-
-    <!-- Cards with Details collapse -->
-
-	<div class="section_title text-center">
-						<h2>Détails du vol</h2><br><br><br><br>
-					</div>
-				</div>
-			</div>
-		<div>
-
-			<div class="card">
-			    <table>
-			        <tbody>
-			            <tr class="card-show-flight-main">
-			              <td>
-			              	<p class="card-show-departure">Heure départ<br>
-			              	<span class="card-departure-place">Lieu départ</span></p></td>
-			              <td>
-			              	<p class="card-duration">X escale(s)<br>Durée</p></td>
-			              <td class="font-weight-normal align-middle">	<p class="card-show-arrival">Heure arrivée<sup> +1</sup><br>
-			              	<span class="card-arrival-place">Lieu arrivée</span></p></td>
-			            </tr>
-			         	<tr class="card-show-flight-main">
-			              <td></td>
-			              <td class="card-show-td-button" align="center">
-			            	<button type="button" class="button-blue" data-toggle="collapse" data-target="#collapseme">Détails</button>
-			              	</td>
-			              <td></td>
-			            </tr>
-
-			            <tr class="collapse out" id="collapseme">
-			              <td>
-			              	<p class="card-show-flight-details">Durée</p></td>
-			              <td>
-			              	<p class="card-show-flight-details">Heure départ<br>Heure arrivée<sup> +1</sup></p>
-                    </td>
-			              <td class="font-weight-normal align-middle">
-                      <p class="card-show-flight-details">AITA aéroport<br>AITA aéroport</p>
-                    </td>
-			            </tr>
-			        </tbody>
-			    </table>
-			</div>
-
-				<div class="col">
-					<div class="section_title text-center">
-						<span class="card-show-price">Prix   </span><a href="#" class="btn btn-outline-danger mr-1"> Réserver
-      					</a>
-      				</div>
-      			</div>
-
-			</div>
 		</div>
 	</div>
 
@@ -232,35 +192,35 @@
 						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
               <%= link_to image_tag("popular_1.jpg"), "https://www.tripadvisor.fr/Home-g293969?fid=65aa7117-76fc-429c-843d-e99314cd982d", target: "_blank" %>
 							<div class="popular_item_content">
-								<div class="popular_item_title">Turkey</div>
+								<div class="popular_item_title">Turquie</div>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
               <%= link_to image_tag("popular_2.jpg"), "https://www.tripadvisor.fr/Home-g28932", target: "_blank" %>
 							<div class="popular_item_content">
-								<div class="popular_item_title">Hawai</div>
+								<div class="popular_item_title">Hawaï</div>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
               <%= link_to image_tag("popular_3.jpg"), "https://www.tripadvisor.fr/Home-g186591", target: "_blank" %>
 							<div class="popular_item_content">
-								<div class="popular_item_title">Ireland</div>
+								<div class="popular_item_title">Irelande</div>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
               <%= link_to image_tag("popular_4.jpg"), "https://www.tripadvisor.fr/Home-g293915", target: "_blank" %>
 							<div class="popular_item_content">
-								<div class="popular_item_title">Thailand</div>
+								<div class="popular_item_title">Thaïlande</div>
 							</div>
 						</div>
 
 						<div class="col-sm-12 col-lg-3 col-md-6 trip_picture">
               <%= link_to image_tag("popular_5.jpg"), "https://www.tripadvisor.fr/Home-g294453", target: "_blank" %>
 							<div class="popular_item_content">
-								<div class="popular_item_title">Croatia</div>
+								<div class="popular_item_title">Croatie</div>
 							</div>
 						</div>
 
@@ -291,3 +251,17 @@
 		</div>
 	</div>
 </div>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5cff5ce3267b2e578531c6f8/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->

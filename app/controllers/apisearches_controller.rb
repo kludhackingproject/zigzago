@@ -6,8 +6,6 @@ class ApisearchesController < ApplicationController
     def index
     end
 
-# vue correspondante à l'affichage des recherches enregistrées (et non du détail des recherches effectuées)
-
     def show
     end
 
@@ -40,7 +38,9 @@ class ApisearchesController < ApplicationController
         format.js
       end
 
-      @apisearch = Apisearch.new(city_departure: departure_find, city_arrival: arrival_find, departure_date: departure_date_find, return_date: return_date_find)
+
+      @apisearch = Apisearch.new(city_arrival: arrival_find, city_departure: departure_find, departure_date: departure_date_find, return_date: return_date_find, user_id: current_user.id)
+
 
       if params[:save_search] == '1'
         @apisearch.save

@@ -74,18 +74,18 @@ $(document).ready(function() {
 
   ///// Spinner //////
 
-  // hide spinner
-  $(".spinner").hide();
-
-
   // show spinner on AJAX start
-  $(btn-search-plane).ajaxStart(function(){
+  $(document).ajaxStart(function(){
     $(".spinner").show();
   });
 
   // hide spinner on AJAX stop
-  $(create).ajaxComplete(function(){
+  $(document).ajaxComplete(function(){
     $(".spinner").hide();
   });
 
+});
+
+$( "button.icon_star" ).submit(function() {
+  $( this ).css('color', '#eec70d');
 });
