@@ -1015,9 +1015,10 @@ section
 .find_title
 {
 	width: 100%;
-	font-size: 30px;
-	font-weight: 300;
+	font-size: 35px;
+	font-weight: 350;
 	color: #FFFFFF;
+	margin-bottom: 150px;
 }
 .find_form
 {
@@ -1090,12 +1091,12 @@ section
 }
 .find_input:hover
 {
-	border: solid 2px #000000;
+	border: solid 2px #fe435b;
 }
 .find_input:focus
 {
-	outline-color: #000000;
-	border: solid 2px #000000;
+	outline-color: #fe435b;
+	border: solid 2px #fe435b;
 }
 .find_button
 {
@@ -1103,7 +1104,7 @@ section
 	height: 56px;
 	font-size: 16px;
 	font-weight: 500;
-	color: #000000;
+	color: #131a2f;
 	line-height: 52px;
 	padding: 0 140px 0px 50px;
 	text-align: center;
@@ -1121,7 +1122,7 @@ section
 }
 .find_button:hover
 {
-	opacity: 0.8;
+	opacity: 0.70;
 }
 
 .delete_button
@@ -1136,7 +1137,7 @@ section
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	background: #000000 !important;
+	background: #131a2f !important;
 	-webkit-transform: translateY(14px);
 	-moz-transform: translateY(14px);
 	-ms-transform: translateY(14px);
@@ -1150,6 +1151,7 @@ section
 {
 	opacity: 0.8;
 }
+
 .find_input::-webkit-input-placeholder
 {
 	font-size: 14px !important;

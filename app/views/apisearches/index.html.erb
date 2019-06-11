@@ -20,35 +20,35 @@
 
 						<div class="col-md-2 col-lg-2 find_item">
 							<div>Départ :</div>
-
-							<input id="basics" type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>>
+							<input id="input-departure" type="text" class="destination find_input" required="required" placeholder="D'où partir ?" <%= text_field_tag :departure %>
 						</div>
 
 						<div class="col-md-2 col-lg-2 find_item">
 							<div>Arrivée :</div>
-
-  							<input type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>>
+  							<input id="input-arrival" type="text" class="destination find_input" required="required" placeholder="Où aller ?" <%= text_field_tag :arrival %>
   						</div>
 
 						<div class="col-md-2 col-lg-2 find_item">
 							<div>Date aller :</div>
-
-                <input class="destination find_input" <%= date_field_tag :departure_date %>>
-
+                <input class="destination find_input" <%= date_field_tag :departure_date %>
 						</div>
 
 						<div class="col-md-2 col-lg-2 find_item">
 							<div>Date retour :</div>
-
-                <input class="destination find_input" <%= date_field_tag :return_date %>>
-
+                <input class="destination find_input" <%= date_field_tag :return_date %>
 						</div>
 
             <div class="col-md-2 col-lg-2 find_item">
               <%= button_tag(type: "submit", class: "btn-search-plane") do %>
-                  <i class='fa fa-plane search-plane animated infinite pulse delay-2s' data-toggle="tooltip" title="Rechercher mon vol"></i>
+                  <i class='fa fa-plane search-plane animated infinite pulse delay-2s ' data-toggle="tooltip" title="Rechercher mon vol"></i>
               <% end %>
             </div>
+
+            <% if current_user %>
+                <div>Save search :</div>
+                <%= check_box_tag :save_search %>
+            <% end %>
+
           <% end %>
   			</div>
   		</div>
@@ -115,10 +115,14 @@
 				<div class="col">
 					<div class="section_title text-center">
 						<h2>Vos résultats de recherche</h2><br><br><br><br>
+							<div class="spinner">
+							<div class="dot1"></div>
+							<div class="dot2"></div>
 					</div>
 				</div>
 			</div>
 
+			</div>
 			<div class="card">
 			    <table>
 			        <tbody>
