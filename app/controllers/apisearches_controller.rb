@@ -33,10 +33,12 @@ class ApisearchesController < ApplicationController
         format.js
       end
 
-      @apisearch = Apisearch.new(city_arrival: arrival_find, city_departure: departure_find, departure_date: departure_date_find, return_date: return_date_find)
+      if user_signed_in?
+        @apisearch = Apisearch.new(city_arrival: arrival_find, city_departure: departure_find, departure_date: departure_date_find, return_date: return_date_find, user_id: current_user.id)
 
-      if params[:save_search] == '1'
-        @apisearch.save
+        if params[:save_search] == '1'
+          @apisearch.save
+        end        
       end
     end
 
