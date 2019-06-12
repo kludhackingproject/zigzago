@@ -11,12 +11,12 @@ class FavoritesController < ApplicationController
 
   # récupérer infos de la carte apisearches
   def create
-    @favorite = Favorite.create(city_departure: params[:city_departure],
+    @favorite = Favorite.create(duration: params[:duration],
+                             city_departure: params[:city_departure],
                              destination: params[:destination],
                              price: params[:price],
                              departure_date: params[:departure_date],
                              return_date: params[:return_date],
-                             duration: params[:duration],
                              back_destination: params[:back_destination],
                              back_departure_date: params[:back_departure_date],
                              back_return_date: params[:back_return_date],
