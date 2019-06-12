@@ -362,7 +362,6 @@ td.float-right {
 
 .find_background {
 	background-color: #131a2f;
-	opacity: 0.8;
 }
 
 .find_item {
@@ -382,6 +381,7 @@ td.float-right {
 
 .search-plane {
 	color: #FFFFFF;
+	margin-top: 20px;
 
 }
 .search-plane:hover {
@@ -393,7 +393,7 @@ td.float-right {
 	margin-left: 30px;
 	background: none;
 	border: none;
-	font-size: 25px;
+	font-size: 40px;
 }
 
 .page-link {

@@ -52,14 +52,8 @@
              		       </td>
 			              <td class="cell-price">
 			              	<p class="card-book">
-                        <% if @price_result[i].to_i < 150 %>
-                             <button type="button" class="btn btn-outline-success mr-1">Réserver</button></p>
-                        <% else %>
-                             <button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
-                        <% end %>
-
-											<%= link_to "Réserver", order_path(:id => i, :price => @price_result[i]), target: "_blank", class:"btn btn-outline-danger mr-1" %>
-
+                          <%= link_to "Réserver", order_path(:id => i, :price => @price_result[i]), target: "_blank", class:"btn btn-outline-danger mr-1" %></p>
+                        
                     </td>
 			            </tr>
 			        </tbody>
