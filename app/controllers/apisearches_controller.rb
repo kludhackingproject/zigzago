@@ -7,6 +7,12 @@ class ApisearchesController < ApplicationController
     end
 
     def show
+      
+      if user_signed_in?
+        @apisearch = Apisearch.where(user_id: current_user.id)
+      else
+        redirect_to apisearches_path
+      end
     end
 
     def new
@@ -48,7 +54,9 @@ class ApisearchesController < ApplicationController
     end
 
     def destroy
-      @apisearch.destroy notice: "Recherche détruite"
+      @apisearch = Apisearch.find(params[:id])
+      @apisearch.destroy
+      redirect_to apisearch_path
     end
 
 end
