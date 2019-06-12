@@ -1,7 +1,7 @@
 <div class="super_container">
 
   <div class="home">
-    <%= image_tag("home.jpg", class: "home_background") %>
+    <%= image_tag("home1.jpg", class: "home_background") %>
 		<div class="home_content home_content_banner">
 			<div class="home_content_inner">
 				<div class="home_text_large">zigzago</div>
@@ -29,12 +29,12 @@
   						</div>
 
 						<div class="col-md-2 col-lg-2 find_item">
-							<div>Date aller :</div>
+							<div>Aller :</div>
                 <input class="destination find_input" <%= date_field_tag :departure_date %>
 						</div>
 
 						<div class="col-md-2 col-lg-2 find_item">
-							<div>Date retour :</div>
+							<div>Retour :</div>
                 <input class="destination find_input" <%= date_field_tag :return_date %>
 						</div>
 
@@ -44,13 +44,12 @@
               <% end %>
             </div>
 
-            <% if current_user %>
-                <div>Save search :</div>
-                <%= check_box_tag :save_search %>
-            <% end %>
-
           <% end %>
   			</div>
+  			<% if current_user %>
+            <div>Save search :
+            <%= check_box_tag :save_search %></div>
+            <% end %>
   		</div>
     </div>
 
