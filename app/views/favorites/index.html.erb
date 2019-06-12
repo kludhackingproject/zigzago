@@ -2,68 +2,60 @@
 	
 	<!-- Home -->
 
-	<div class="home">
-		<!-- Image by https://unsplash.com/@peecho -->
-		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="https://i.f1g.fr/media/madame/1900x800_crop/sites/default/files/img/2018/05/la-felicita-a-station-f.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="home_content">
-						<div class="home_content_inner">
-							<div class="home_title">Vos favoris</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>		
-	</div>
-
+	<div class="home profile">
+    	<div class="home_background parallax-window small-banner" data-parallax="scroll" data-speed="0.8">
+      	<%= image_tag("elements.jpg") %>
+    	</div>
+    	<div class="home_content">
+      		<div class="home_content_inner">
+        		<span class="home_text_small">Vos favoris</span>
+      		</div>
+    	</div>
+  	</div>
 
 	<div class="services">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h2>Vos favoris</h2><br><br><br><br>
 					</div>
 				</div>
 			</div>
 
-<%= @favorite.each do |favorite| %>
+<% @favorites.each do |favorite| %>
 
 	<div class="card">
 	    <table>
 	        <tbody>
 	            <tr class="card-row">
 	              <td>
-	              	<p class="card-departure-time">favorite.departure_date<br>
-		              	<span class="card-departure-place">favorite.city_departure</span></p>
+	              	<p class="card-departure-time"><%= favorite.departure_date %><br>
+		              	<span class="card-departure-place"><%= favorite.city_departure %></span></p>
 	       		 </td>
 	             <td>
-	              	<p class="card-duration">favorite.duration</p>
+	              	<p class="card-duration"><%= favorite.duration %></p>
 	       		 </td>
-	             <td class="font-weight-normal align-middle">	<p class="card-arrival-time">favorite.return_date<br>
-		              	<span class="card-arrival-place">favorite.destination</span></p>
+	             <td class="font-weight-normal align-middle">	<p class="card-arrival-time"><%= favorite.return_date %><br>
+		              	<span class="card-arrival-place"><%= favorite.destination %></span></p>
 	    	     </td>
 	             <td class="cell-price">
-	                <p class="card-price">favorite.price</p>
-	             </td>
-	             <td class="card-icon-favorite">
-	             </td>
+	                <p class="card-price"><%= favorite.price %> €</p></br>
+					<%= link_to "Supprimer", favorite_path(:id => favorite.id), method: "DELETE", class:"btn btn-outline-danger mr-1" %>
+			      </td>
 	            </tr>
 		        <tr>
 		         <td>
-	             	<p class="card-departure-time">favorite.back_departure_date<br>
-	              	<span class="card-departure-place">favorite.back_city_departure</span></p>
+	             	<p class="card-departure-time"><%= favorite.back_departure_date %><br>
+	              	<span class="card-departure-place"><%= favorite.back_city_departure %></span></p>
 	      		 </td>
 	             <td>
-	              	<p class="card-duration">favorite.back_duration</p>
+	              	<p class="card-duration"><%= favorite.back_duration %></p>
 	      		 </td>
-	             <td class="font-weight-normal align-middle"> <p class="card-arrival-time">favorite.back_return_date<br>
-	              	<span class="card-arrival-place">favorite.back_destination</span></p>
+	             <td class="font-weight-normal align-middle"> <p class="card-arrival-time"><%= favorite.back_return_date %><br>
+	              	<span class="card-arrival-place"><%= favorite.back_destination %></span></p>
 	             </td>
 	             <td class="cell-price">
-	              	<p class="card-price">favorite.back_price</p>
+	             	<%= link_to "Réserver", target: "_blank", class:"btn btn-outline-danger mr-1" %>
 	       		 </td>
 	             <td></td>
 	            </tr>
@@ -72,45 +64,3 @@
 	</div>
 	
 <% end %>
-
-			<div class="card">
-			    <table>
-			        <tbody>
-			            <tr class="card-row">
-			              <td>
-			              	<p class="card-departure-time">Heure départ<br>
-			              	<span class="card-departure-place">Lieu départ</span></p>
-                   		 </td>
-			              <td>
-			              	<p class="card-duration">Durée</p>
-                  		 </td>
-			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
-			              	<span class="card-arrival-place">Lieu arrivée</span></p>
-             		       </td>
-			              <td class="card-favorites-price">
-			                <a href="#" class="button-rose">Prix</a>
-			              </td>
-			            </tr>
-			            <tr>
-			              <td>
-			              	<p class="card-departure-time">Heure départ<br>
-			              	<span class="card-departure-place">Lieu départ</span></p>
-                   		 </td>
-			              <td>
-			              	<p class="card-duration">Durée</p>
-                  		 </td>
-			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time">Heure arrivée<br>
-			              	<span class="card-arrival-place">Lieu arrivée</span></p>
-             		       </td>
-			              <td class="card-favorites-price">
-			              	<a href="#" class="btn btn-outline-danger mr-1">Supprimer</a>
-			              	<div class="checkout_btn_inner d-flex align-items-center">
-							</div>
-			              	</td>
-			              <td></td>
-			            </tr>
-			        </tbody>
-			    </table>
-			</div>
-		</div>
-	</div>

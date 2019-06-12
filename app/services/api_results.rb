@@ -7,7 +7,7 @@ class ApiResults
         client = OAuth2::Client.new(ENV['AMADEUS_CLIENT_ID'], ENV['AMADEUS_CLIENT_SECRET'], site: 'https://test.api.amadeus.com', token_url: 'https://test.api.amadeus.com/v1/security/oauth2/token')
         token = client.client_credentials.get_token
         
-        response = token.get("/v1/shopping/flight-offers?origin=#{departure}&destination=#{arrival}&departureDate=#{departure_date}&returnDate=#{return_date}&maxPrice=200&nonStop=true")
+        response = token.get("/v1/shopping/flight-offers?origin=#{departure}&destination=#{arrival}&departureDate=#{departure_date}&returnDate=#{return_date}&nonStop=true")
         
         response_body = JSON.parse(response.body)
         
