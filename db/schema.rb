@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2019_06_12_074243) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city_arrival"
-    t.time "duration"
     t.index ["user_id"], name: "index_apisearches_on_user_id"
   end
 
@@ -46,7 +45,6 @@ ActiveRecord::Schema.define(version: 2019_06_12_074243) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "duration"
     t.string "back_city_departure"
     t.string "back_destination"
     t.datetime "back_departure_date"
