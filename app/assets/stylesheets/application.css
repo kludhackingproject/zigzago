@@ -491,6 +491,44 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
 	padding-bottom: 40px;
 }
 
+.order-details{
+	width: 500px;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px; 
+	padding-bottom: 25px;
+	font-size: 25px;
+	color: black;
+}
+
+.list-group-item{
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.stripe-reserv-button{
+	margin:auto;
+	width: 100px;
+	padding-bottom: 150px;
+}
+
+.order-details .card{
+	width: 600px;
+	color: black;
+	text-align: center;
+}
+
+.table{
+	width: 1000px;
+	margin: auto;
+	color:black;
+	margin-top: 75px;
+	margin-bottom: 400px;
+	font-size: 17px;
+}
+
+.table .td{
+	padding-top: 8px;
 .card_registered {
 	width: 100%;
 	height: 180px;
