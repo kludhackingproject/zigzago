@@ -7,7 +7,12 @@ class ApisearchesController < ApplicationController
     end
 
     def show
-      @apisearch = Apisearch.where(user_id: current_user.id)
+      
+      if user_signed_in?
+        @apisearch = Apisearch.where(user_id: current_user.id)
+      else
+        redirect_to apisearches_path
+      end
     end
 
     def new
