@@ -45,6 +45,11 @@ ActiveRecord::Schema.define(version: 2019_06_12_082611) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "back_city_departure"
+    t.string "back_destination"
+    t.datetime "back_departure_date"
+    t.datetime "back_return_date"
+    t.time "back_duration"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
