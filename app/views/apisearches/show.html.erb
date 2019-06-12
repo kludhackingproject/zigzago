@@ -1,8 +1,6 @@
 
 <div class="super_container">
 
-	<!-- Home -->
-
   <div class="home">
     <%= image_tag("home0.jpg", class: "home_background") %>
 		<div class="home_content">
@@ -13,23 +11,20 @@
 		</div>
   </div>
 
-	<!-- Save Form -->
+<div class="row">
+	<div class="col">
+		<div class="section_title text-center">
+			<h2>Vos résultats de recherche</h2>
+		</div>
+	</div>
+</div>
 
-	<div class="find">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="find_title text-center">Mes recherches enregistrées</div>
-				</div>
-
-				<div class="col-12">
-					<div class="find_form_container">
-						<%= form_tag url_for(action: 'show'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
-
-						
-						<%= @apisearch.each do |f| %>
-						<div class="card_registered">
-						<%= image_tag("save_search.jpg", class: "find_background") %>
+<div class="col-12">
+	<div class="find_form_container">
+		<%= form_tag url_for(action: 'show'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
+			<%= @apisearch.each do |f| %>
+				<div class="card_registered">
+					<%= image_tag("save_search.jpg", class: "find_background") %>
 						<div class="card_registered_row">
 							<div class="card_registered_column">
 								<div class="card_registered_departure">
@@ -51,7 +46,7 @@
 							</div>
 							<div class="card_registered_column">
 								<div class="card_registered_button_search">
-									<%= link_to apisearches_path, class: "btn-search-plane" do %>
+									<%= link_to root_path, class: "btn-search-plane" do %>
 									<i class='fa fa-plane search-plane animated infinite pulse delay-2s ' data-toggle="tooltip" title="Rechercher mon vol"></i>
 									<% end %>
 								</div>
@@ -62,12 +57,8 @@
 								</div>
 							</div>
 						</div>
-						</div>
-						<% end %>
-						<% end%>
-					</div>
 				</div>
-			</div>
-		</div>
+			<% end %>
+		<% end%>
 	</div>
 </div>
