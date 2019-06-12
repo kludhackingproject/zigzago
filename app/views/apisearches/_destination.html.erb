@@ -26,17 +26,14 @@
              		       </td>
 			              <td class="cell-price">
 			                <p class="card-price"><%= @price_result[i] %></p>
+
 			              </td>
 			              <td class="card-icon-favorite">
-			              	<%= form_tag(favorites_path, method: "post", remote: true) do %>
-				                <input type="hidden" name="city_departure" value ="something" />
-				                <input type ="hidden" name ="destination" value ="something" />
-				                <input type = "hidden" name ="price" value ="something" />
-				                <input type ="hidden" name ="departure_date" value ="something" />
-				                <input type ="hidden" name ="return_date" value ="something" />
-				                <input type ="hidden" name ="user_id" value ="something" />
-			                <%= button_tag(type: "submit", class: "icon_star") do %><i class='fa fa-star'></i><% end %>
-			                <% end %>
+			              	<% if current_user %>
+                    			<%= link_to '<button><i class="fa fa-star"></i></button>'.html_safe, favorites_path, data: {:method => "create"} %>
+                  			<% else %>
+                    			<%= link_to '<button><i class="fa fa-star"></i></button>'.html_safe,  new_user_session_path %>
+                  			<% end %>
 			              </td>
 			            </tr>
 			            <tr>
@@ -51,13 +48,13 @@
 			              	<span class="card-arrival-place"> <%= @destination_result[i + 1] %> </span></p>
              		       </td>
 			              <td class="cell-price">
-			              	<p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
-                    </td>
+			              	<%= link_to "Réserver", order_path(:id => i, :price => @price_result[i]), target: "_blank", class:"btn btn-outline-danger mr-1" %>
+                   		 </td>
 			              <td></td>
 			            </tr>
 			        </tbody>
 			    </table>
 			</div>
-			<% } %>
+			<% end %>
 		</div>
   </div>
