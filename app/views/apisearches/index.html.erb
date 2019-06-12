@@ -44,15 +44,14 @@
               <% end %>
             </div>
 
-          <% end %>
-  			</div>
   			<% if current_user %>
             <div>Save search : </div>
             <%= check_box_tag :save_search %>
             <% end %>
+			<% end %>
   		</div>
     </div>
-
+</div>
   <div id="results"></div>
 
 	<div class="services">
@@ -93,56 +92,6 @@
 			</div>
 		</div>
   </div>
-
-
-      <div class="card">
-          <table>
-              <tbody>
-                  <tr class="card-row">
-                    <td>
-                      <p class="card-departure-time">Heure départ<br>
-                      <span class="card-departure-place">Lieu départ</span></p>
-                       </td>
-                    <td>
-                      <p class="card-duration">Durée</p>
-                       </td>
-                    <td class="font-weight-normal align-middle">  <p class="card-arrival-time">Heure arrivée<br>
-                      <span class="card-arrival-place">Lieu arrivée</span></p>
-                       </td>
-                    <td class="cell-price">
-                      <p class="card-price">Prix</p>
-                    </td>
-                    <td class="card-icon-favorite">
-                      <%= form_tag(favorites_path, method: "post", remote: true) do %>
-                        <input type="hidden" name="city_departure" value ="something" />
-                        <input type ="hidden" name ="destination" value ="something" />
-                        <input type = "hidden" name ="price" value ="something" />
-                        <input type ="hidden" name ="departure_date" value ="something" />
-                        <input type ="hidden" name ="return_date" value ="something" />
-                        <input type ="hidden" name ="user_id" value ="something" />
-                      <%= button_tag(type: "submit", class: "icon_star_default") do %><i class='fa fa-star'></i><% end %>
-                      <% end %>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p class="card-departure-time">Heure départ<br>
-                      <span class="card-departure-place">Lieu départ</span></p>
-                       </td>
-                    <td>
-                      <p class="card-duration">Durée</p>
-                       </td>
-                    <td class="font-weight-normal align-middle">  <p class="card-arrival-time">Heure arrivée<br>
-                      <span class="card-arrival-place">Lieu arrivée</span></p>
-                       </td>
-                    <td class="cell-price">
-                      <p class="card-book"><button type="button" class="btn btn-outline-danger mr-1">Réserver</button></p>
-                        </td>
-                    <td></td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
 
     <!-- Popular -->
 
