@@ -1,4 +1,5 @@
 <div class="super_container">
+
   <div class="home contact">
     <div class="home_background parallax-window small-banner" data-parallax="scroll" data-speed="0.8">
       <%= image_tag("news.jpg") %>
@@ -9,16 +10,31 @@
       </div>
     </div>
   </div>
-  <div class="contact_title">  <%= @price %> </div>
 
-  <%= form_tag url_for(action: 'create', :controller => 'orders', :price => @price), method: "post" do %>
+  <div class="order-details">
+  
 
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-            data-description="A month's subscription"
-            data-label="Réserver"
-            data-amount="<%= @price_in_card %>"
-            data-locale="eur">
-    </script>
-  <% end %>
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item">Destination <br><%= @destination %></br></li>
+      <li class="list-group-item">Départ <br><%= @city_departure %> à <%= @departure_date %></br></li>
+      <li class="list-group-item">Date<br><%= @departure_date %></br></li>
+      <li class="list-group-item"> Prix <br><%= @price %>€</br></li>
+
+    </ul>
+
+  </div>
+
+  <div class="stripe-reserv-button">
+    <%= form_tag url_for(action: 'create', :controller => 'orders', :city_departure => @city_departure, :destination => @destination, :price => @price, :departure_date => @departure_date, :arrival_date => @arrival_date, :duration => @duration, :back_citydeparture => @back_citydeparture, :back_destination => @back_destination, :back_departuredate => @back_departuredate, :back_arrivaldate => @back_arrivaldate, :back_duration => @back_duration), method: "post" do %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-label="Réserver"
+          data-amount="<%= @price_in_card %>"
+          data-locale="eur">
+      </script>
+    <% end %>
+  </div>
+
 </div>
