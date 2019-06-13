@@ -22,7 +22,7 @@ class FavoritesController < ApplicationController
                              back_return_date: params[:back_return_date],
                              back_city_departure: params[:back_city_departure],
                              back_duration: params[:back_duration],
-                             user_id: current_user.id                             )
+                             user_id: current_user.id)
     respond_to do |format|
      format.html { redirect_to apisearches_path }
      format.js
@@ -32,7 +32,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
     flash[:success] = "Offre supprimée des favoris !"
-    render :index
+    redirect_to favorites_path
   end
 
   def destroy_date
