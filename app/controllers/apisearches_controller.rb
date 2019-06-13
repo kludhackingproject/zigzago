@@ -1,8 +1,18 @@
 class ApisearchesController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
+
     def index
     end
 
     def show
+      
+      if user_signed_in?
+        @apisearch = Apisearch.where(user_id: current_user.id)
+      else
+        redirect_to apisearches_path
+      end
     end
 
     def new
@@ -16,6 +26,7 @@ class ApisearchesController < ApplicationController
       return_date_find = params[:return_date]
 
       @api_results = ApiResults.new(departure_find, arrival_find, departure_date_find, return_date_find)
+
 
 
       @departure_result = @api_results.departure
@@ -43,7 +54,11 @@ class ApisearchesController < ApplicationController
     end
 
     def destroy
-      @apisearch.destroy notice: "Recherche détruite"
+      @apisearch = Apisearch.find(params[:id])
+      @apisearch.destroy
+      redirect_to apisearch_path
     end
 
 end
+
+
