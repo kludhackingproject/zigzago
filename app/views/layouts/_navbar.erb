@@ -61,7 +61,7 @@
 					<a id="connect_button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="submit">Profil</a>
 					<ul class="dropdown-menu">
 				    <% if current_user %>
-							<li class="nav-item"><%= link_to 'Favoris', favorites_path %></li>
+							<li class="nav-item"><%= link_to 'Favoris', favorites_path, class: 'nav-link' %></li>
 							<li class="nav-item"><%= link_to 'Mes recherches', apisearch_path(:id => current_user.id), class: 'nav-link' %></li>
 							<li class="nav-item"><%= link_to 'Mes commandes', orders_path, method: :index, class: 'nav-link' %></li>
 							<li class="nav-item"><%= link_to 'Mon profil', profile_path(:id => current_user.id), class: 'nav-link' %></li>
