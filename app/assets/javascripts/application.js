@@ -38,6 +38,7 @@
 //= require contact_custom
 //= require custom
 //= require elements_custom
+//= require news_custom
 //= require offers_custom
 
 // let icon_star = document.querySelector(".button-blue")
@@ -63,10 +64,10 @@ $(document).ready(function() {
   		for (var i = 0, len = data.length; i < len; i++) {
   			autoComplete.push(data[i].location + ", " + data[i].code);
   		}
-  		$( "#input-departure" ).autocomplete({
+  		$( "#departure" ).autocomplete({
   			source: autoComplete
   		});
-      $( "#input-arrival" ).autocomplete({
+      $( "#arrival" ).autocomplete({
         source: autoComplete
       });
   	});
@@ -85,12 +86,3 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-
-
-///// Add to favorites /////
-
-$(document).ready(function(){
-    $("button.icon_star_default").click(function(){
-        $(this).removeClass("icon_star_default").addClass("icon_star_yellow");
-    });
-});

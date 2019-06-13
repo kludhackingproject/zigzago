@@ -24,10 +24,8 @@ class ApisearchesController < ApplicationController
       arrival_find = params[:arrival].split(", ").last
       departure_date_find = params[:departure_date]
       return_date_find = params[:return_date]
-
+      
       @api_results = ApiResults.new(departure_find, arrival_find, departure_date_find, return_date_find)
-
-
 
       @departure_result = @api_results.departure
       @departuredate_result = @api_results.departure_date

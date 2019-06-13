@@ -17,21 +17,22 @@
 							<li class="main_nav_item"><%= link_to 'Recherche', root_path %></li>
 							<li class="main_nav_item"><%= link_to 'Contact', contact_index_path %></li>
 							<li class="main_nav_item_dropdown submenu dropdown">
-								<a href="#" id="connect_button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="submit">Profil</a>
-                <ul class="dropdown-menu">
-                  <% if current_user %>
-										<li class="nav-item"><%= link_to 'Favoris', root_path, class: 'nav-link' %></li>
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="submit">Profil</a>
+		                		<ul class="dropdown-menu">
+		                  			<% if current_user %>
+										<li class="nav-item"><%= link_to 'Mes Favoris', favorites_path, class: 'nav-link' %></li>
 										<li class="nav-item"><%= link_to 'Mes recherches', apisearch_path(:id => current_user.id), class: 'nav-link' %></li>
 										<li class="nav-item"><%= link_to 'Mes commandes', orders_path, method: :get, class: 'nav-link' %></li>
-                    <li class="nav-item"><%= link_to 'Mon profil', profile_path(:id => current_user.id), class: 'nav-link' %></li>
-                    <li class="nav-item"><%= link_to 'Editer mon profil', edit_user_registration_path, class: 'nav-link' %></li>
-                    <li class="nav-item"><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
-                  <% else %>
-                    <li class="nav-item"><%= link_to "Créer un compte", new_user_registration_path, class: 'nav-link' %></li>
-                    <li class="nav-item"><%= link_to "Se connecter", new_user_session_path, class: 'nav-link' %></li>
-                  <% end %>
-                </ul>
-		          </li>
+					                    <li class="nav-item"><%= link_to 'Mon profil', profile_path(:id => current_user.id), class: 'nav-link' %></li>
+					                    <li class="nav-item"><%= link_to 'Editer mon profil', edit_user_registration_path, class: 'nav-link' %></li>
+					                    <li class="nav-item"><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+					                <% else %>
+					                	<li class="nav-item"><%= link_to "Créer un compte", new_user_registration_path, class: 'nav-link' %></li>
+					                	<li class="nav-item"><%= link_to "Se connecter", new_user_session_path, class: 'nav-link' %></li>
+		                  			<% end %>
+		                		</ul>
+		         			</li>
+
 						</ul>
 					</nav>
 
@@ -57,10 +58,10 @@
 				<li class="menu_item menu_mm"><%= link_to 'Recherche', root_path %></li>
 				<li class="menu_item menu_mm"><%= link_to 'Contact', contact_index_path %></li>
 				<li class="menu_item menu_mm submenu dropdown">
-					<a href="" id="connect_button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="submit">Profil</a>
+					<a id="connect_button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="submit">Profil</a>
 					<ul class="dropdown-menu">
 				    <% if current_user %>
-							<li class="nav-item"><%= link_to 'Favoris', favorites_path, class: 'nav-link' %></li>
+							<li class="nav-item"><%= link_to 'Favoris', favorites_path %></li>
 							<li class="nav-item"><%= link_to 'Mes recherches', apisearch_path(:id => current_user.id), class: 'nav-link' %></li>
 							<li class="nav-item"><%= link_to 'Mes commandes', orders_path, method: :index, class: 'nav-link' %></li>
 							<li class="nav-item"><%= link_to 'Mon profil', profile_path(:id => current_user.id), class: 'nav-link' %></li>
