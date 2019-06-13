@@ -63,13 +63,12 @@
 }
 
 .alert{
-	margin-left: 450px;
-	margin-right: 450px;
-	width: 500px;
+	position:fixed;
+	margin-left: 30%;
+	margin-right: 30%;
+    width: 40%;
+    z-index:9999;
 	text-align: center;
-	margin-bottom: 0px !important;
-	position: absolute;
-	z-index: 400;
 }
 
 .div-center {
@@ -434,7 +433,7 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
   background-color: #ffffff;
   text-decoration: none;
   cursor: pointer;
-  border: none; 
+  border: none;
   fill: white;
   outline:none;
   color: #cecece;
@@ -444,7 +443,7 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
   background-color: #ffffff;
   text-decoration: none;
   cursor: pointer;
-  border: none; 
+  border: none;
   fill: white;
   outline:none;
   color: #eec70d;
@@ -455,7 +454,7 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
-    overflow: hidden;        
+    overflow: hidden;
 	color: #FFFFFF;
 	padding: 10px 98px;
 	font-size: 20px;
@@ -502,7 +501,7 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
 	width: 500px;
 	margin: auto;
 	text-align: center;
-	padding-top: 100px; 
+	padding-top: 100px;
 	padding-bottom: 25px;
 	font-size: 25px;
 	color: black;
@@ -591,22 +590,19 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
 	height: 85px;
 	margin: 0px 0px 0px 0px;
 }
-.dropdown-menu-mm {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	z-index: 1000;
-	display: none;
-	float: left;
-	min-width: 10rem;
-	padding: .5rem 0;
-	margin: .125rem 0 0;
-	font-size: 1rem;
+
+.contact_form_container, .placeholder{
 	color: #131a2f;
-	text-align: left;
-	list-style: none;
-	background-color: #FFFFFF;
-	background-clip: padding-box;
-	border: 1px solid rgba(0,0,0,.15);
-	border-radius: .25rem;
 }
+
+.contact_send_btn{
+    width: 100%;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.contact_form_container{
+	padding-top: 80px;
+	padding-bottom: 70px;
+}
+
