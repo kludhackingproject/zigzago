@@ -63,10 +63,10 @@ $(document).ready(function() {
   		for (var i = 0, len = data.length; i < len; i++) {
   			autoComplete.push(data[i].location + ", " + data[i].code);
   		}
-  		$( "#input-departure" ).autocomplete({
+  		$( "#departure" ).autocomplete({
   			source: autoComplete
   		});
-      $( "#input-arrival" ).autocomplete({
+      $( "#arrival" ).autocomplete({
         source: autoComplete
       });
   	});

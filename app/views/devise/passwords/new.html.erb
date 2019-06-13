@@ -1,3 +1,5 @@
+<%= devise_error_messages! %>
+
 <div class="super_container">
 
   <div class="home profile">
@@ -18,7 +20,6 @@
         <div class="col-lg-6 devise-form">
           <div class="contact_form_container">
            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class: "clearfix", id: "contact_form") do |f| %>
-            	<%= render "devise/shared/error_messages", resource: resource %>
             	<%= f.label :adresse_email %><br />
 				<%= f.email_field :email, autofocus: true, autocomplete: "email", class: "contact_input contact_input_subject", id: "contact_input_subject", type: "email", placeholder: "Adresse email" %>
 				<%= f.submit "Réinitialiser", class: "contact_send_btn trans_200", id: "contact_send_btn" %>
