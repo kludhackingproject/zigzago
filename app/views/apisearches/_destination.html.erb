@@ -10,12 +10,7 @@
 			</div>
 		</div>
 
-		<% if @price_result.length == nil %>
-			<div class="no-result">
-				<p>Aucun vols ne corresponds à votre recherche.</p>
-			</div>
-		<% else %>
-			<% (0...@price_result.length).step(2) { |i| %>
+		<% (0...@price_result.length).step(2) { |i| %>
 				<div class="card">
 			    	<table>
 			       		<tbody>
@@ -61,8 +56,5 @@
 			    	</table>
 				</div>
 			<% } %>
-		<% end %>
-
 	</div>
-	
 </div>
