@@ -5,16 +5,12 @@ class ApiResults
     def initialize(departure, arrival, departure_date, return_date)
         
         client = OAuth2::Client.new(ENV['AMADEUS_CLIENT_ID'], ENV['AMADEUS_CLIENT_SECRET'], site: 'https://test.api.amadeus.com', token_url: 'https://test.api.amadeus.com/v1/security/oauth2/token')
+        token = client.client_credentials.get_token
+        response = token.get("/v1/shopping/flight-offers?origin=#{departure}&destination=#{arrival}&departureDate=#{departure_date}&returnDate=#{return_date}&nonStop=true")
+        response_body = JSON.parse(response.body)
+        
+        @results = response_body['data']
 
-        if OAuth2.errors.empty? == false
-            flash[:warning] = "Aucun vol pour votre recherche"
-            render 'new'
-        else
-            token = client.client_credentials.get_token
-            response = token.get("/v1/shopping/flight-offers?origin=#{departure}&destination=#{arrival}&departureDate=#{departure_date}&returnDate=#{return_date}&nonStop=true")
-            response_body = JSON.parse(response.body)
-            @results = response_body['data']
-        end
 
         @departure_array = []
         @destination_array = []
