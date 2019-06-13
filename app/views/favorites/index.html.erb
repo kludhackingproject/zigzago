@@ -18,49 +18,57 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-					</div>
+		
+						<%= if @favorites.each do |favorite| %>
+								<div class="card">
+								    <table>
+								        <tbody>
+								            <tr class="card-row">
+								              <td>
+								              	<p class="card-departure-time"><%= favorite.departure_date %><br>
+									              	<span class="card-departure-place"><%= favorite.city_departure %></span></p>
+								       		 </td>
+								             <td>
+								              	<p class="card-duration"><%= favorite.duration %></p>
+								       		 </td>
+								             <td class="font-weight-normal align-middle">	<p class="card-arrival-time"><%= favorite.return_date %><br>
+									              	<span class="card-arrival-place"><%= favorite.destination %></span></p>
+								    	     </td>
+								             <td class="cell-price">
+								                <p class="card-price"><%= favorite.price %> €</p></br>
+												<%= link_to "Supprimer", favorite_path(:id => favorite.id), method: "DELETE", class:"btn btn-outline-danger mr-1" %>
+										      </td>
+								            </tr>
+									        <tr>
+									         <td>
+								             	<p class="card-departure-time"><%= favorite.back_departure_date %><br>
+								              	<span class="card-departure-place"><%= favorite.back_city_departure %></span></p>
+								      		 </td>
+								             <td>
+								              	<p class="card-duration"><%= favorite.back_duration %></p>
+								      		 </td>
+								             <td class="font-weight-normal align-middle"> <p class="card-arrival-time"><%= favorite.back_return_date %><br>
+								              	<span class="card-arrival-place"><%= favorite.back_destination %></span></p>
+								             </td>
+								             <td class="cell-price">
+								             	<%= link_to "Réserver", target: "_blank", class:"btn btn-outline-danger mr-1" %>
+								       		 </td>
+								             <td></td>
+								            </tr>
+								        </tbody>
+								    </table>
+								</div>
+				  			<% end.empty? %>
+				  				<div class="contact_title">Vous n'avez pas de favori enregistré !</div>
+				  					<p>Vous pouvez enregistrer vos offres préférées depuis la page de recherche.</p>
+				  				<div class="section_title text-center">
+				  					<%= link_to "Rechercher de nouveaux trajets", root_path, class:"button-blue" %></br></br></br>
+				  				</div>
+			  			<% end %>
+
+			  		</div>
 				</div>
 			</div>
-
-<% @favorites.each do |favorite| %>
-
-	<div class="card">
-	    <table>
-	        <tbody>
-	            <tr class="card-row">
-	              <td>
-	              	<p class="card-departure-time"><%= favorite.departure_date %><br>
-		              	<span class="card-departure-place"><%= favorite.city_departure %></span></p>
-	       		 </td>
-	             <td>
-	              	<p class="card-duration"><%= favorite.duration %></p>
-	       		 </td>
-	             <td class="font-weight-normal align-middle">	<p class="card-arrival-time"><%= favorite.return_date %><br>
-		              	<span class="card-arrival-place"><%= favorite.destination %></span></p>
-	    	     </td>
-	             <td class="cell-price">
-	                <p class="card-price"><%= favorite.price %> €</p></br>
-					<%= link_to "Supprimer", favorite_path(:id => favorite.id), method: "DELETE", class:"btn btn-outline-danger mr-1" %>
-			      </td>
-	            </tr>
-		        <tr>
-		         <td>
-	             	<p class="card-departure-time"><%= favorite.back_departure_date %><br>
-	              	<span class="card-departure-place"><%= favorite.back_city_departure %></span></p>
-	      		 </td>
-	             <td>
-	              	<p class="card-duration"><%= favorite.back_duration %></p>
-	      		 </td>
-	             <td class="font-weight-normal align-middle"> <p class="card-arrival-time"><%= favorite.back_return_date %><br>
-	              	<span class="card-arrival-place"><%= favorite.back_destination %></span></p>
-	             </td>
-	             <td class="cell-price">
-	             	<%= link_to "Réserver", target: "_blank", class:"btn btn-outline-danger mr-1" %>
-	       		 </td>
-	             <td></td>
-	            </tr>
-	        </tbody>
-	    </table>
+		</div>
 	</div>
-	
-<% end %>
+</div>

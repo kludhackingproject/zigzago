@@ -20,9 +20,9 @@
 								<a href="#" id="connect_button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="submit">Profil</a>
                 <ul class="dropdown-menu">
                   <% if current_user %>
-										<li class="nav-item"><%= link_to 'Favoris', root_path, class: 'nav-link' %></li>
-										<li class="nav-item"><%= link_to 'Mes recherches', contact_index_path, class: 'nav-link' %></li>
-										<li class="nav-item"><%= link_to 'Mes commandes', orders_path, method: :get, class: 'nav-link' %></li>
+					<li class="nav-item"><%= link_to 'Mes favoris', favorites_path, class: 'nav-link' %></li>
+					<li class="nav-item"><%= link_to 'Mes recherches', contact_index_path, class: 'nav-link' %></li>
+					<li class="nav-item"><%= link_to 'Mes commandes', orders_path, method: :get, class: 'nav-link' %></li>
                     <li class="nav-item"><%= link_to 'Mon profil', profile_path(:id => current_user.id), class: 'nav-link' %></li>
                     <li class="nav-item"><%= link_to 'Editer mon profil', edit_user_registration_path, class: 'nav-link' %></li>
                     <li class="nav-item"><%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
