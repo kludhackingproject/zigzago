@@ -1,28 +1,21 @@
 
 <div class="super_container">
 
-  <div class="home">
-    <%= image_tag("home1.jpg", class: "home_background") %>
-		<div class="home_content">
-			<div class="home_content_inner">
-				<div class="home_text_large">zigzago</div>
-				<div class="home_text_small">A new way to travel</div>
-			</div>
-		</div>
-  </div>
-
-<div class="row">
-	<div class="col">
-		<div class="section_title text-center">
-			<h2>Vos résultats de recherche</h2>
-		</div>
-	</div>
-</div>
+	<div class="home profile">
+    	<div class="home_background parallax-window small-banner" data-parallax="scroll" data-speed="0.8">
+      	<%= image_tag("elements.jpg") %>
+    	</div>
+    	<div class="home_content">
+      		<div class="home_content_inner">
+        		<span class="home_text_small">Vos recherches enregistrées</span>
+      		</div>
+    	</div>
+  	</div>
 
 <div class="col-12">
 	<div class="find_form_container">
 		<%= form_tag url_for(action: 'show'), remote: true, id: "find_form", method: "post",  class: "find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap" do %>
-			<%= @apisearch.each do |f| %>
+			<% if @apisearch.each do |f| %>
 				<div class="card_registered">
 					<%= image_tag("save_search.jpg", class: "find_background") %>
 						<div class="card_registered_row">
@@ -58,6 +51,8 @@
 							</div>
 						</div>
 				</div>
+			<% end.empty? %>
+			<p class="empty_search_text"> Vous n'avez pas de recherche enregistrée </p>
 			<% end %>
 		<% end%>
 	</div>

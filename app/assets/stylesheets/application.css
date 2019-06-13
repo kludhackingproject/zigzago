@@ -451,7 +451,7 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
     overflow: hidden;        
 	color: #FFFFFF;
 	padding: 10px 98px;
-	font-size: 20px;
+	font-size: 25px;
  }
 
   @keyframes sk-bounce {
@@ -554,33 +554,40 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
 
 .card_registered_departure{
 	height: 85px;
-	margin: 20px 0px 0px 80px;
+	margin: 20px 0px 0px 170px;
 	width: 250px;
 }
 
 .card_registered_arrival{
 	height: 85px;
-	margin: 0px 0px 0px 80px;
+	margin: 0px 0px 0px 170px;
 	width: 250px;
 }
 
 .card_registered_departure_date{
 	height: 85px;
-	margin: 20px 0px 0px 100px;
+	margin: 20px 0px 0px 170px;
 	width: 250px;
 }
 .card_registered_arrival_date{
 	height: 85px;
-	margin: 0px 0px 0px 100px;
+	margin: 0px 0px 0px 170px;
 	width: 250px;
 }
 
 .card_registered_button_search{
 	height: 85px;
-	margin: 32px 29px 0px 0px;
+	margin: 15px 29px 17px 0px;
 }
 
 .card_registered_button_delete{
 	height: 85px;
 	margin: 0px 0px 0px 0px;
+}
+
+.empty_search_text{
+	margin-left: 459px;
+	margin-right: 459px;
+	color: #364157;
+	font-size: 150%;
 }

@@ -21,7 +21,7 @@
                 <ul class="dropdown-menu">
                   <% if current_user %>
 										<li class="nav-item"><%= link_to 'Favoris', root_path, class: 'nav-link' %></li>
-										<li class="nav-item"><%= link_to 'Mes recherches', contact_index_path, class: 'nav-link' %></li>
+										<li class="nav-item"><%= link_to 'Mes recherches', apisearch_path(:id => current_user.id), class: 'nav-link' %></li>
 										<li class="nav-item"><%= link_to 'Mes commandes', orders_path, method: :get, class: 'nav-link' %></li>
                     <li class="nav-item"><%= link_to 'Mon profil', profile_path(:id => current_user.id), class: 'nav-link' %></li>
                     <li class="nav-item"><%= link_to 'Editer mon profil', edit_user_registration_path, class: 'nav-link' %></li>
