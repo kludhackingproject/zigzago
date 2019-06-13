@@ -1,10 +1,10 @@
 class FavoritesController < ApplicationController
   def index
     @favorites = Favorite.all
-  end 
+  end
 
   def show
-  end 
+  end
 
   def new
   end
@@ -24,17 +24,17 @@ class FavoritesController < ApplicationController
                              back_duration: params[:back_duration],
                              user_id: current_user.id                             )
     respond_to do |format|
-      format.html { redirect_to apisearches_path }
-      format.js { redirect_to apisearches_path }
+     format.html { redirect_to apisearches_path }
+     format.js
   end
 
   def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
     flash[:success] = "Offre supprimée des favoris !"
-    redirect_to favorites_path
+    render :index
   end
-    
+
   def destroy_date
     @datetime = DateTime.now
     @datetime_departure = @departure_date

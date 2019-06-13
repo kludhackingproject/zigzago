@@ -10,51 +10,52 @@
 			</div>
 		</div>
 
-		<% (0...@price_result.length).step(2) { |i| %>
-				<div class="card">
-			    	<table>
-			       		<tbody>
-			            	<tr class="card-row">
-			              		<td>
-			              			<p class="card-departure-time"> <%= @departuredate_result[i] %> <br>
-			              			<span class="card-departure-place">  <%=  @departure_result[i] %> </span></p>
-                   		 		</td>
-			             		<td>
-			              			<p class="card-duration"> <%= @departureduration_result[i] %>  </p>
-                  				</td>
-			              			<td class="font-weight-normal align-middle">	<p class="card-arrival-time"> <%= @arrivaldate_result[i] %> <br>
-			              			<span class="card-arrival-place"> <%= @destination_result[i] %> </span></p>
-             		       		</td>
-			              		<td class="cell-price">
-			                		<p class="card-price"><%= @price_result[i] %> €</p>
-			              		</td>
-			             		<td class="card-icon-favorite">
-			              			<% if current_user %>
-                    					<%= link_to '<button class="icon_star_default"><i class="fa fa-star"></i></button>'.html_safe, favorites_path(:id => i, :city_departure => @departure_result[i], :destination => @destination_result[i], :price => @price_result[i], :departure_date => @departuredate_result[i], :return_date => @arrivaldate_result[i], :duration =>  @departureduration_result[i], :back_city_departure => @departure_result[i + 1], :back_destination =>  @arrivaldate_result[i + 1], :back_departure_date => @departuredate_result[i + 1], :back_return_date => @arrivaldate_result[i + 1], :back_duration => @departureduration_result[i + 1]), data: {:method => "post"}, remote: true %>
-                  					<% else %>
-                    					<%= link_to '<button class="icon_star"><i class="fa fa-star"></i></button>'.html_safe, new_user_session_path %>
-									<% end %>
-								</td>
-			           		</tr>
-			            	<tr>
-			              		<td>
-			              			<p class="card-departure-time"> <%= @departuredate_result[i + 1] %> <br>
-			              			<span class="card-departure-place"> <%=  @departure_result[i + 1] %> </span></p>
-                   		 		</td>
-			              		<td>
-			              			<p class="card-duration"> <%= @departureduration_result[i + 1] %>  </p>
-                  		 		</td>
-			              			<td class="font-weight-normal align-middle"> <p class="card-arrival-time"> <%= @arrivaldate_result[i + 1] %><br>
-			              			<span class="card-arrival-place"> <%= @destination_result[i + 1] %> </span></p>
-             		       		</td>
-			              		<td class="cell-price">
-			              			<p class="card-book">
-                          			<%= link_to "Réserver", order_path(:id => i, :city_departure => @departure_result[i], :destination => @destination_result[i], :price => @price_result[i], :departure_date => @departuredate_result[i], :arrival_date => @arrivaldate_result[i], :duration =>  @departureduration_result[i], :back_citydeparture => @departure_result[i + 1], :back_destination =>  @arrivaldate_result[i + 1], :back_departuredate => @departuredate_result[i + 1], :back_arrivaldate => @arrivaldate_result[i + 1], :back_duration => @departureduration_result[i + 1]), target: "_blank", class:"btn btn-outline-danger mr-1" %></p>
-                   				</td>
-			            	</tr>
-			        	</tbody>
-			    	</table>
-				</div>
+<% (0...@price_result.length).step(2) { |i| %>
+
+			<div class="card">
+			    <table>
+			        <tbody>
+			            <tr class="card-row">
+			              <td>
+			              	<p class="card-departure-time"> <%= @departuredate_result[i] %> <br>
+			              	<span class="card-departure-place">  <%=  @departure_result[i] %> </span></p>
+                   		 </td>
+			              <td>
+			              	<p class="card-duration"> <%= @departureduration_result[i] %>  </p>
+                  		 </td>
+			              <td class="font-weight-normal align-middle">	<p class="card-arrival-time"> <%= @arrivaldate_result[i] %> <br>
+			              	<span class="card-arrival-place"> <%= @destination_result[i] %> </span></p>
+             		       </td>
+			              <td class="cell-price">
+			                <p class="card-price"><%= @price_result[i] %> €</p>
+			              </td>
+			              <td class="card-icon-favorite">
+			              	<% if current_user %>
+                  			<%= link_to '<button class="icon_star_default"><i class="fa fa-star"></i></button>'.html_safe, favorites_path(:id => i, :city_departure => @departure_result[i], :destination => @destination_result[i], :price => @price_result[i], :departure_date => @departuredate_result[i], :return_date => @arrivaldate_result[i], :duration =>  @departureduration_result[i], :back_city_departure => @departure_result[i + 1], :back_destination =>  @arrivaldate_result[i + 1], :back_departure_date => @departuredate_result[i + 1], :back_return_date => @arrivaldate_result[i + 1], :back_duration => @departureduration_result[i + 1]), data: {:method => "post"}, remote: true %>
+                			<% else %>
+                  			<%= link_to '<button class="icon_star_default"><i class="fa fa-star"></i></button>'.html_safe, new_user_session_path %>
+                			<% end %>
+			              </td>
+			            </tr>
+			            <tr>
+			              <td>
+			              	<p class="card-departure-time"> <%= @departuredate_result[i + 1] %> <br>
+			              	<span class="card-departure-place"> <%=  @departure_result[i + 1] %> </span></p>
+                   		 </td>
+			              <td>
+			              	<p class="card-duration"> <%= @departureduration_result[i + 1] %>  </p>
+                  		 </td>
+			              <td class="font-weight-normal align-middle"> <p class="card-arrival-time"> <%= @arrivaldate_result[i + 1] %><br>
+			              	<span class="card-arrival-place"> <%= @destination_result[i + 1] %> </span></p>
+             		       </td>
+			              <td class="cell-price">
+			              	<p class="card-book">
+                          <%= link_to "Réserver", order_path(:id => i, :city_departure => @departure_result[i], :destination => @destination_result[i], :price => @price_result[i], :departure_date => @departuredate_result[i], :arrival_date => @arrivaldate_result[i], :duration =>  @departureduration_result[i], :back_citydeparture => @departure_result[i + 1], :back_destination =>  @arrivaldate_result[i + 1], :back_departuredate => @departuredate_result[i + 1], :back_arrivaldate => @arrivaldate_result[i + 1], :back_duration => @departureduration_result[i + 1]), target: "_blank", class:"btn btn-outline-danger mr-1" %></p>
+                   		</td>
+			            </tr>
+			        </tbody>
+			    </table>
+			</div>
 			<% } %>
-	</div>
-</div>
+		</div>
+  </div>
