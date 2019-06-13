@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_140649) do
+ActiveRecord::Schema.define(version: 2019_06_12_164839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_140649) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city_arrival"
+    t.time "duration"
     t.index ["user_id"], name: "index_apisearches_on_user_id"
   end
 
@@ -45,6 +46,12 @@ ActiveRecord::Schema.define(version: 2019_06_11_140649) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "back_city_departure"
+    t.string "back_destination"
+    t.datetime "back_departure_date"
+    t.datetime "back_return_date"
+    t.time "back_duration"
+    t.time "duration"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
@@ -53,6 +60,17 @@ ActiveRecord::Schema.define(version: 2019_06_11_140649) do
     t.string "stripe_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city_departure"
+    t.string "destination"
+    t.decimal "price"
+    t.datetime "departure_date"
+    t.datetime "arrival_date"
+    t.string "duration"
+    t.string "back_citydeparture"
+    t.string "back_destination"
+    t.datetime "back_departuredate"
+    t.datetime "back_arrivaldate"
+    t.string "back_duration"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

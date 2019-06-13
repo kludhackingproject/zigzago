@@ -55,7 +55,7 @@ $(document).ready(function() {
     $('html, body').animate( { scrollTop: $('#search-anchor').offset().top }, 2000 );
   });
 
-  //////// Autocomplet form /////////
+  //////// Autocomplete form /////////
 
   $( function() {
   	$.getJSON("/json/airports4.json", function(data) {
@@ -85,3 +85,12 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
+
+///// Add to favorites /////
+
+$(document).ready(function(){
+    $("button.icon_star_default").click(function(){
+        $(this).removeClass("icon_star_default").addClass("icon_star_yellow");
+    });
+});

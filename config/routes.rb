@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :show, :new, :create, :destroy]
   resources :profiles, only: [:show]
   resources :contact, only: [:index, :show, :new, :create, :destroy]
-  resources :orders, only: [:new, :show, :create]
+  resources :orders, only: [:index, :new, :show, :create]
 end

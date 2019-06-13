@@ -1,9 +1,27 @@
 class OrdersController < ApplicationController
+  
+  def index
+    @orders = Order.all
+  end
+  
   def new
   end
 
   def show
+
+    @city_departure = params[:city_departure]
+    @destination = params[:destination]
+    @departure_date = params[:departure_date]
+    @arrival_date = params[:arrival_date]
     @price = params[:price].to_i
+    @duration = params[:duration]
+
+    @back_citydeparture = params[:back_citydeparture]
+    @back_destination = params[:back_destination]
+    @back_departuredate = params[:back_departuredate]
+    @back_arrivaldate = params[:back_arrivaldate]
+    @back_duration = params[:back_duration]
+
     @price_in_card = @price * 100
 
   end
@@ -12,7 +30,9 @@ class OrdersController < ApplicationController
     @price = params[:price].to_i
     @price_conv = @price * 100
 
-    @order = Order.new(user_id: current_user.id, stripe_token: params[:stripeToken])
+    @order = Order.new(user_id: current_user.id, stripe_token: params[:stripeToken], city_departure: params[:city_departure], destination: params[:destination], 
+    departure_date: params[:departure_date], arrival_date: params[:arrival_date], price: params[:price], duration: params[:duration], back_citydeparture: params[:back_citydeparture], 
+    back_destination: params[:back_destination], back_departuredate: params[:back_departuredate], back_arrivaldate: params[:back_arrivaldate])
 
     ApiStripe.new(@price_conv, params[:stripeEmail], params[:stripeToken])
 
