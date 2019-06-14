@@ -51,7 +51,19 @@
                                                   <span class="card-arrival-place"><%= favorite.back_destination %></span></p>
                                              </td>
                                              <td class="cell-price">
-                                                 <%= link_to "Réserver", order_path(:id => current_user.id, :city_departure => favorite.city_departure, :destination => favorite.destination , :price => favorite.price, :departure_date => favorite.departure_date, :arrival_date => favorite.return_date, :duration =>  favorite.back_duration, :back_citydeparture => favorite.back_city_departure, :back_destination =>  favorite.back_destination, :back_departuredate => favorite.back_departure_date, :back_arrivaldate => favorite.back_return_date , :back_duration => favorite.back_duration ),target: "_blank", class:"btn btn-outline-danger mr-1" %>
+                                                 <%= link_to "Réserver", order_path(:id => current_user.id, 
+                                                                                    :city_departure => favorite.city_departure, 
+                                                                                    :destination => favorite.destination , 
+                                                                                    :price => favorite.price, 
+                                                                                    :departure_date => favorite.departure_date, 
+                                                                                    :arrival_date => favorite.return_date, 
+                                                                                    :duration =>  favorite.back_duration, 
+                                                                                    :back_citydeparture => favorite.back_city_departure, 
+                                                                                    :back_destination =>  favorite.back_destination, 
+                                                                                    :back_departuredate => favorite.back_departure_date, 
+                                                                                    :back_arrivaldate => favorite.back_return_date , 
+                                                                                    :back_duration => favorite.back_duration ),
+                                                                                    target: "_blank", class:"btn btn-outline-danger mr-1" %>
                                                 </td>
                                              <td></td>
                                             </tr>
