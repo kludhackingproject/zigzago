@@ -54,28 +54,23 @@
 			</div>
 
 			<div class="row">
-				<div class="col">
-					<div class="section_title text-center">
-						<div class="button about_button">
-						<%= link_to ' Editer le profil ', edit_user_registration_path %></div>
-					</div>
+			<div class="col">
+				<div class="section_title_registration">
+					<%= link_to ' Editer le profil ', edit_user_registration_path, :class => "button_profiles_registration" %>
+				</div>
+			</div>
+					
+			<div class="col">
+				<div class="section_title_favorites">
+					<%= link_to " Mes favoris ", favorites_path, :class => "button_profiles_favorites" %>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col">
-					<div class="section_title text-center">
-						<%= link_to " Mes favoris ", favorites_path, :class => "button-blue" %></br>
-					</div>
+			<div class="col">
+				<div class="section_title_apisearch">
+					<%= link_to "Mes recherches", apisearch_path(:id => current_user.id), :class => "button_profiles_apisearch" %>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col">
-					<div class="section_title text-center">
-						<%= link_to "Mes recherches", apisearch_path(:id => current_user.id), :class => "button-blue" %>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
