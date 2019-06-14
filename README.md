@@ -1,5 +1,16 @@
 # ZigZago App
 
+Application de comparaison de vol developpée par : 
+- Vincent Gillibert,
+- Thibault Telliez,
+- Lucas Piquet,
+- Drieli Luz,
+- Antoine Jacques
+
+Dans le cadre du projet final THP 2019.
+
+Lien en production : https://zigzago-app.herokuapp.com/
+
 ## Protocole 
 
 ```[workflow démarrage]
