@@ -24,9 +24,9 @@
     </thead>
 
     <tbody>
-        <% @orders.each do |order| %>
+        <% @orders.each_with_index do |order, i| %>
           <tr>
-            <th scope="row"> <%= order.id %> </th>
+            <th scope="row"> <%= i + 1 %> </th>
             <td class="order-row"><%= order.city_departure %></td>
             <td class="order-row"><%= order.destination %></td>
             <td class="order-row"><%= order.price %>€</td>
