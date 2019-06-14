@@ -54,6 +54,7 @@ class ApisearchesController < ApplicationController
     def destroy
       @apisearch = Apisearch.find(params[:id])
       @apisearch.destroy
+      flash[:success] = "Recherche supprimée"
       redirect_to apisearch_path
     end
 

@@ -38,6 +38,7 @@
 //= require contact_custom
 //= require custom
 //= require elements_custom
+//= require news_custom
 //= require offers_custom
 
 // let icon_star = document.querySelector(".button-blue")
