@@ -52,12 +52,14 @@
 						</div>
 				</div>
 			<% end.empty? %>
+			<div class="col">
 				<div class="empty_search_text"> Vous n'avez pas de recherche enregistrée </div>
 				<p class ="empty_search_text_2"> Vous pouvez enregistrer vos recherches préférées depuis la page de recherche </p>
             	<div class="button_blue_apisearch">
                     <%= link_to "Rechercher de nouveaux trajets", root_path, class:"button-blue" %>
             	</div>
 			<% end %>
+			</div>
 		<% end%>
 	</div>
 </div>

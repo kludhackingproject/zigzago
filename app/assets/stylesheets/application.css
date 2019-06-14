@@ -592,24 +592,18 @@ li.ui-menu-item .ui-menu-item-wrapper:hover {
 }
 
 .empty_search_text{
-	margin-left: 459px;
-	margin-right: 459px;
 	margin-bottom: 20px;
 	color: #364157;
 	font-size: 145%;
 }
 
 .empty_search_text_2{
-	margin-left: 459px;
-	margin-right: 459px;
 	color: #364157;
 	font-size: 85%;
 }
 
 .button_blue_apisearch{
-	margin-left: 520px;
-	margin-right: 520px;
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 .contact_form_container, .placeholder{
