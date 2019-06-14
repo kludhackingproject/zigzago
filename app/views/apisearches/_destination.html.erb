@@ -50,7 +50,7 @@
              		       </td>
 			              <td class="cell-price">
 			              	<p class="card-book">
-                          <%= link_to "Réserver", order_path(:id => i, :city_departure => @departure_result[i], :destination => @destination_result[i], :price => @price_result[i], :departure_date => @departuredate_result[i], :arrival_date => @arrivaldate_result[i], :duration =>  @departureduration_result[i], :back_citydeparture => @departure_result[i + 1], :back_destination =>  @arrivaldate_result[i + 1], :back_departuredate => @departuredate_result[i + 1], :back_arrivaldate => @arrivaldate_result[i + 1], :back_duration => @departureduration_result[i + 1]), target: "_blank", class:"btn btn-outline-danger mr-1" %></p>
+                          <%= link_to "Réserver", order_path(:id => i, :city_departure => @departure_result[i], :destination => @destination_result[i], :price => @price_result[i], :departure_date => @departuredate_result[i], :arrival_date => @arrivaldate_result[i], :duration =>  @departureduration_result[i], :back_citydeparture => @departure_result[i + 1], :back_destination =>  @destination_result[i + 1], :back_departuredate => @departuredate_result[i + 1], :back_arrivaldate => @arrivaldate_result[i + 1], :back_duration => @departureduration_result[i + 1]), target: "_blank", class:"btn btn-outline-danger mr-1" %></p>
                    		</td>
 			            </tr>
 			        </tbody>
