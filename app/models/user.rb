@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :orders
+  has_many :favorites
 
   validates :first_name, presence: true, length: { in: 0..20 }
   validates :last_name, presence: true, length: { in: 0..20 }
